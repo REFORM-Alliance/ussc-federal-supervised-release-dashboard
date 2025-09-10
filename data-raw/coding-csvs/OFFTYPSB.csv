@@ -1,0 +1,34 @@
+Code,Description
+1,Murder
+2,Manslaughter
+3,Kidnapping/Hostage Taking
+4,Sexual Abuse
+5,Assault
+6,Robbery
+9,Arson
+10,"Drugs - Trafficking, Manufacturing, and Importing"
+11,Drugs - Communication Facilities
+12,Drugs: - Simple Possession
+13,"Firearms (Includes Firearms Use, Possession, and Trafficking)"
+15,Burglary/Breaking and Entering
+16,Auto Theft
+17,Larceny
+18,Fraud
+19,Embezzlement
+20,Forgery/Counterfeiting
+21,Bribery
+22,Tax Offenses
+23,Money Laundering
+24,Racketeering /Extortion
+25,Gambling/Lottery
+26,Civil Rights Offenses
+27,Immigration
+28,"Child Pornography (includes OFFTYPE2=42, Child Pornography)"
+29,Prison Offenses
+30,"Administration of Justice (Includes accessory after the fact, misprision of felony, and witness tampering)"
+31,"Environmental, Game, Fish, and Wildlife Offenses"
+32,National Defense Offenses
+33,Antitrust Violations
+34,Food and Drug Offenses
+35,"Traffic Violations and Other Offenses (Includes Other Drug, Environmental, Firearms, Miscellaneous Property Crimes, Violent, Traffic offenses, Obscenity, and Prostitution) (Includes OFFTYPE2= 43,44)"
+.,Missing

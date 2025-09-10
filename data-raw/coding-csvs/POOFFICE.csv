@@ -1,0 +1,388 @@
+StateDistrictNumber,State,StateDistrict,OfficeCode,OfficeName
+27,Alabama, Middle,1,Dothan
+27,Alabama, Middle,2,Montgomery
+26,Alabama, Northern,1,Anniston
+26,Alabama, Northern,2,Birmingham
+26,Alabama, Northern,3,Florence
+26,Alabama, Northern,4,Gadsden
+26,Alabama, Northern,5,Huntsville
+26,Alabama, Northern,7,Tuscaloosa
+28,Alabama, Southern,1,Mobile
+28,Alabama, Southern,2,Selma
+95,Alaska,,3,Anchorage
+95,Alaska,,4,Fairbanks
+70,Arizona,,0,Yuma
+70,Arizona,,2,Phoenix
+70,Arizona,,4,Tucson
+70,Arizona,,6,Flagstaff
+70,Arizona,,9,Chinle
+70,Arizona,,C,Tuba City
+70,Arizona,,G,Sierra Vista
+60,Arkansas, Eastern,3,Jonesboro
+60,Arkansas, Eastern,4,Little Rock
+60,Arkansas, Eastern,5,Pine Bluff
+61,Arkansas, Western,1,El Dorado/Texarkana
+61,Arkansas, Western,2,Fort Smith
+61,Arkansas, Western,5,Fayetteville
+61,Arkansas, Western,6,Hot Springs
+73,California, Central,0,Woodland Hills
+73,California, Central,2,Los Angeles
+73,California, Central,3,Lancaster
+73,California, Central,5,Riverside
+73,California, Central,6,San Bernardino
+73,California, Central,8,Santa Ana
+73,California, Central,9,Santa Barbara
+73,California, Central,A,Long Beach
+73,California, Central,B,Santa Fe Springs
+73,California, Central,C,Ventura
+73,California, Central,D,Studio City
+73,California, Central,E,West Covina
+73,California, Central,F,Inglewood
+73,California, Central,G,Laguna Hills
+72,California, Eastern,0,Elk Grove
+72,California, Eastern,1,Fresno
+72,California, Eastern,2,Sacramento
+72,California, Eastern,3,Redding
+72,California, Eastern,5,Bakersfield
+72,California, Eastern,6,Roseville
+72,California, Eastern,9,Modesto
+72,California, Eastern,J,Visalia
+71,California, Northern,0,San Mateo
+71,California, Northern,2,San Rafael
+71,California, Northern,3,San Francisco
+71,California, Northern,4,Oakland
+71,California, Northern,5,San Jose
+71,California, Northern,7,Monterey
+71,California, Northern,9,Santa Rosa
+74,California, Southern,1,Chula Vista
+74,California, Southern,2,El Centro
+74,California, Southern,3,San Diego
+82,Colorado,,1,Denver
+82,Colorado,,2,Durango
+82,Colorado,,3,Grand Junction
+82,Colorado,,8,Colorado Springs
+05,Connecticut,,2,Hartford
+05,Connecticut,,3,New Haven
+05,Connecticut,,5,Bridgeport
+11,Delaware,,1,Wilmington
+11,Delaware,,2,Dover
+90,District of Columbia,,1,"Washington, D.C."
+30,Florida, Middle,2,Fort Myers
+30,Florida, Middle,3,Jacksonville
+30,Florida, Middle,5,Ocala
+30,Florida, Middle,6,Orlando
+30,Florida, Middle,8,Tampa
+30,Florida, Middle,9,Sarasota
+30,Florida, Middle,B,Cocoa
+30,Florida, Middle,C,Lakeland
+30,Florida, Middle,F,Naples
+29,Florida, Northern,1,Gainesville
+29,Florida, Northern,3,Pensacola
+29,Florida, Northern,4,Tallahassee
+29,Florida, Northern,5,Panama City
+31,Florida, Southern,0,Fort Lauderdale
+31,Florida, Southern,1,Miami
+31,Florida, Southern,2,Fort Pierce
+31,Florida, Southern,3,Hollywood
+31,Florida, Southern,4,Key West
+31,Florida, Southern,5,Boca Raton
+31,Florida, Southern,9,West Palm Beach
+33,Georgia, Middle,1,Albany
+33,Georgia, Middle,3,Athens
+33,Georgia, Middle,4,Columbus
+33,Georgia, Middle,5,Macon
+33,Georgia, Middle,7,Valdosta
+32,Georgia, Northern,1,Atlanta
+32,Georgia, Northern,2,Gainesville
+32,Georgia, Northern,3,Newnan
+32,Georgia, Northern,4,Rome
+32,Georgia, Northern,5,Marietta
+32,Georgia, Northern,6,Tucker
+34,Georgia, Southern,1,Augusta
+34,Georgia, Southern,2,Brunswick
+34,Georgia, Southern,4,Savannah
+34,Georgia, Southern,8,Statesboro
+93,Guam,,1,Hagatna
+75,Hawaii,,1,Honolulu
+76,Idaho,,1,Boise
+76,Idaho,,2,Coeur d'Alene
+76,Idaho,,3,Moscow
+76,Idaho,,4,Pocatello
+53,Illinois, Central,1,Peoria
+53,Illinois, Central,3,Springfield
+53,Illinois, Central,4,Rock Island
+53,Illinois, Central,C,Champaign/Urbana
+52,Illinois, Northern,1,Chicago
+52,Illinois, Northern,3,Rockford
+52,Illinois, Northern,8,Lisle
+54,Illinois, Southern,3,East St. Louis
+54,Illinois, Southern,4,Benton
+55,Indiana, Northern,1,Fort Wayne
+55,Indiana, Northern,2,Hammond
+55,Indiana, Northern,3,South Bend
+55,Indiana, Northern,4,Lafayette
+56,Indiana, Southern,1,Indianapolis
+56,Indiana, Southern,2,Terre Haute
+56,Indiana, Southern,3,Evansville
+56,Indiana, Southern,4,New Albany
+56,Indiana, Southern,5,Bloomington
+56,Indiana, Southern,7,Muncie
+62,Iowa, Northern,1,Cedar Rapids
+62,Iowa, Northern,5,Sioux City
+63,Iowa, Southern,3,Davenport
+63,Iowa, Southern,4,Des Moines
+63,Iowa, Southern,5,Rock Island
+83,Kansas,,2,Kansas City
+83,Kansas,,5,Topeka
+83,Kansas,,6,Wichita
+43,Kentucky, Eastern,0,Ashland
+43,Kentucky, Eastern,2,Covington
+43,Kentucky, Eastern,3,Frankfort
+43,Kentucky, Eastern,5,Lexington
+43,Kentucky, Eastern,6,London
+43,Kentucky, Eastern,7,Pikeville
+44,Kentucky, Western,1,Bowling Green
+44,Kentucky, Western,3,Louisville
+44,Kentucky, Western,4,Owensboro
+44,Kentucky, Western,5,Paducah
+44,Kentucky, Western,B,Hopkinsville
+35,Louisiana, Eastern,1,Hammond
+35,Louisiana, Eastern,2,New Orleans
+35,Louisiana, Eastern,3,Houma
+96,Louisiana, Middle,3,Baton Rouge
+36,Louisiana, Western,1,Alexandria
+36,Louisiana, Western,2,Lake Charles
+36,Louisiana, Western,3,Monroe
+36,Louisiana, Western,5,Shreveport
+36,Louisiana, Western,6,Lafayette
+00,Maine,,1,Bangor
+00,Maine,,2,Portland
+16,Maryland,,1,Baltimore
+16,Maryland,,8,Greenbelt
+01,Massachusetts,,0,Plymouth
+01,Massachusetts,,1,Boston
+01,Massachusetts,,3,Springfield
+01,Massachusetts,,4,Worcester
+01,Massachusetts,,5,Lawrence
+45,Michigan, Eastern,1,Bay City
+45,Michigan, Eastern,2,Detroit
+45,Michigan, Eastern,4,Flint
+45,Michigan, Eastern,5,Ann Arbor
+45,Michigan, Eastern,6,Southfield
+46,Michigan, Western,1,Grand Rapids
+46,Michigan, Western,2,Marquette
+46,Michigan, Western,4,Kalamazoo
+46,Michigan, Western,5,Lansing
+64,Minnesota,,3,St. Paul
+64,Minnesota,,4,Minneapolis
+64,Minnesota,,5,Duluth
+64,Minnesota,,6,Fergus Falls
+37,Mississippi, Northern,1,Aberdeen
+37,Mississippi, Northern,3,Oxford
+37,Mississippi, Northern,4,Greenville
+37,Mississippi, Northern,8,Tupelo
+38,Mississippi, Southern,1,Biloxi
+38,Mississippi, Southern,2,Hattiesburg
+38,Mississippi, Southern,3,Jackson
+38,Mississippi, Southern,6,Gulfport
+65,Missouri, Eastern,1,Cape Girardeau
+65,Missouri, Eastern,4,St. Louis
+66,Missouri, Western,2,Jefferson City
+66,Missouri, Western,4,Kansas City
+66,Missouri, Western,6,Springfield
+77,Montana,,1,Billings
+77,Montana,,2,Butte
+77,Montana,,3,Glasgow
+77,Montana,,4,Great Falls
+77,Montana,,6,Helena
+77,Montana,,9,Missoula
+77,Montana,,B,Browning
+77,Montana,,E,Hardin
+67,Nebraska,,4,Lincoln
+67,Nebraska,,7,North Platte
+67,Nebraska,,8,Omaha
+78,Nevada,,2,Las Vegas
+78,Nevada,,3,Reno
+02,New Hampshire,,1,Concord
+12,New Jersey,,0,Northfield
+12,New Jersey,,1,Camden
+12,New Jersey,,2,Newark
+12,New Jersey,,3,Trenton
+12,New Jersey,,6,Tinton Fields
+12,New Jersey,,D,Paterson
+84,New Mexico,,1,Albuquerque
+84,New Mexico,,2,Las Cruces
+84,New Mexico,,5,Roswell
+84,New Mexico,,6,Santa Fe
+84,New Mexico,,8,Gallup
+84,New Mexico,,F,Farmington
+07,New York, Eastern,1,Brooklyn
+07,New York, Eastern,6,Central Islip
+06,New York, Northern,1,Albany
+06,New York, Northern,3,Binghamton
+06,New York, Northern,5,Syracuse
+08,New York, Southern,1,New York City
+08,New York, Southern,7,White Plains
+08,New York, Southern,8,Middletown
+08,New York, Southern,9,Newburgh
+09,New York, Western,1,Buffalo
+09,New York, Western,6,Rochester
+17,North Carolina, Eastern,3,Fayetteville
+17,North Carolina, Eastern,4,New Bern
+17,North Carolina, Eastern,5,Raleigh
+17,North Carolina, Eastern,7,Wilmington
+17,North Carolina, Eastern,8,Wilson
+17,North Carolina, Eastern,C,Jacksonville
+17,North Carolina, Eastern,G,Greenville
+18,North Carolina, Middle,1,Durham
+18,North Carolina, Middle,2,Greensboro
+18,North Carolina, Middle,3,Rockingham
+18,North Carolina, Middle,4,Salisbury
+18,North Carolina, Middle,6,Winston Salem
+19,North Carolina, Western,1,Asheville
+19,North Carolina, Western,2,Bryson City
+19,North Carolina, Western,3,Charlotte
+19,North Carolina, Western,5,Statesville
+19,North Carolina, Western,H,Hickory
+68,North Dakota,,0,New Town
+68,North Dakota,,1,Bismarck
+68,North Dakota,,2,Grand Forks
+68,North Dakota,,3,Fargo
+68,North Dakota,,4,Minot
+68,North Dakota,,6,Devils Lake
+68,North Dakota,,A,Belcourt
+94,North Mariana Islands,,1,Saipan
+47,Ohio, Northern,1,Cleveland
+47,Ohio, Northern,3,Toledo
+47,Ohio, Northern,4,Youngstown
+47,Ohio, Northern,5,Akron
+48,Ohio, Southern,1,Cincinnati
+48,Ohio, Southern,2,Columbus
+48,Ohio, Southern,3,Dayton
+86,Oklahoma, Eastern,4,Durant
+86,Oklahoma, Eastern,6,Muskogee
+85,Oklahoma, Northern,4,Tulsa
+87,Oklahoma, Western,3,Lawton
+87,Oklahoma, Western,5,Oklahoma City
+79,Oregon,,0,Salem
+79,Oregon,,1,Medford
+79,Oregon,,3,Portland
+79,Oregon,,6,Eugene
+79,Oregon,,E,Bend
+13,Pennsylvania, Eastern,2,Philadelphia
+13,Pennsylvania, Eastern,4,Reading
+13,Pennsylvania, Eastern,5,Allentown
+14,Pennsylvania, Middle,1,Harrisburg
+14,Pennsylvania, Middle,3,Scranton
+14,Pennsylvania, Middle,4,Williamsport
+14,Pennsylvania, Middle,5,Wilkes Barre
+15,Pennsylvania, Western,1,Erie
+15,Pennsylvania, Western,2,Pittsburgh
+15,Pennsylvania, Western,7,Johnston
+04,Puerto Rico,,3,San Juan
+04,Puerto Rico,,6,Ponce
+03,Rhode Island,,1,Providence
+20,South Carolina,,2,Charleston
+20,South Carolina,,3,Columbia
+20,South Carolina,,4,Florence
+20,South Carolina,,6,Greenville
+20,South Carolina,,7,Spartanburg
+20,South Carolina,,D,Beaufort
+69,South Dakota,,1,Aberdeen
+69,South Dakota,,2,Mission
+69,South Dakota,,3,Pierre
+69,South Dakota,,4,Sioux Falls
+69,South Dakota,,5,Rapid City
+69,South Dakota,,6,Pine Ridge
+69,South Dakota,,7,Timber Lake
+49,Tennessee, Eastern,1,Chattanooga
+49,Tennessee, Eastern,2,Greeneville
+49,Tennessee, Eastern,3,Knoxville
+50,Tennessee, Middle,1,Columbia
+50,Tennessee, Middle,2,Cookeville
+50,Tennessee, Middle,3,Nashville
+50,Tennessee, Middle,4,Clarksville
+51,Tennessee, Western,1,Jackson
+51,Tennessee, Western,2,Memphis
+40,Texas, Eastern,0,Plano
+40,Texas, Eastern,1,Beaumont
+40,Texas, Eastern,4,Sherman
+40,Texas, Eastern,5,Texarkana
+40,Texas, Eastern,6,Tyler
+40,Texas, Eastern,9,Lufkin
+39,Texas, Northern,0,Garland
+39,Texas, Northern,1,Abilene
+39,Texas, Northern,2,Amarillo
+39,Texas, Northern,3,Dallas
+39,Texas, Northern,4,Fort Worth
+39,Texas, Northern,5,Lubbock
+39,Texas, Northern,6,San Angelo
+39,Texas, Northern,7,Wichita Falls
+39,Texas, Northern,8,Arlington
+39,Texas, Northern,9,Benbrook
+41,Texas, Southern,1,Brownsville
+41,Texas, Southern,2,Corpus Christi
+41,Texas, Southern,3,Galveston
+41,Texas, Southern,4,Houston
+41,Texas, Southern,5,Laredo
+41,Texas, Southern,6,Victoria
+41,Texas, Southern,8,McAllen
+41,Texas, Southern,9,Rio Grande City
+42,Texas, Western,0,Alpine
+42,Texas, Western,1,Austin
+42,Texas, Western,2,Del Rio
+42,Texas, Western,3,El Paso
+42,Texas, Western,4,Pecos
+42,Texas, Western,5,San Antonio
+42,Texas, Western,6,Waco
+42,Texas, Western,7,Midland Odessa
+42,Texas, Western,B,Temple
+88,Utah,,1,Ogden
+88,Utah,,2,Salt Lake City
+88,Utah,,3,St. George
+88,Utah,,4,Vernal
+88,Utah,,5,West Valley City
+88,Utah,,6,Murray
+10,Vermont,,1,Brattleboro
+10,Vermont,,2,Burlington
+91,Virgin Islands,,4,St. Croix
+91,Virgin Islands,,5,St. Thomas
+22,Virginia, Eastern,0,Fredericksburg
+22,Virginia, Eastern,1,Alexandria
+22,Virginia, Eastern,2,Norfolk
+22,Virginia, Eastern,3,Richmond
+22,Virginia, Eastern,4,Newport News
+22,Virginia, Eastern,6,Colonial Heights
+22,Virginia, Eastern,9,Williamsburg
+22,Virginia, Eastern,E,Manassas
+23,Virginia, Western,1,Abingdon
+23,Virginia, Western,2,Big Stone Gap
+23,Virginia, Western,3,Charlottesville
+23,Virginia, Western,4,Danville
+23,Virginia, Western,5,Harrisonburg
+23,Virginia, Western,6,Lynchburg
+23,Virginia, Western,7,Roanoke
+80,Washington, Eastern,1,Yakima
+80,Washington, Eastern,2,Spokane
+80,Washington, Eastern,4,Richland
+81,Washington, Western,0,Tukwila
+81,Washington, Western,1,Everett
+81,Washington, Western,2,Seattle
+81,Washington, Western,3,Tacoma
+81,Washington, Western,5,Vancouver
+24,West Virginia, Northern,1,Clarksburg
+24,West Virginia, Northern,2,Elkins
+24,West Virginia, Northern,3,Martinsburg
+24,West Virginia, Northern,5,Wheeling
+25,West Virginia, Southern,1,Bluefield
+25,West Virginia, Southern,2,Charleston
+25,West Virginia, Southern,3,Huntington
+25,West Virginia, Southern,5,Beckley
+57,Wisconsin, Eastern,1,Green Bay
+57,Wisconsin, Eastern,2,Milwaukee
+58,Wisconsin, Western,1,Eau Claire
+58,Wisconsin, Western,3,Madison
+89,Wyoming,,1,Casper
+89,Wyoming,,2,Cheyenne
+89,Wyoming,,3,Jackson
+89,Wyoming,,4,Lander

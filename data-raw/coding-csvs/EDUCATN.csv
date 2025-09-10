@@ -1,0 +1,30 @@
+Code,Description
+0,No schooling
+1,1 year of elementary or high school completed
+2,2 years of elementary or high school completed
+3,3 years of elementary or high school completed
+4,4 years of elementary or high school completed
+5,5 years of elementary or high school completed
+6,6 years of elementary or high school completed
+7,7 years of elementary or high school completed
+8,8 years of elementary or high school completed
+9,9 years of elementary or high school completed
+10,10 years of elementary or high school completed
+11,11 years of elementary or high school completed
+12,High school graduate
+13,One year of college/freshman
+14,Two years of college/sophomore
+15,Three years of college/junior
+16,College graduate
+21,G.E.D. (General Education Diploma)
+22,Trade or vocational degree
+23,Associates Degree (A.A.)
+24,"Graduate Degree (Masters, J.D., M.D., Ph.D., etc.)"
+31,Some elementary school
+32,Some high school
+33,Some trade or vocational school
+34,Some college
+35,Some graduate school
+36,Military training
+37,Middle school/Junior high
+.,Missing
