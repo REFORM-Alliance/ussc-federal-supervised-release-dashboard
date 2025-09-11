@@ -21,6 +21,65 @@ library(lubridate)
 library(scales)
 library(bslib)
 library(RColorBrewer)
+library(plotly)
+
+
+####Connect to Database####
+##Database Connection
+con <- dbConnect(
+  RPostgres::Postgres(),
+  host = "reform-cjis-rds-cluster.cluster-cl8mgigamxxo.us-east-1.rds.amazonaws.com",
+  port = 5432,
+  user = "postgres",
+  password = "Reform12345!"
+)
+
+on.exit(dbDisconnect(con), add = TRUE)
+
+
+####Read in Data####
+##Supervision Data
+supervision_df <- 
+  con %>% 
+  tbl(in_schema("ussc_federal_data", "sentencing_data_aggregated_dashboard")) %>%
+  collect() %>% 
+  mutate(across(ends_with("_flag"), 
+                ~.x %>% 
+                  replace_na(0))) %>% 
+  rename("total_sentenced" = "total_count") %>% 
+  mutate(total_sentenced = 
+           total_sentenced %>% 
+           as.numeric()) %>% 
+  rename("po_office" = "po_office_name")
+
+##State Geometries
+states_sf <- 
+  states(cb = TRUE) %>%
+  st_transform(4326) %>% 
+  clean_names() %>% 
+  rename("state_name" = "name")
+
+##Judicial District Geometries
+judicial_sf <- 
+  "data-raw" %>% 
+  here("shp") %>% 
+  here("US_District_Courts.shp") %>% 
+  st_read() %>% 
+  st_transform(4326) %>% 
+  clean_names() %>% 
+  rename("state_district" = "name") %>% 
+  mutate(state_district = 
+           state_district %>% 
+           str_replace_all("District Court", "") %>% 
+           str_trim(side = "both"))
+
+##PO Office Data
+po_office_df <- 
+  "data-raw" %>% 
+  here("po_office_locations.csv") %>% 
+  fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>% 
+  clean_names() %>% 
+  rename("po_office" = "po_office_name")
 
 
 ####App####
@@ -85,7 +144,7 @@ ui <- navbarPage("USSC Federal Sentencing Dashboard",
                               width = 10,
                               fluidRow(
                                 box(width = 8, leafletOutput("map", height = 500)),
-                                box(width = 4, plotOutput("barplot", height = 500))
+                                box(width = 4, plotlyOutput("barplot", height = 500))
                               ),
                               fluidRow(
                                 box(width = 12, DTOutput("table"))
@@ -193,52 +252,6 @@ ui <- navbarPage("USSC Federal Sentencing Dashboard",
 
 ##Server
 server <- function(input, output, session){
-  
-  ####Connect to Database####
-  ##Database Connection
-  con <- dbConnect(
-    RPostgres::Postgres(),
-    host = "reform-cjis-rds-cluster.cluster-cl8mgigamxxo.us-east-1.rds.amazonaws.com",
-    port = 5432,
-    user = "postgres",
-    password = "Reform12345!"
-  )
-  
-  on.exit(dbDisconnect(con), add = TRUE)
-  
-  ##Supervision Data
-  supervision_df <- 
-    con %>% 
-    tbl(in_schema("ussc_federal_data", "sentencing_data_aggregated_dashboard")) %>%
-    collect() %>% 
-    mutate(across(ends_with("_flag"), 
-                  ~.x %>% 
-                    replace_na(0))) %>% 
-    rename("total_sentenced" = "total_count") %>% 
-    mutate(total_sentenced = 
-             total_sentenced %>% 
-             as.numeric())
-  
-  ##State Geometries
-  states_sf <- 
-    states(cb = TRUE) %>%
-    st_transform(4326) %>% 
-    clean_names() %>% 
-    rename("state_name" = "name")
-  
-  ##Judicial District Geometries
-  judicial_sf <- 
-    "data-raw" %>% 
-    here("shp") %>% 
-    here("US_District_Courts.shp") %>% 
-    st_read() %>% 
-    st_transform(4326) %>% 
-    clean_names() %>% 
-    rename("state_district" = "name") %>% 
-    mutate(state_district = 
-             state_district %>% 
-             str_replace_all("District Court", "") %>% 
-             str_trim(side = "both"))
   
   filtered <- reactive({
     supervision_df %>%
@@ -441,81 +454,356 @@ server <- function(input, output, session){
                     opacity = 0.7) %>%
           setView(lng = -98.5795, lat = 39.8283, zoom = 4)
       }
+    }else if(input$geo_level == "po_office"){
+      map_data <- 
+        po_office_df %>%
+        left_join(df_map, by = "po_office")
+      
+      pal <- colorBin(
+        palette = "BuGn",        # Blue-Green sequential palette
+        domain = map_data$value, 
+        bins = 7,                 # adjust as needed
+        na.color = "gray90"
+      )
+      
+      if(input$outcome %in% c("probation_rate", "supervised_release_rate")){
+        map_data %>% 
+          filter(is.na(.data[[input$geo_level]]) == FALSE) %>% 
+          mutate(value = 
+                   value %>% 
+                   replace_na(0) %>% 
+                   as.numeric()) %>% 
+          leaflet() %>%
+          addProviderTiles("CartoDB.Positron") %>%
+          addCircleMarkers(
+            lng = ~long, lat = ~lat,
+            radius = ~scales::rescale(value, to = c(4, 12), from = range(value, na.rm = TRUE)), 
+            fillColor = ~pal(value),
+            color = "black", weight = 1,
+            fillOpacity = 0.8,
+            label = ~paste0(po_office, ": ", scales::percent_format(accuracy = 0.01)(value)),
+            labelOptions = labelOptions(
+              style = list("font-weight" = "normal", padding = "3px 8px"),
+              textsize = "13px",
+              direction = "auto"
+            )
+          ) %>%
+          addLegend("bottomright", 
+                    pal = pal, 
+                    values = ~value,
+                    labFormat = labelFormat(
+                      transform = function(x) x * 100,
+                      suffix = "%"
+                    ),
+                    title = 
+                      input$outcome %>% 
+                      str_replace_all("_flag", "_count") %>%
+                      str_replace_all("_", " ") %>% 
+                      str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+                      str_to_title(), 
+                    opacity = 0.7) %>%
+          setView(lng = -98.5795, lat = 39.8283, zoom = 4) %>% 
+          htmlwidgets::onRender("
+            function(el, x) {
+              var map = this;
+              map.eachLayer(function(layer) {
+                if (layer.options && layer.options.radius) {
+                  // save the original radius if not already stored
+                  if (!layer.options.baseRadius) {
+                    layer.options.baseRadius = layer.options.radius;
+                  }
+                  layer.on('mouseover', function(e) {
+                    this.setStyle({weight: 3, color: '#E69F00'});
+                    this.setRadius(this.options.baseRadius * 1.5);
+                  });
+                  layer.on('mouseout', function(e) {
+                    this.setStyle({weight: 1, color: 'black'});
+                    this.setRadius(this.options.baseRadius);
+                  });
+                }
+              });
+            }
+          ")
+      }else{
+        map_data %>%
+          filter(is.na(.data[[input$geo_level]]) == FALSE) %>% 
+          mutate(value = 
+                   value %>% 
+                   replace_na(0) %>% 
+                   as.numeric()) %>% 
+          leaflet() %>%
+          addProviderTiles("CartoDB.Positron") %>%
+          addCircleMarkers(
+            lng = ~long, lat = ~lat,
+            radius = ~scales::rescale(value, to = c(4, 12), from = range(value, na.rm = TRUE)), 
+            fillColor = ~pal(value),
+            color = "black", weight = 1,
+            fillOpacity = 0.8,
+            label = ~paste0(po_office, ": ", scales::comma_format()(value)),
+            labelOptions = labelOptions(
+              style = list("font-weight" = "normal", padding = "3px 8px"),
+              textsize = "13px",
+              direction = "auto"
+            )
+          ) %>%
+          addLegend("bottomright",
+                    pal = pal,
+                    values = ~value,
+                    title = input$outcome %>%
+                      str_replace_all("_flag", "_count") %>%
+                      str_replace_all("_", " ") %>%
+                      str_replace_all("probation_rate", "probation_sentence_rate") %>%
+                      str_to_title(),
+                    opacity = 0.7) %>%
+          setView(lng = -98.5795, lat = 39.8283, zoom = 4) %>%
+          htmlwidgets::onRender("
+            function(el, x) {
+              var map = this;
+              map.eachLayer(function(layer) {
+                if (layer.options && layer.options.radius) {
+                  // save the original radius if not already stored
+                  if (!layer.options.baseRadius) {
+                    layer.options.baseRadius = layer.options.radius;
+                  }
+                  layer.on('mouseover', function(e) {
+                    this.setStyle({weight: 3, color: '#E69F00'});
+                    this.setRadius(this.options.baseRadius * 1.5);
+                  });
+                  layer.on('mouseout', function(e) {
+                    this.setStyle({weight: 1, color: 'black'});
+                    this.setRadius(this.options.baseRadius);
+                  });
+                }
+              });
+            }
+          ")
+      }
     }
     
   })
   
-  output$barplot <- renderPlot({
+  output$barplot <- renderPlotly({
     if(input$outcome %in% c("probation_rate", "supervised_release_rate")){
-      agg_data() %>%
-        mutate(across(input$geo_level, 
-                      ~.x %>% 
-                        replace_na("Missing/Not Applicable"))) %>%
-        ggplot(aes(x = reorder(.data[[input$geo_level]], -value), y = value)) +
-        geom_col(aes(fill = value)) +
-        scale_fill_gradientn(
-          colors = colorRampPalette(brewer.pal(7, "BuGn"))(100),  # 100-step smooth gradient
-          na.value = "gray90"
-        ) +
-        coord_flip() +
-        labs(x = 
-               input$geo_level %>% 
-               str_replace_all("state_name", "State") %>% 
-               str_replace_all("state_district", "Judicial District"), 
-             y = 
-               input$outcome %>% 
-               str_replace_all("_flag", "_count") %>%
-               str_replace_all("_", " ") %>% 
-               str_replace_all("probation_rate", "probation_sentence_rate") %>% 
-               str_to_title(), 
-             title = paste(input$outcome %>% 
-                             str_replace_all("_flag", "_count") %>%
-                             str_replace_all("_", " ") %>% 
-                             str_replace_all("probation_rate", "probation_sentence_rate") %>% 
-                             str_to_title(), 
-                           "by", 
-                           input$geo_level %>% 
-                             str_replace_all("state_name", "State") %>% 
-                             str_replace_all("state_district", "Judicial District"))) +
-        theme_minimal() +
-        theme(legend.position = "none") + 
-        scale_y_continuous(labels = scales::percent_format(accuracy = 0.1))
+      df <- agg_data() %>%
+        mutate(across(all_of(input$geo_level), ~replace_na(.x, "Missing/Not Applicable")),
+               value = as.numeric(value))  # ensure numeric for coloring
+      
+      # Create a 100-step color palette like your ggplot
+      pal <- colorRampPalette(brewer.pal(7, "BuGn"))(100)
+      
+      # Map values to color indices
+      df$color_index <- cut(df$value, breaks = 100, labels = FALSE)
+      df$fill_color <- pal[df$color_index]
+      
+      barplot_main <- 
+        plot_ly(
+          data = df,
+          x = ~value,
+          y = ~reorder(.data[[input$geo_level]], -value),  # flip like coord_flip
+          type = "bar",
+          orientation = "h",
+          # text = ~paste0(.data[[input$geo_level]], ": ", scales::percent(value, accuracy = 0.1)),
+          # hoverinfo = "text",
+          text = NULL,  # prevents the label from showing on the bar
+          hoverinfo = "text",
+          hovertext = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
+          marker = list(color = ~fill_color)
+        ) %>%
+        layout(
+          title = paste(
+            input$outcome %>% 
+              str_replace_all("_flag", "_count") %>%
+              str_replace_all("_", " ") %>% 
+              str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+              str_to_title(),
+            "by",
+            input$geo_level %>% 
+              str_replace_all("state_name", "State") %>% 
+              str_replace_all("state_district", "Judicial District") %>% 
+              str_replace_all("po_office", "PO Office")
+          ),
+          xaxis = list(
+            title = input$outcome %>% 
+              str_replace_all("_flag", "_count") %>%
+              str_replace_all("_", " ") %>% 
+              str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+              str_to_title(),
+            tickformat = ".1%"  # percent labels like ggplot
+          ),
+          yaxis = list(
+            title = input$geo_level %>% 
+              str_replace_all("state_name", "State") %>% 
+              str_replace_all("state_district", "Judicial District") %>% 
+              str_replace_all("po_office", "PO Office"),
+            tickfont = list(size = 8),
+            dtick = 1,
+            side = "left", 
+            automargin = TRUE
+          ),
+          yaxis2 = list(
+            overlaying = "y",
+            side = "right",
+            showticklabels = FALSE
+          ),
+          hovermode = "closest"
+        )
+        
+      
+      
+      # barplot_main <- 
+      #   agg_data() %>%
+      #   mutate(across(input$geo_level, 
+      #                 ~.x %>% 
+      #                   replace_na("Missing/Not Applicable"))) %>%
+      #   ggplot(aes(x = reorder(.data[[input$geo_level]], -value), y = value)) +
+      #   geom_col(aes(fill = value)) +
+      #   scale_fill_gradientn(
+      #     colors = colorRampPalette(brewer.pal(7, "BuGn"))(100),  # 100-step smooth gradient
+      #     na.value = "gray90"
+      #   ) +
+      #   coord_flip() +
+      #   labs(x = 
+      #          input$geo_level %>% 
+      #          str_replace_all("state_name", "State") %>% 
+      #          str_replace_all("state_district", "Judicial District") %>% 
+      #          str_replace_all("po_office", "PO Office"), 
+      #        y = 
+      #          input$outcome %>% 
+      #          str_replace_all("_flag", "_count") %>%
+      #          str_replace_all("_", " ") %>% 
+      #          str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+      #          str_to_title(), 
+      #        title = paste(input$outcome %>% 
+      #                        str_replace_all("_flag", "_count") %>%
+      #                        str_replace_all("_", " ") %>% 
+      #                        str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+      #                        str_to_title(), 
+      #                      "by", 
+      #                      input$geo_level %>% 
+      #                        str_replace_all("state_name", "State") %>% 
+      #                        str_replace_all("state_district", "Judicial District") %>% 
+      #                        str_replace_all("po_office", "PO Office"))) +
+      #   theme_minimal() +
+      #   theme(legend.position = "none") + 
+      #   scale_y_continuous(labels = scales::percent_format(accuracy = 0.1))
     }else{
-      agg_data() %>%
-        mutate(across(input$geo_level, 
-                      ~.x %>% 
-                        replace_na("Missing/Not Applicable"))) %>%
-        ggplot(aes(x = reorder(.data[[input$geo_level]], -value), y = value)) +
-        geom_col(aes(fill = value)) +
-        scale_fill_gradientn(
-          colors = colorRampPalette(brewer.pal(7, "BuGn"))(100),  # 100-step smooth gradient
-          na.value = "gray90"
-        ) +
-        coord_flip() +
-        labs(x = 
-               input$geo_level %>% 
-               str_replace_all("state_name", "State") %>% 
-               str_replace_all("state_district", "Judicial District"), 
-             y = 
-               input$outcome %>% 
-               str_replace_all("_flag", "_count") %>%
-               str_replace_all("_", " ") %>% 
-               str_replace_all("probation_rate", "probation_sentence_rate") %>% 
-               str_to_title(), 
-             title = paste(input$outcome %>% 
-                             str_replace_all("_flag", "_count") %>%
-                             str_replace_all("_", " ") %>% 
-                             str_replace_all("probation_rate", "probation_sentence_rate") %>% 
-                             str_to_title(), 
-                           "by", 
-                           input$geo_level %>% 
-                             str_replace_all("state_name", "State") %>% 
-                             str_replace_all("state_district", "Judicial District"))) +
-        theme_minimal() +
-        theme(legend.position = "none") + 
-        scale_y_continuous(labels = scales::comma_format())
+      df <- agg_data() %>%
+        mutate(across(all_of(input$geo_level), ~replace_na(.x, "Missing/Not Applicable")),
+               value = as.numeric(value))  # ensure numeric for coloring
+      
+      # Create a 100-step color palette like your ggplot
+      pal <- colorRampPalette(brewer.pal(7, "BuGn"))(100)
+      
+      # Map values to color indices
+      df$color_index <- cut(df$value, breaks = 100, labels = FALSE)
+      df$fill_color <- pal[df$color_index]
+      
+      barplot_main <-
+        plot_ly(
+          data = df,
+          x = ~value,
+          y = ~reorder(.data[[input$geo_level]], -value),  # flip like coord_flip
+          type = "bar",
+          orientation = "h",
+          # text = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
+          # hoverinfo = "text",
+          text = NULL,  # prevents the label from showing on the bar
+          hoverinfo = "text",
+          hovertext = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
+          marker = list(color = ~fill_color)
+        ) %>%
+        layout(
+          title = paste(
+            input$outcome %>% 
+              str_replace_all("_flag", "_count") %>%
+              str_replace_all("_", " ") %>% 
+              str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+              str_to_title(),
+            "by",
+            input$geo_level %>% 
+              str_replace_all("state_name", "State") %>% 
+              str_replace_all("state_district", "Judicial District") %>% 
+              str_replace_all("po_office", "PO Office")
+          ),
+          xaxis = list(
+            title = input$outcome %>% 
+              str_replace_all("_flag", "_count") %>%
+              str_replace_all("_", " ") %>% 
+              str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+              str_to_title(),
+            tickformat = ","
+          ),
+          yaxis = list(
+            title = input$geo_level %>% 
+              str_replace_all("state_name", "State") %>% 
+              str_replace_all("state_district", "Judicial District") %>% 
+              str_replace_all("po_office", "PO Office"),
+            tickfont = list(size = 8),
+            dtick = 1,
+            side = "left",
+            automargin = TRUE
+          ),
+          yaxis2 = list(
+            overlaying = "y",
+            side = "right",
+            showticklabels = FALSE
+          ),
+          hovermode = "closest",
+          showlegend = FALSE
+        )
+      
+      # 
+      # barplot_main <- 
+      #   agg_data() %>%
+      #   mutate(across(input$geo_level, 
+      #                 ~.x %>% 
+      #                   replace_na("Missing/Not Applicable"))) %>%
+      #   ggplot(aes(x = reorder(.data[[input$geo_level]], -value), y = value)) +
+      #   geom_col(aes(fill = value)) +
+      #   scale_fill_gradientn(
+      #     colors = colorRampPalette(brewer.pal(7, "BuGn"))(100),  # 100-step smooth gradient
+      #     na.value = "gray90"
+      #   ) +
+      #   coord_flip() +
+      #   labs(x = 
+      #          input$geo_level %>% 
+      #          str_replace_all("state_name", "State") %>% 
+      #          str_replace_all("state_district", "Judicial District") %>% 
+      #          str_replace_all("po_office", "PO Office"), 
+      #        y = 
+      #          input$outcome %>% 
+      #          str_replace_all("_flag", "_count") %>%
+      #          str_replace_all("_", " ") %>% 
+      #          str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+      #          str_to_title(), 
+      #        title = paste(input$outcome %>% 
+      #                        str_replace_all("_flag", "_count") %>%
+      #                        str_replace_all("_", " ") %>% 
+      #                        str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+      #                        str_to_title(), 
+      #                      "by", 
+      #                      input$geo_level %>% 
+      #                        str_replace_all("state_name", "State") %>% 
+      #                        str_replace_all("state_district", "Judicial District") %>% 
+      #                        str_replace_all("po_office", "PO Office"))) +
+      #   theme_minimal() +
+      #   theme(legend.position = "none") + 
+      #   scale_y_continuous(labels = scales::comma_format())
     }
     
+    if(input$geo_level %in% c("po_office", "state_district")){
+      barplot_main <- 
+        barplot_main %>%
+        layout(
+          yaxis = list(
+            showticklabels = FALSE,   # hide y-axis labels
+            showline = TRUE,
+            showgrid = FALSE
+          )
+        )
+    }
+    
+    barplot_main
   })
   
   output$table <- renderDT({
@@ -540,7 +828,10 @@ server <- function(input, output, session){
                     str_replace_all("_flag", "_count") %>%
                     str_replace_all("probation_rate", "probation_sentence_rate") %>% 
                     str_replace_all("_", " ") %>% 
-                    str_to_title()) %>%
+                    str_to_title() %>% 
+                    str_replace_all("Po Office", "PO Office") %>% 
+                    str_replace_all("State Name", "State") %>% 
+                    str_replace_all("State District", "District")) %>%
       datatable(
         extensions = 'Buttons', 
         class = 'compact stripe hover',
