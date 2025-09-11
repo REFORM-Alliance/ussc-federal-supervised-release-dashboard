@@ -22,37 +22,11 @@ library(scales)
 library(bslib)
 library(RColorBrewer)
 library(plotly)
-
-
-####Connect to Database####
-##Database Connection
-# con <- dbConnect(
-#   RPostgres::Postgres(),
-#   host = "reform-cjis-rds-cluster.cluster-cl8mgigamxxo.us-east-1.rds.amazonaws.com",
-#   port = 5432,
-#   user = "postgres",
-#   password = "Reform12345!"
-# )
-# 
-# on.exit(dbDisconnect(con), add = TRUE)
+library(readr)
 
 
 ####Read in Data####
 ##Supervision Data
-# supervision_df <- 
-#   con %>% 
-#   tbl(in_schema("ussc_federal_data", "sentencing_data_aggregated_dashboard")) %>%
-#   collect() %>% 
-#   mutate(across(ends_with("_flag"), 
-#                 ~.x %>% 
-#                   replace_na(0))) %>% 
-#   rename("total_sentenced" = "total_count") %>% 
-#   mutate(total_sentenced = 
-#            total_sentenced %>% 
-#            as.numeric()) %>% 
-#   rename("po_office" = "po_office_name")
-# 
-# fwrite(supervision_df, here("data-raw", "aggregated_ussc_sentencing_data.csv"), row.names = FALSE)
 supervision_df <-
   "data-raw" %>% 
   here("aggregated_ussc_sentencing_data.csv") %>% 
@@ -66,19 +40,11 @@ states_sf <-
   clean_names() %>% 
   rename("state_name" = "name")
 
-##Judicial District Geometries
+##Read in Judicial SF
 judicial_sf <- 
-  "data-raw" %>% 
-  here("shp") %>% 
-  here("US_District_Courts.shp") %>% 
-  st_read() %>% 
-  st_transform(4326) %>% 
-  clean_names() %>% 
-  rename("state_district" = "name") %>% 
-  mutate(state_district = 
-           state_district %>% 
-           str_replace_all("District Court", "") %>% 
-           str_trim(side = "both"))
+  "data" %>% 
+  here("judicial_sf_data.rds") %>% 
+  read_rds()
 
 ##PO Office Data
 po_office_df <- 
