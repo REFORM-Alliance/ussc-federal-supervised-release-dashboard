@@ -700,7 +700,7 @@ dbExecute(con, paste0("CREATE TABLE ", qualify_table("ussc_federal_data", "sente
 
 ####Geocode PO Offices####
 ##Load US Cities Data
-data(us.cities, package = "maps")
+us.cities <- maps::us.cities
 
 ##PO Office
 po_office_df <-

@@ -2603,63 +2603,6 @@
         "RemoteSha": "2.0.3"
       }
     },
-    "mapproj": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.posit.co/cran/latest",
-      "description": {
-        "Package": "mapproj",
-        "Title": "Map Projections",
-        "Version": "1.2.12",
-        "Date": "2025-05-15",
-        "Authors@R": "c(person(given=\"Doug\",\n                    family=\"McIlroy\",\n                    role=\"aut\",\n                    comment = \"Original C code\"),\n             person(given=\"Ray\",\n                    family=\"Brownrigg\",\n                    role=c(\"trl\", \"aut\"),\n                    comment=\"R packaging\"),\n             person(given=c(\"Thomas\", \"P.\"),\n                    family=\"Minka\",\n                    role=c(\"trl\", \"aut\"),\n                    comment=\"R packaging\"),\n             person(given=\"Roger\",\n                    family=\"Bivand\",\n                    role=\"ctb\",\n                    comment=\"transition to Plan 9 code base\"),\n             person(given=\"Alex\",\n                    family=\"Deckmyn\",\n                    role=c(\"ctb\", \"cre\"),\n                    email=\"alex.deckmyn@meteo.be\"))",
-        "Description": "Converts latitude/longitude into projected coordinates.",
-        "Depends": "R (>= 3.0.0), maps (>= 2.3-0)",
-        "Imports": "stats, graphics",
-        "License": "Lucent Public License",
-        "NeedsCompilation": "yes",
-        "Packaged": "2025-05-19 10:49:35 UTC; alex",
-        "Author": "Doug McIlroy [aut] (Original C code),\n  Ray Brownrigg [trl, aut] (R packaging),\n  Thomas P. Minka [trl, aut] (R packaging),\n  Roger Bivand [ctb] (transition to Plan 9 code base),\n  Alex Deckmyn [ctb, cre]",
-        "Maintainer": "Alex Deckmyn <alex.deckmyn@meteo.be>",
-        "Repository": "RSPM",
-        "Date/Publication": "2025-05-19 12:00:02 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2025-05-20 04:23:14 UTC; unix"
-      }
-    },
-    "maps": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.posit.co/cran/latest",
-      "description": {
-        "Package": "maps",
-        "Title": "Draw Geographical Maps",
-        "Version": "3.4.3",
-        "Date": "2025-05-15",
-        "Description": "Display of maps.  Projection code and larger maps are in\n             separate packages ('mapproj' and 'mapdata').",
-        "Depends": "R (>= 3.5.0)",
-        "Imports": "graphics, utils",
-        "LazyData": "yes",
-        "Suggests": "mapproj (>= 1.2-0), mapdata (>= 2.3.0), sf, rnaturalearth",
-        "License": "GPL-2",
-        "URL": "https://github.com/adeckmyn/maps",
-        "BugReports": "https://github.com/adeckmyn/maps/issues",
-        "Authors@R": "c(person(given  = c(\"Richard\", \"A.\"),\n                    family = \"Becker\",\n                    role   = \"aut\",\n                    comment= \"Original S code\"),\n             person(given  = c(\"Allan\", \"R.\"),\n                    family = \"Wilks\",\n                    role   = \"aut\",\n                    comment= \"Original S code\"),\n             person(given  = \"Ray\",\n                    family = \"Brownrigg\",\n                    role   = c(\"trl\", \"aut\"),\n                    comment= \"R version\"),\n             person(given  = c(\"Thomas\", \"P.\"),\n                    family = \"Minka\",\n                    role   = \"aut\",\n                    comment= \"Enhancements\"),\n             person(given  = \"Alex\",\n                    family = \"Deckmyn\",\n                    role   = c(\"aut\", \"cre\"),\n                    comment= c(ORCID=\"0009-0002-2010-8310\"),\n                    email  = \"alex.deckmyn@meteo.be\"))",
-        "NeedsCompilation": "yes",
-        "Repository": "RSPM",
-        "Packaged": "2025-05-19 08:35:55 UTC; alex",
-        "Author": "Richard A. Becker [aut] (Original S code),\n  Allan R. Wilks [aut] (Original S code),\n  Ray Brownrigg [trl, aut] (R version),\n  Thomas P. Minka [aut] (Enhancements),\n  Alex Deckmyn [aut, cre] (ORCID:\n    <https://orcid.org/0009-0002-2010-8310>)",
-        "Maintainer": "Alex Deckmyn <alex.deckmyn@meteo.be>",
-        "Date/Publication": "2025-05-26 17:40:02 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2025-05-27 04:26:36 UTC; unix",
-        "RemoteType": "standard",
-        "RemoteRef": "maps",
-        "RemotePkgRef": "maps",
-        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "3.4.3"
-      }
-    },
     "memoise": {
       "Source": "CRAN",
       "Repository": "https://packagemanager.posit.co/cran/latest",
@@ -4777,43 +4720,6 @@
         "RemoteSha": "0.8-7"
       }
     },
-    "urbnmapr": {
-      "Source": "github",
-      "Repository": null,
-      "description": {
-        "Package": "urbnmapr",
-        "Type": "Package",
-        "Title": "State and county shapefiles in sf and tibble format",
-        "Version": "0.0.0.9002",
-        "Authors@R": "c(\n    person('Sarah', 'Strochak', email = 'sstrochak@urban.org', role = c('aut', 'cre')),\n    person('Kyle', 'Ueyama', email = 'kueyama@urban.org', role = 'aut'),\n    person('Aaron', 'Williams', email = 'awilliams@urban.org', role = 'aut'),\n    person(family = 'Urban Institute', role = 'cph'),\n    person('William', 'Murphy', role = c('ctb', 'cph'), comment = 'Original author for copied and derived code for fiftystater'),\n    person('Barry', 'Rowlingson', role = 'ctb', comment = 'Original author for copied and derived code for fiftystater')\n    )",
-        "Description": "Provides state and county shapefiles in 'sf' and 'tibble' format that is \n    compatible to map with 'ggplot2'. Shapefiles include Alaska and Hawaii, \n    transformed to be displayed as insets within the continental United States.\n    Heavily inspired by and derived in part from the fiftystater \n    package <https://cran.r-project.org/package=fiftystater> by William Murphy.",
-        "Depends": "R (>= 3.5.0)",
-        "Imports": "tibble, mapproj, sf",
-        "Suggests": "tidyverse, urbnthemes, scales, knitr, rmarkdown",
-        "URL": "https://github.com/UrbanInstitute/urbnmapr",
-        "BugReports": "https://github.com/UrbanInstitute/urbnmapr/issues",
-        "LazyData": "true",
-        "License": "GPL-3",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "6.1.1",
-        "VignetteBuilder": "knitr",
-        "RemoteType": "github",
-        "RemoteHost": "api.github.com",
-        "RemoteRepo": "urbnmapr",
-        "RemoteUsername": "UrbanInstitute",
-        "RemoteRef": "HEAD",
-        "RemoteSha": "ef9f4488d6bc916a07746aafe5755e9fb9da19eb",
-        "GithubRepo": "urbnmapr",
-        "GithubUsername": "UrbanInstitute",
-        "GithubRef": "HEAD",
-        "GithubSHA1": "ef9f4488d6bc916a07746aafe5755e9fb9da19eb",
-        "NeedsCompilation": "no",
-        "Packaged": "2025-08-27 18:24:31 UTC; basil",
-        "Author": "Sarah Strochak [aut, cre],\n  Kyle Ueyama [aut],\n  Aaron Williams [aut],\n  Urban Institute [cph],\n  William Murphy [ctb, cph] (Original author for copied and derived code\n    for fiftystater),\n  Barry Rowlingson [ctb] (Original author for copied and derived code for\n    fiftystater)",
-        "Maintainer": "Sarah Strochak <sstrochak@urban.org>",
-        "Built": "R 4.4.2; ; 2025-08-27 18:24:32 UTC; unix"
-      }
-    },
     "utf8": {
       "Source": "CRAN",
       "Repository": "https://packagemanager.posit.co/cran/latest",
@@ -5237,13 +5143,13 @@
       "checksum": "b7519d43bfeb8fe746e373d1edc798ab"
     },
     ".RData": {
-      "checksum": "3007ceab2e75b609a97141d977b14531"
+      "checksum": "537daf890382d14ed73750b133f9cba1"
     },
     ".Rprofile": {
-      "checksum": "826fc2f99493dc3df78facd01e3ec0ed"
+      "checksum": "6d5cac012f4d9b9b524e1f6dfe5bd96a"
     },
     "app.R": {
-      "checksum": "aa5b28d2c5a9acf8cd942d15a59effe3"
+      "checksum": "8b85387282aa11b96cdc73321067e132"
     },
     "data-raw/coding-csvs/CIRCDIST.csv": {
       "checksum": "c42beb1131dba471e5650a6fbe9ca92f"
@@ -5375,16 +5281,16 @@
       "checksum": "f7676def00137c2fb9bc9f96b8b21185"
     },
     "R/ussc-dashboard_v1.R": {
-      "checksum": "e88f95ddcb29ec91371155db5cf32905"
+      "checksum": "a2a64672af1d7887b73d667d09e3c78a"
     },
     "R/ussc-dashboard_v2.R": {
-      "checksum": "ee5b2f77e292f78da074d89b06e7da43"
+      "checksum": "099321effc00fb93bada8bafefa9e14a"
     },
     "R/utils-functions.R": {
       "checksum": "0140d10fccde746c3817567c04ad2bcc"
     },
     "renv.lock": {
-      "checksum": "8072f61d49c5902947f45035a0068a4a"
+      "checksum": "f0c65543179e63acbbf75f9bd5ef61fd"
     }
   },
   "users": null
