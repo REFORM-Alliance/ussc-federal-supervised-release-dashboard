@@ -9,11 +9,6 @@
     "content_category": null,
     "has_parameters": false
   },
-  "environment": {
-    "r": {
-      "requires": "~=4.4.0"
-    }
-  },
   "packages": {
     "DBI": {
       "Source": "CRAN",
@@ -2603,6 +2598,40 @@
         "RemoteSha": "2.0.3"
       }
     },
+    "maps": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Package": "maps",
+        "Title": "Draw Geographical Maps",
+        "Version": "3.4.3",
+        "Date": "2025-05-15",
+        "Description": "Display of maps.  Projection code and larger maps are in\n             separate packages ('mapproj' and 'mapdata').",
+        "Depends": "R (>= 3.5.0)",
+        "Imports": "graphics, utils",
+        "LazyData": "yes",
+        "Suggests": "mapproj (>= 1.2-0), mapdata (>= 2.3.0), sf, rnaturalearth",
+        "License": "GPL-2",
+        "URL": "https://github.com/adeckmyn/maps",
+        "BugReports": "https://github.com/adeckmyn/maps/issues",
+        "Authors@R": "c(person(given  = c(\"Richard\", \"A.\"),\n                    family = \"Becker\",\n                    role   = \"aut\",\n                    comment= \"Original S code\"),\n             person(given  = c(\"Allan\", \"R.\"),\n                    family = \"Wilks\",\n                    role   = \"aut\",\n                    comment= \"Original S code\"),\n             person(given  = \"Ray\",\n                    family = \"Brownrigg\",\n                    role   = c(\"trl\", \"aut\"),\n                    comment= \"R version\"),\n             person(given  = c(\"Thomas\", \"P.\"),\n                    family = \"Minka\",\n                    role   = \"aut\",\n                    comment= \"Enhancements\"),\n             person(given  = \"Alex\",\n                    family = \"Deckmyn\",\n                    role   = c(\"aut\", \"cre\"),\n                    comment= c(ORCID=\"0009-0002-2010-8310\"),\n                    email  = \"alex.deckmyn@meteo.be\"))",
+        "NeedsCompilation": "yes",
+        "Repository": "RSPM",
+        "Packaged": "2025-05-19 08:35:55 UTC; alex",
+        "Author": "Richard A. Becker [aut] (Original S code),\n  Allan R. Wilks [aut] (Original S code),\n  Ray Brownrigg [trl, aut] (R version),\n  Thomas P. Minka [aut] (Enhancements),\n  Alex Deckmyn [aut, cre] (ORCID:\n    <https://orcid.org/0009-0002-2010-8310>)",
+        "Maintainer": "Alex Deckmyn <alex.deckmyn@meteo.be>",
+        "Date/Publication": "2025-05-26 17:40:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2025-05-27 04:26:36 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "maps",
+        "RemotePkgRef": "maps",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "3.4.3"
+      }
+    },
     "memoise": {
       "Source": "CRAN",
       "Repository": "https://packagemanager.posit.co/cran/latest",
@@ -3455,37 +3484,6 @@
         "RemoteReposName": "CRAN",
         "RemotePkgPlatform": "source",
         "RemoteSha": "2.1.2"
-      }
-    },
-    "renv": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.posit.co/cran/latest",
-      "description": {
-        "Package": "renv",
-        "Type": "Package",
-        "Title": "Project Environments",
-        "Version": "1.1.4",
-        "Authors@R": "c(\n    person(\"Kevin\", \"Ushey\", role = c(\"aut\", \"cre\"), email = \"kevin@rstudio.com\",\n           comment = c(ORCID = \"0000-0003-2880-7407\")),\n    person(\"Hadley\", \"Wickham\", role = c(\"aut\"), email = \"hadley@rstudio.com\",\n           comment = c(ORCID = \"0000-0003-4757-117X\")),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n    )",
-        "Description": "A dependency management toolkit for R. Using 'renv', you can create\n    and manage project-local R libraries, save the state of these libraries to\n    a 'lockfile', and later restore your library as required. Together, these\n    tools can help make your projects more isolated, portable, and reproducible.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://rstudio.github.io/renv/, https://github.com/rstudio/renv",
-        "BugReports": "https://github.com/rstudio/renv/issues",
-        "Imports": "utils",
-        "Suggests": "BiocManager, cli, compiler, covr, cpp11, devtools, gitcreds,\njsonlite, jsonvalidate, knitr, miniUI, modules, packrat, pak,\nR6, remotes, reticulate, rmarkdown, rstudioapi, shiny,\ntestthat, uuid, waldo, yaml, webfakes",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "7.3.2",
-        "VignetteBuilder": "knitr",
-        "Config/Needs/website": "tidyverse/tidytemplate",
-        "Config/testthat/edition": "3",
-        "Config/testthat/parallel": "true",
-        "Config/testthat/start-first": "bioconductor,python,install,restore,snapshot,retrieve,remotes",
-        "NeedsCompilation": "no",
-        "Packaged": "2025-03-20 16:43:40 UTC; kevin",
-        "Author": "Kevin Ushey [aut, cre] (<https://orcid.org/0000-0003-2880-7407>),\n  Hadley Wickham [aut] (<https://orcid.org/0000-0003-4757-117X>),\n  Posit Software, PBC [cph, fnd]",
-        "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2025-03-20 18:10:01 UTC",
-        "Built": "R 4.4.0; ; 2025-03-21 05:21:03 UTC; unix"
       }
     },
     "reprex": {
@@ -5139,158 +5137,20 @@
     }
   },
   "files": {
-    ".gitattributes": {
-      "checksum": "b7519d43bfeb8fe746e373d1edc798ab"
-    },
-    ".RData": {
-      "checksum": "537daf890382d14ed73750b133f9cba1"
-    },
-    ".Rprofile": {
-      "checksum": "6d5cac012f4d9b9b524e1f6dfe5bd96a"
-    },
     "app.R": {
-      "checksum": "8b85387282aa11b96cdc73321067e132"
+      "checksum": "84ff76914cdfb1e6956e70b384bb7527"
     },
-    "data-raw/coding-csvs/CIRCDIST.csv": {
-      "checksum": "c42beb1131dba471e5650a6fbe9ca92f"
+    "parse-federal-supervised-release-data.R": {
+      "checksum": "a406068507f2dafb63217a7acc594914"
     },
-    "data-raw/coding-csvs/CITIZEN.csv": {
-      "checksum": "af808127cceecebf0f0db8dca7745bd1"
-    },
-    "data-raw/coding-csvs/CITWHERE.csv": {
-      "checksum": "7e7e219c3d19e801d2c98b6a228aa2fb"
-    },
-    "data-raw/coding-csvs/districts_with_states.csv": {
-      "checksum": "4a6b811cf1d44f9d04aeaf59d5e33f73"
-    },
-    "data-raw/coding-csvs/EDUCATN.csv": {
-      "checksum": "642ad78a3eeb20f001160e7b5223b021"
-    },
-    "data-raw/coding-csvs/NEWEDUC.csv": {
-      "checksum": "a04adc0dd9fedcfaa6d993c6085f86c7"
-    },
-    "data-raw/coding-csvs/OFFGUIDE.csv": {
-      "checksum": "c4238d088eb10b48211d2eca42dd22db"
-    },
-    "data-raw/coding-csvs/OFFTYPSB.csv": {
-      "checksum": "622c38bad2012a5bc4788e4c3613ea10"
-    },
-    "data-raw/coding-csvs/POOFFICE.csv": {
-      "checksum": "d9f9ffd329a579650c778591ccdfabd6"
-    },
-    "data-raw/federal-criminal-history-data/crimhist16nid.zip": {
-      "checksum": "278db4542048b56be9369744823c1f02"
-    },
-    "data-raw/federal-criminal-history-data/crimhist17nid.zip": {
-      "checksum": "e095762df785be2e2eae69661ae5622d"
-    },
-    "data-raw/federal-criminal-history-data/crimhist18nid.zip": {
-      "checksum": "46fdb8eaab052c56d1a6ff90a19e2bc2"
-    },
-    "data-raw/federal-criminal-history-data/crimhist19nid.zip": {
-      "checksum": "a0ba913a0cf581f9966bba507240c437"
-    },
-    "data-raw/federal-criminal-history-data/crimhist20nid.zip": {
-      "checksum": "d9a459a35d32be5f7376f2a79b079e67"
-    },
-    "data-raw/federal-criminal-history-data/crimhist21nid.zip": {
-      "checksum": "e2bbd269498597b0f164522f3c9587ed"
-    },
-    "data-raw/federal-criminal-history-data/crimhist22nid.zip": {
-      "checksum": "254279199ce14f036bf7a8c57e626f9d"
-    },
-    "data-raw/federal-criminal-history-data/crimhist23nid.zip": {
-      "checksum": "d7b57d01a827c41a3deae86c391d6dc4"
-    },
-    "data-raw/federal-criminal-history-data/crimhist24nid_csv.zip": {
-      "checksum": "e173ccb155585d627919a7676aebb6c8"
-    },
-    "data-raw/federal-criminal-history-data/crimhist24nid.zip": {
-      "checksum": "5415dd30e7f00fc2e961e093fda32152"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy14nid.zip": {
-      "checksum": "8d1b7aaa03c5354b24b4155a66981593"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy15nid.zip": {
-      "checksum": "b2dd439ef6bd0eb89874e4c4f2213341"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy16nid.zip": {
-      "checksum": "0099ac4d3ce5681f0f1e4f8c31bf22d3"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy17nid.zip": {
-      "checksum": "18c84837dd5daab45ae278ab07646027"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy18nid.zip": {
-      "checksum": "d6a8f4d2526bda76540f40f0f9b25ad5"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy19nid.zip": {
-      "checksum": "36daa9813edc092d01772746d33f74c9"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy20nid.zip": {
-      "checksum": "82bb8167e9bb8481fcb2885d2edcab55"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy21nid.zip": {
-      "checksum": "bf3274ef483ed174fac69f35ec9b330e"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy22nid.zip": {
-      "checksum": "900991b2b1f474b308b49e90bc4733a0"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy23nid.zip": {
-      "checksum": "60689090398720b7104f5e29344fe108"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy24nid_csv.zip": {
-      "checksum": "73bff83c5054751994aa51352e465791"
-    },
-    "data-raw/federal-individual-sentencing-data/opafy24nid.zip": {
-      "checksum": "5779d780747a5cd9dc2ed2449bf4f21a"
-    },
-    "data-raw/federal-individual-sentencing-supplemental-data/ussc_sup_fy14.zip": {
-      "checksum": "94f4d8276fd86ffcd985dd28efd663d7"
-    },
-    "data-raw/federal-individual-sentencing-supplemental-data/ussc_sup_fy15.zip": {
-      "checksum": "37723cffe2239a222567915d5115b214"
-    },
-    "data-raw/federal-individual-sentencing-supplemental-data/ussc_sup_fy16.zip": {
-      "checksum": "d0af29696fcb819341181e3b9e44d6f0"
-    },
-    "data-raw/federal-individual-sentencing-supplemental-data/ussc_sup_fy17.zip": {
-      "checksum": "3579ed0b534a6222d52187bdddc4420a"
-    },
-    "data-raw/po_office_locations.csv": {
-      "checksum": "a47e29415ff8fc6af96ae14b0ba6df68"
-    },
-    "data-raw/shp/US_District_Courts.cpg": {
-      "checksum": "ae3b3df9970b49b6523e608759bc957d"
-    },
-    "data-raw/shp/US_District_Courts.dbf": {
-      "checksum": "cf4495d1aae002562499b93990eb9065"
-    },
-    "data-raw/shp/US_District_Courts.prj": {
-      "checksum": "9fef42dc42dede01c3ca00704497f947"
-    },
-    "data-raw/shp/US_District_Courts.shp": {
-      "checksum": "06c6ab7d1762a1d4c1667c96891097fb"
-    },
-    "data-raw/shp/US_District_Courts.shx": {
-      "checksum": "5e4208c16978d6d6485d823dc2d14c4f"
-    },
-    "logs/cronlogs.log": {
-      "checksum": "81e656c41377ca96c497a721479f4ff3"
-    },
-    "R/parse-federal-supervised-release-data.R": {
-      "checksum": "f7676def00137c2fb9bc9f96b8b21185"
-    },
-    "R/ussc-dashboard_v1.R": {
+    "ussc-dashboard_v1.R": {
       "checksum": "a2a64672af1d7887b73d667d09e3c78a"
     },
-    "R/ussc-dashboard_v2.R": {
+    "ussc-dashboard_v2.R": {
       "checksum": "099321effc00fb93bada8bafefa9e14a"
     },
-    "R/utils-functions.R": {
+    "utils-functions.R": {
       "checksum": "0140d10fccde746c3817567c04ad2bcc"
-    },
-    "renv.lock": {
-      "checksum": "f0c65543179e63acbbf75f9bd5ef61fd"
     }
   },
   "users": null
