@@ -1,4 +1,5 @@
 rm(list = ls())
+options(shiny.autoload.r = FALSE)
 
 
 ####Read in Libraries####
