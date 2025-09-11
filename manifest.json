@@ -5174,16 +5174,19 @@
   },
   "files": {
     ".gitattributes": {
-      "checksum": "b7519d43bfeb8fe746e373d1edc798ab"
+      "checksum": "68b329da9893e34099c7d8ad5cb9c940"
     },
     ".RData": {
       "checksum": "537daf890382d14ed73750b133f9cba1"
     },
     ".Rprofile": {
-      "checksum": "449ad45adcdd4f07f5a801c32e36f1aa"
+      "checksum": "53bd2d808fff21299cf91945fbc5091e"
     },
     "app.R": {
-      "checksum": "3196465be9b901755bbae94d5510d578"
+      "checksum": "403561802ab1cdacb89c534bcab9de4a"
+    },
+    "data-raw/aggregated_ussc_sentencing_data.csv": {
+      "checksum": "7a0060d79fe4a8f5a86cf89d3ebcd438"
     },
     "data-raw/coding-csvs/CIRCDIST.csv": {
       "checksum": "c42beb1131dba471e5650a6fbe9ca92f"
@@ -5308,11 +5311,17 @@
     "data-raw/shp/US_District_Courts.shx": {
       "checksum": "5e4208c16978d6d6485d823dc2d14c4f"
     },
+    "data/judicial_sf_data.rds": {
+      "checksum": "47370b62fab6cce4cfa069ab4251a26a"
+    },
     "logs/cronlogs.log": {
       "checksum": "81e656c41377ca96c497a721479f4ff3"
     },
     "R/parse-federal-supervised-release-data.R": {
-      "checksum": "a406068507f2dafb63217a7acc594914"
+      "checksum": "23cb1098667e0c64c259eaa92aeddfc8"
+    },
+    "R/prep-data-for-dashboard.R": {
+      "checksum": "c8e86a842fc7730342bab31580e8fa45"
     },
     "R/ussc-dashboard_v1.R": {
       "checksum": "a2a64672af1d7887b73d667d09e3c78a"
