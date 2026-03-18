@@ -116,8 +116,13 @@ ui <- navbarPage("USSC Federal Sentencing Dashboard",
                             mainPanel(
                               width = 10,
                               fluidRow(
-                                box(width = 8, leafletOutput("map", height = 500)),
-                                box(width = 4, plotlyOutput("barplot", height = 500))
+                                box(width = 7, leafletOutput("map", height = 500)),
+                                box(width = 5, 
+                                    align = "left",
+                                    div(style = "width:95%; padding:0; margin:0; text-align:left;",
+                                        plotlyOutput("barplot", height = 500, width = "100%")
+                                    )
+                                )
                               ),
                               fluidRow(
                                 box(width = 12, DTOutput("table"))
@@ -277,6 +282,8 @@ server <- function(input, output, session){
         na.color = "gray90"
       )
       
+      pal <- colorNumeric(palette = "BuGn", domain = map_data$value, na.color = "transparent")
+      
       if(input$outcome %in% c("probation_rate", "supervised_release_rate")){
         map_data %>% 
           filter(is.na(.data[[input$geo_level]]) == FALSE) %>% 
@@ -351,12 +358,7 @@ server <- function(input, output, session){
         judicial_sf %>%
         left_join(df_map, by = "state_district")
       
-      pal <- colorBin(
-        palette = "BuGn",        # Blue-Green sequential palette
-        domain = map_data$value, 
-        bins = 7,                 # adjust as needed
-        na.color = "gray90"
-      )
+      pal <- colorNumeric(palette = "BuGn", domain = map_data$value, na.color = "transparent")
       
       if(input$outcome %in% c("probation_rate", "supervised_release_rate")){
         map_data %>% 
@@ -432,12 +434,7 @@ server <- function(input, output, session){
         po_office_df %>%
         left_join(df_map, by = "po_office")
       
-      pal <- colorBin(
-        palette = "BuGn",        # Blue-Green sequential palette
-        domain = map_data$value, 
-        bins = 7,                 # adjust as needed
-        na.color = "gray90"
-      )
+      pal <- colorNumeric(palette = "BuGn", domain = map_data$value, na.color = "transparent")
       
       if(input$outcome %in% c("probation_rate", "supervised_release_rate")){
         map_data %>% 
@@ -557,68 +554,129 @@ server <- function(input, output, session){
   
   output$barplot <- renderPlotly({
     if(input$outcome %in% c("probation_rate", "supervised_release_rate")){
-      df <- agg_data() %>%
+      df <- 
+        agg_data() %>%
         mutate(across(all_of(input$geo_level), ~replace_na(.x, "Missing/Not Applicable")),
                value = as.numeric(value))  # ensure numeric for coloring
       
       # Create a 100-step color palette like your ggplot
       pal <- colorRampPalette(brewer.pal(7, "BuGn"))(100)
+      # pal <- colorNumeric(palette = "BuGn", domain = df$value, na.color = "transparent")
       
       # Map values to color indices
-      df$color_index <- cut(df$value, breaks = 100, labels = FALSE)
-      df$fill_color <- pal[df$color_index]
+      # df$color_index <- cut(df$value, breaks = 100, labels = FALSE)
+      # df$fill_color <- pal[df$color_index]
       
-      barplot_main <- 
-        plot_ly(
-          data = df,
-          x = ~value,
-          y = ~reorder(.data[[input$geo_level]], -value),  # flip like coord_flip
-          type = "bar",
-          orientation = "h",
-          # text = ~paste0(.data[[input$geo_level]], ": ", scales::percent(value, accuracy = 0.1)),
-          # hoverinfo = "text",
-          text = NULL,  # prevents the label from showing on the bar
-          hoverinfo = "text",
-          hovertext = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
-          marker = list(color = ~fill_color)
-        ) %>%
-        layout(
+      # barplot_main <- 
+      #   plot_ly(
+      #     data = df,
+      #     x = ~value,
+      #     y = ~reorder(.data[[input$geo_level]], -value),  # flip like coord_flip
+      #     type = "bar",
+      #     orientation = "h",
+      #     # text = ~paste0(.data[[input$geo_level]], ": ", scales::percent(value, accuracy = 0.1)),
+      #     # hoverinfo = "text",
+      #     text = NULL,  # prevents the label from showing on the bar
+      #     hoverinfo = "text",
+      #     hovertext = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
+      #     marker = list(color = ~fill_color)
+      #   ) %>%
+      #   layout(
+      #     title = paste(
+      #       input$outcome %>% 
+      #         str_replace_all("_flag", "_count") %>%
+      #         str_replace_all("_", " ") %>% 
+      #         str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+      #         str_to_title(),
+      #       "by",
+      #       input$geo_level %>% 
+      #         str_replace_all("state_name", "State") %>% 
+      #         str_replace_all("state_district", "Judicial District") %>% 
+      #         str_replace_all("po_office", "PO Office")
+      #     ),
+      #     xaxis = list(
+      #       title = input$outcome %>% 
+      #         str_replace_all("_flag", "_count") %>%
+      #         str_replace_all("_", " ") %>% 
+      #         str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+      #         str_to_title(),
+      #       tickformat = ".1%"  # percent labels like ggplot
+      #     ),
+      #     yaxis = list(
+      #       title = input$geo_level %>% 
+      #         str_replace_all("state_name", "State") %>% 
+      #         str_replace_all("state_district", "Judicial District") %>% 
+      #         str_replace_all("po_office", "PO Office"),
+      #       tickfont = list(size = 8),
+      #       dtick = 1,
+      #       side = "left", 
+      #       automargin = TRUE
+      #     ),
+      #     yaxis2 = list(
+      #       overlaying = "y",
+      #       side = "right",
+      #       showticklabels = FALSE
+      #     ),
+      #     hovermode = "closest"
+      #   )
+      
+      ggplot_barplot_main <- 
+        df %>%
+        # reorder for horizontal bars like Plotly does
+        mutate(geo_reorder = reorder(.data[[input$geo_level]], value)) %>%
+        ggplot(aes(
+          x = value,
+          y = geo_reorder,
+          fill = pal(value),
+          text = paste0(.data[[input$geo_level]], ": ", comma(value))
+        )) +
+        geom_col() +  # horizontal bars
+        scale_fill_gradientn(colors = pal) +
+        scale_x_continuous(
+          labels = percent_format(accuracy = 0.1)  # match Plotly tickformat
+        ) +
+        labs(
           title = paste(
-            input$outcome %>% 
+            input$outcome %>%
               str_replace_all("_flag", "_count") %>%
-              str_replace_all("_", " ") %>% 
-              str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+              str_replace_all("_", " ") %>%
+              str_replace_all("probation_rate", "probation_sentence_rate") %>%
               str_to_title(),
             "by",
-            input$geo_level %>% 
-              str_replace_all("state_name", "State") %>% 
-              str_replace_all("state_district", "Judicial District") %>% 
+            input$geo_level %>%
+              str_replace_all("state_name", "State") %>%
+              str_replace_all("state_district", "Judicial District") %>%
               str_replace_all("po_office", "PO Office")
           ),
-          xaxis = list(
-            title = input$outcome %>% 
-              str_replace_all("_flag", "_count") %>%
-              str_replace_all("_", " ") %>% 
-              str_replace_all("probation_rate", "probation_sentence_rate") %>% 
-              str_to_title(),
-            tickformat = ".1%"  # percent labels like ggplot
-          ),
-          yaxis = list(
-            title = input$geo_level %>% 
-              str_replace_all("state_name", "State") %>% 
-              str_replace_all("state_district", "Judicial District") %>% 
-              str_replace_all("po_office", "PO Office"),
-            tickfont = list(size = 8),
-            dtick = 1,
-            side = "left", 
-            automargin = TRUE
-          ),
-          yaxis2 = list(
-            overlaying = "y",
-            side = "right",
-            showticklabels = FALSE
-          ),
-          hovermode = "closest"
+          x = 
+            input$outcome %>%
+            str_replace_all("_flag", "_count") %>%
+            str_replace_all("_", " ") %>%
+            str_replace_all("probation_rate", "probation_sentence_rate") %>%
+            str_to_title(),
+          y = 
+            input$geo_level %>%
+            str_replace_all("state_name", "State") %>%
+            str_replace_all("state_district", "Judicial District") %>%
+            str_replace_all("po_office", "PO Office")
+        ) +
+        theme_minimal() +
+        theme(
+          axis.text.y = element_text(size = 8, margin = margin(r = 0)),  
+          plot.margin = margin(t = 5, r = 5, b = 5, l = 5),
+          axis.title.y = element_text(margin = margin(r = 10)),
+          axis.title.x = element_text(margin = margin(t = 10))
+        ) 
+      # +
+      #   coord_flip()
+      
+      barplot_main <- 
+        ggplot_barplot_main %>%
+        ggplotly(tooltip = "text") %>%
+        layout(
+          margin = list(l = 50, r = 10, t = 50, b = 50),
+          autosize = TRUE,
+          showlegend = FALSE
         )
         
       
@@ -666,62 +724,122 @@ server <- function(input, output, session){
       
       # Create a 100-step color palette like your ggplot
       pal <- colorRampPalette(brewer.pal(7, "BuGn"))(100)
+      # pal <- colorNumeric(palette = "BuGn", domain = df$value, na.color = "transparent")
       
       # Map values to color indices
-      df$color_index <- cut(df$value, breaks = 100, labels = FALSE)
-      df$fill_color <- pal[df$color_index]
+      # df$color_index <- cut(df$value, breaks = 100, labels = FALSE)
+      # df$fill_color <- pal[df$color_index]
       
-      barplot_main <-
-        plot_ly(
-          data = df,
-          x = ~value,
-          y = ~reorder(.data[[input$geo_level]], -value),  # flip like coord_flip
-          type = "bar",
-          orientation = "h",
-          # text = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
-          # hoverinfo = "text",
-          text = NULL,  # prevents the label from showing on the bar
-          hoverinfo = "text",
-          hovertext = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
-          marker = list(color = ~fill_color)
-        ) %>%
-        layout(
+      # barplot_main <-
+      #   plot_ly(
+      #     data = df,
+      #     x = ~value,
+      #     y = ~reorder(.data[[input$geo_level]], -value),  # flip like coord_flip
+      #     type = "bar",
+      #     orientation = "h",
+      #     # text = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
+      #     # hoverinfo = "text",
+      #     text = NULL,  # prevents the label from showing on the bar
+      #     hoverinfo = "text",
+      #     hovertext = ~paste0(.data[[input$geo_level]], ": ", scales::comma(value)),
+      #     marker = list(color = ~fill_color)
+      #   ) %>%
+      #   layout(
+      #     title = paste(
+      #       input$outcome %>% 
+      #         str_replace_all("_flag", "_count") %>%
+      #         str_replace_all("_", " ") %>% 
+      #         str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+      #         str_to_title(),
+      #       "by",
+      #       input$geo_level %>% 
+      #         str_replace_all("state_name", "State") %>% 
+      #         str_replace_all("state_district", "Judicial District") %>% 
+      #         str_replace_all("po_office", "PO Office")
+      #     ),
+      #     xaxis = list(
+      #       title = input$outcome %>% 
+      #         str_replace_all("_flag", "_count") %>%
+      #         str_replace_all("_", " ") %>% 
+      #         str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+      #         str_to_title(),
+      #       tickformat = ","
+      #     ),
+      #     yaxis = list(
+      #       title = input$geo_level %>% 
+      #         str_replace_all("state_name", "State") %>% 
+      #         str_replace_all("state_district", "Judicial District") %>% 
+      #         str_replace_all("po_office", "PO Office"),
+      #       tickfont = list(size = 8),
+      #       dtick = 1,
+      #       side = "left",
+      #       automargin = TRUE
+      #     ),
+      #     yaxis2 = list(
+      #       overlaying = "y",
+      #       side = "right",
+      #       showticklabels = FALSE
+      #     ),
+      #     hovermode = "closest",
+      #     showlegend = FALSE
+      #   )
+      
+      ggplot_barplot_main <- 
+        df %>%
+        # reorder for horizontal bars like Plotly does
+        mutate(geo_reorder = reorder(.data[[input$geo_level]], value)) %>%
+        ggplot(aes(
+          x = value,
+          y = geo_reorder,
+          fill = value,
+          text = paste0(.data[[input$geo_level]], ": ", comma(value))
+        )) +
+        geom_col() +  # horizontal bars
+        scale_fill_gradientn(colors = pal) +
+        scale_x_continuous(
+          labels = comma_format()  # match Plotly tickformat
+        ) +
+        labs(
           title = paste(
-            input$outcome %>% 
+            input$outcome %>%
               str_replace_all("_flag", "_count") %>%
-              str_replace_all("_", " ") %>% 
-              str_replace_all("probation_rate", "probation_sentence_rate") %>% 
+              str_replace_all("_", " ") %>%
+              str_replace_all("probation_rate", "probation_sentence_rate") %>%
               str_to_title(),
             "by",
-            input$geo_level %>% 
-              str_replace_all("state_name", "State") %>% 
-              str_replace_all("state_district", "Judicial District") %>% 
+            input$geo_level %>%
+              str_replace_all("state_name", "State") %>%
+              str_replace_all("state_district", "Judicial District") %>%
               str_replace_all("po_office", "PO Office")
           ),
-          xaxis = list(
-            title = input$outcome %>% 
-              str_replace_all("_flag", "_count") %>%
-              str_replace_all("_", " ") %>% 
-              str_replace_all("probation_rate", "probation_sentence_rate") %>% 
-              str_to_title(),
-            tickformat = ","
-          ),
-          yaxis = list(
-            title = input$geo_level %>% 
-              str_replace_all("state_name", "State") %>% 
-              str_replace_all("state_district", "Judicial District") %>% 
-              str_replace_all("po_office", "PO Office"),
-            tickfont = list(size = 8),
-            dtick = 1,
-            side = "left",
-            automargin = TRUE
-          ),
-          yaxis2 = list(
-            overlaying = "y",
-            side = "right",
-            showticklabels = FALSE
-          ),
-          hovermode = "closest",
+          x = 
+            input$outcome %>%
+            str_replace_all("_flag", "_count") %>%
+            str_replace_all("_", " ") %>%
+            str_replace_all("probation_rate", "probation_sentence_rate") %>%
+            str_to_title(),
+          y = 
+            input$geo_level %>%
+            str_replace_all("state_name", "State") %>%
+            str_replace_all("state_district", "Judicial District") %>%
+            str_replace_all("po_office", "PO Office")
+        ) +
+        theme_minimal() +
+        theme(
+          axis.text.y = element_text(size = 8, margin = margin(r = 0)),  
+          plot.margin = margin(t = 5, r = 5, b = 5, l = 5),
+          axis.title.y = element_text(margin = margin(r = 10)),
+          axis.title.x = element_text(margin = margin(t = 10))
+        )
+      # +
+      #   coord_flip()
+      
+      barplot_main <- 
+        ggplot_barplot_main %>%
+        ggplotly(tooltip = "text") %>%
+        layout(
+          margin = list(l = 50, r = 10, t = 50, b = 50),
+          autosize = TRUE,
           showlegend = FALSE
         )
       

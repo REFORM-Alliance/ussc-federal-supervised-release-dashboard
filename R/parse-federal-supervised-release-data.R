@@ -35,13 +35,22 @@ source(here("R", "utils-functions.R"))
 ####Read in Data####
 ##Parse Data 
 years <- c(2014:2024)
+# years <- c(2018:2024)
 years %>% 
   map(~{
     ##Parse Individual Data File
     year = .x
-    dir.create("data-raw" %>% 
-                 here("federal-individual-sentencing-data") %>% 
-                 here(year))
+    dir <- 
+      "data-raw" %>% 
+      here("federal-individual-sentencing-data") %>% 
+      here(year)
+    
+    if(dir.exists(dir) == TRUE){
+      unlink(dir, recursive = TRUE)
+    }
+    
+    dir %>% 
+      dir.create()
     
     short_year <- 
       year %>% 
@@ -148,6 +157,15 @@ years %>%
       unlink(recursive = TRUE)
     
     ##Parse Supplemental Data File
+    dir <- 
+      "data-raw" %>% 
+      here("federal-individual-sentencing-supplemental-data") %>% 
+      here(year)
+    
+    if(dir.exists(dir) == TRUE){
+      unlink(dir, recursive = TRUE)
+    }
+    
     supplement_data_file <- 
       "data-raw" %>% 
       here("federal-individual-sentencing-supplemental-data") %>% 
@@ -206,6 +224,15 @@ years %>%
     }
     
     ##Parse Criminal History Data File
+    dir <- 
+      "data-raw" %>% 
+      here("federal-criminal-history-data") %>% 
+      here(year)
+    
+    if(dir.exists(dir) == TRUE){
+      unlink(dir, recursive = TRUE)
+    }
+    
     criminal_history_data_file <- 
       "data-raw" %>% 
       here("federal-criminal-history-data") %>% 
@@ -379,7 +406,7 @@ years %>%
                       starts_with("ofbeg"), starts_with("ofend"), 
                       starts_with("offtyp"), starts_with("prob"),
                       starts_with("tot"), starts_with("timeserv"), 
-                      ends_with("_crim_hist")) %>% 
+                      starts_with("combdrg"), ends_with("_crim_hist")) %>% 
         mutate(across(where(is_character), 
                       ~.x %>% 
                         na_if("") %>% 
@@ -387,7 +414,7 @@ years %>%
                across(any_of(c("offguide", "senspcap", "sentrnge", "senttcap")), 
                       ~.x %>% 
                         as.double()),
-               across(c(any_of(c("circdist", "citizen", "eventnum_crim_hist")), 
+               across(c(any_of(c("circdist", "citizen", "eventnum_crim_hist", "combdrg2")), 
                         matches("^chpts\\d{1,3}_crim_hist$"),
                         matches("^choff\\d_\\d{1,3}_crim_hist$"),
                         matches("^chfed\\d{1,3}_crim_hist$"),
@@ -427,7 +454,10 @@ years %>%
                         as.numeric()), 
                across(c("chpts_crim_hist", "chfed_crim_hist", "chage_crim_hist", starts_with("choff")), 
                       ~.x %>% 
-                        as.numeric())) %>% 
+                        as.numeric()),
+               combdrg2 = 
+                 combdrg2 %>% 
+                 as.character()) %>% 
         rename("total_crim_hist_event_num" = "eventnum_crim_hist")
       
       rm(df_plus_crim)
@@ -445,7 +475,7 @@ years %>%
                       starts_with("ofbeg"), starts_with("ofend"), 
                       starts_with("offtyp"), starts_with("prob"),
                       starts_with("tot"), starts_with("timeserv"), 
-                      ends_with("_crim_hist")) %>% 
+                      starts_with("combdrg"), ends_with("_crim_hist")) %>% 
         mutate(across(where(is_character), 
                       ~.x %>% 
                         na_if("") %>% 
@@ -453,7 +483,7 @@ years %>%
                across(any_of(c("offguide", "senspcap", "sentrnge", "senttcap")), 
                       ~.x %>% 
                         as.double()),
-               across(c(any_of(c("circdist", "citizen", "eventnum_crim_hist")), 
+               across(c(any_of(c("circdist", "citizen", "eventnum_crim_hist", "combdrg2")), 
                         matches("^chpts\\d{1,3}_crim_hist$"),
                         matches("^choff\\d_\\d{1,3}_crim_hist$"),
                         matches("^chfed\\d{1,3}_crim_hist$"),
@@ -474,14 +504,17 @@ years %>%
                         as.numeric()),
                fiscal_year = 
                  year %>% 
-                 as.numeric()) %>% 
+                 as.numeric(),
+               combdrg2 = 
+                 combdrg2 %>% 
+                 as.character()) %>% 
         select(where(~ !all(is.na(.x)))) 
       
       rm(df_plus_crim)
     }
     
     ##Write Table into DB
-    safe_insert_table(con = con, df = df_final, table_name = "sentencing_data_full", schema = "ussc_federal_data")
+    safe_insert_table(con = con, df = df_final, table_name = "sentencing_data_full_weed", schema = "ussc_federal_data")
     print(glue::glue("Data Read, Parsed, and Written in Database for USSC FY{short_year}"))
     rm(df_final)
   })
@@ -516,7 +549,10 @@ years %>%
 ##Merge Other CSVs to Data
 merge_sql_call <- 
   con %>% 
-  tbl(in_schema("ussc_federal_data", "sentencing_data_full")) %>% 
+  tbl(in_schema("ussc_federal_data", "sentencing_data_full_weed")) %>% 
+  mutate(combdrg2 = 
+           combdrg2 %>% 
+           as.numeric()) %>% 
   left_join(con %>% 
               tbl(in_schema("ussc_federal_data", "OFFTYPSB")) %>% 
               rename("offtypsb_code" = "code", 
@@ -526,6 +562,15 @@ merge_sql_call <-
                        offtypsb_code %>%
                        as.numeric()), 
             by = c("offtypsb" = "offtypsb_code")) %>% 
+  left_join(con %>% 
+              tbl(in_schema("ussc_federal_data", "COMBDRG2")) %>% 
+              rename("combdrg_code" = "code", 
+                     "combdrg_description" = "description") %>% 
+              filter(combdrg_code != ".") %>% 
+              mutate(combdrg_code = 
+                       combdrg_code %>%
+                       as.numeric()), 
+            by = c("combdrg2" = "combdrg_code")) %>% 
   left_join(con %>% 
               tbl(in_schema("ussc_federal_data", "OFFGUIDE")) %>% 
               rename("offguide_code" = "code", 
@@ -672,12 +717,157 @@ merge_sql_call <-
             by = c("district", "pooffice")) %>% 
   sql_render()
 
-dbExecute(con, paste0("CREATE TABLE ", qualify_table("ussc_federal_data", "sentencing_data_full_parsed"), " AS ", merge_sql_call))
+dbExecute(con, paste0("CREATE TABLE ", qualify_table("ussc_federal_data", "sentencing_data_full_weed_parsed"), " AS ", merge_sql_call))
+
+##Aggregate Weed Data
+weed_df_agg <- 
+  con %>% 
+  tbl(in_schema("ussc_federal_data", "sentencing_data_full_weed_parsed")) %>% 
+  group_by(usscidn, crim_hist_event_num) %>% 
+  slice_sample(n = 1) %>% 
+  ungroup() %>% 
+  dplyr::select(usscidn, age, state_name, state_district, po_office_name, fiscal_year, sentyr,
+                starts_with("dob"), ends_with("description"), ends_with("flag")) %>% 
+  distinct() %>% 
+  # filter(offguide_description %in% c("Drug Trafficking", "Drug Possession"), 
+  #        combdrg_description == "Marijuana") %>% 
+  mutate(drug_cat = 
+           case_when(combdrg_description == "Marijuana" & offguide_description == "Drug Trafficking" ~ "Marijuana Trafficking", 
+                     combdrg_description == "Marijuana" & offguide_description == "Drug Possession" ~ "Marijuana Possession", 
+                     TRUE ~ "Other")) %>% 
+  filter(is.na(drug_cat) == FALSE) %>% 
+  group_by(state_name, fiscal_year, drug_cat) %>% 
+  dplyr::summarize(probation_sentence_count = 
+                     probation_sentence_flag %>% 
+                     sum(na.rm = TRUE), 
+                   supervised_release_sentence_count = 
+                     supervised_release_flag %>% 
+                     sum(na.rm = TRUE), 
+                   total_sentence_count_by_drug_cat = n()) %>% 
+  ungroup() %>% 
+  # group_by(state_name, fiscal_year) %>%
+  # mutate(total_sentence_count_by_state_year = 
+  #          total_sentence_count_by_drug_cat %>% 
+  #          sum(na.rm = TRUE)) %>% 
+  # ungroup() %>% 
+  # filter(!(drug_cat == "Other")) %>%
+  mutate(probation_sentence_rate = 
+           probation_sentence_count/total_sentence_count_by_drug_cat, 
+         supervised_release_sentence_rate = 
+           supervised_release_sentence_count/total_sentence_count_by_drug_cat) %>% 
+  filter(is.na(state_name) == FALSE) %>% 
+  collect() %>% 
+  {
+    df <- .
+    df %>% 
+      bind_rows(df %>% 
+                  # dplyr::select(-total_sentence_count_by_state_year) %>% 
+                  group_by(fiscal_year, drug_cat) %>% 
+                  dplyr::summarize(across(contains("count"),
+                                          ~.x %>% 
+                                            sum(na.rm = TRUE))) %>% 
+                  ungroup() %>% 
+                  mutate(probation_sentence_rate = 
+                           probation_sentence_count/total_sentence_count_by_drug_cat, 
+                         supervised_release_sentence_rate = 
+                           supervised_release_sentence_count/total_sentence_count_by_drug_cat, 
+                         state_name = "Total"))
+  } %>% 
+  rename("state" = "state_name") %>% 
+  mutate(state = 
+           state %>% 
+           fct_relevel("Total",
+                       after = 0)) %>% 
+  {
+    df <- .
+    df %>% 
+      right_join(df %>% 
+                   dplyr::select(state, fiscal_year, drug_cat) %>% 
+                   distinct() %>% 
+                   {
+                     expand_grid(
+                       state = unique(.$state),
+                       fiscal_year = unique(.$fiscal_year),
+                       drug_cat = unique(.$drug_cat)
+                     )
+                   }, 
+                 by = c("state", "fiscal_year", "drug_cat")) %>% 
+      mutate(across(c(contains("_count"), ends_with("_rate")), 
+                    ~.x %>% 
+                      replace_na(0)))
+  } %>% 
+  rename("year" = "fiscal_year") %>% 
+  arrange(state, year, drug_cat) %>% 
+  group_by(state, year) %>% 
+  mutate(total_sentences_by_state_year = 
+           total_sentence_count_by_drug_cat %>% 
+           sum(na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  filter(!(drug_cat == "Other")) 
+  # 
+  # 
+  # 
+  # 
+  # 
+  # 
+  # {
+  #   df <- .
+  #   df %>% 
+  #     bind_rows(df %>% 
+  #                 dplyr::select(-total_sentence_count_by_state_year) %>% 
+  #                 group_by(fiscal_year, drug_cat) %>% 
+  #                 dplyr::summarize(across(contains("count"),
+  #                                         ~.x %>% 
+  #                                           sum(na.rm = TRUE))) %>% 
+  #                 ungroup() %>% 
+  #                 mutate(probation_sentence_rate = 
+  #                          probation_sentence_count/total_sentence_count_by_drug_cat, 
+  #                        supervised_release_sentence_rate = 
+  #                          supervised_release_sentence_count/total_sentence_count_by_drug_cat, 
+  #                        state_name = "Total") %>% 
+  #                 left_join(df %>% 
+  #                             dplyr::select(state_name, fiscal_year, total_sentence_count_by_state_year) %>% 
+  #                             distinct() %>% 
+  #                             group_by(fiscal_year) %>% 
+  #                             dplyr::summarize(total_sentence_count_by_state_year = 
+  #                                                total_sentence_count_by_state_year %>% 
+  #                                                sum(na.rm = TRUE)) %>% 
+  #                             ungroup() %>% 
+  #                             mutate(state_name = "Total", 
+  #                                    drug_cat = "Marijuana Trafficking,,,Marijuana Possession") %>% 
+  #                             separate_rows(drug_cat, sep = ",,,"), 
+  #                           by = c("state_name", "fiscal_year", "drug_cat")))
+  # } %>% 
+  # rename("state" = "state_name") %>% 
+  # mutate(state = 
+  #          state %>% 
+  #          fct_relevel("Total",
+  #                      after = 0)) %>% 
+  # {
+  #   df <- .
+  #   df %>% 
+  #     right_join(df %>% 
+  #                  dplyr::select(state, fiscal_year, drug_cat) %>% 
+  #                  distinct() %>% 
+  #                  {
+  #                    expand_grid(
+  #                      state = unique(.$state),
+  #                      fiscal_year = unique(.$fiscal_year),
+  #                      drug_cat = unique(.$drug_cat)
+  #                    )
+  #                  }, 
+  #                by = c("state", "fiscal_year", "drug_cat")) %>% 
+  #     mutate(across(c(contains("_count"), ends_with("_rate")), 
+  #                   ~.x %>% 
+  #                     replace_na(0)))
+  # } %>% 
+  # rename("year" = "fiscal_year") %>% 
+  # arrange(state, year, drug_cat)
 
 ##Aggregate Data for Dashboard
 dashboard_df_sql <- 
   con %>% 
-  tbl(in_schema("ussc_federal_data", "sentencing_data_full_parsed")) %>%
+  tbl(in_schema("ussc_federal_data", "sentencing_data_full_weed_parsed")) %>%
   group_by(usscidn, crim_hist_event_num) %>% 
   slice_sample(n = 1) %>% 
   ungroup() %>% 
