@@ -348,6 +348,44 @@
         "RemoteSha": "1.0.2"
       }
     },
+    "V8": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Package": "V8",
+        "Type": "Package",
+        "Title": "Embedded JavaScript and WebAssembly Engine for R",
+        "Version": "8.0.1",
+        "Authors@R": "c(\n    person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroenooms@gmail.com\",\n      comment = c(ORCID = \"0000-0002-4035-0289\")),\n    person(\"George\", \"Stagg\", role = \"ctb\", comment = c(ORCID = \"0009-0006-3173-9846\")),\n    person(\"Jan Marvin\", \"Garbuszus\", role = \"ctb\"))",
+        "Description": "An R interface to V8 <https://v8.dev>: Google's open source JavaScript\n    and WebAssembly engine. This package can be compiled either with V8 or NodeJS \n    when built as a shared library.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://jeroen.r-universe.dev/V8",
+        "BugReports": "https://github.com/jeroen/v8/issues",
+        "SystemRequirements": "On Linux you can build against libv8-dev (Debian)\nor v8-devel (Fedora). We also provide static libv8 binaries for\nmost platforms, see the README for details.",
+        "NeedsCompilation": "yes",
+        "VignetteBuilder": "knitr",
+        "Imports": "Rcpp (>= 0.12.12), jsonlite (>= 1.0), curl (>= 1.0), utils",
+        "LinkingTo": "Rcpp",
+        "Suggests": "testthat, knitr, rmarkdown",
+        "RoxygenNote": "7.3.1",
+        "Language": "en-US",
+        "Encoding": "UTF-8",
+        "Biarch": "true",
+        "Packaged": "2025-10-10 09:30:48 UTC; jeroen",
+        "Author": "Jeroen Ooms [aut, cre] (ORCID: <https://orcid.org/0000-0002-4035-0289>),\n  George Stagg [ctb] (ORCID: <https://orcid.org/0009-0006-3173-9846>),\n  Jan Marvin Garbuszus [ctb]",
+        "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2025-10-10 10:30:20 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2026-01-11 07:46:36 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "V8",
+        "RemotePkgRef": "V8",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "8.0.1"
+      }
+    },
     "askpass": {
       "Source": "CRAN",
       "Repository": "https://packagemanager.posit.co/cran/latest",
@@ -1603,6 +1641,80 @@
         "RemoteSha": "0.1.4"
       }
     },
+    "geojsonsf": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Package": "geojsonsf",
+        "Type": "Package",
+        "Title": "GeoJSON to Simple Feature Converter",
+        "Version": "2.0.5",
+        "Date": "2025-11-25",
+        "Authors@R": "c(\n    person(\"David\", \"Cooley\", ,\"dcooley@symbolix.com.au\", role = c(\"aut\", \"cre\")),\n    person(\"Andy\", \"Teucher\", ,\"andy.teucher@gmail.com\", role = \"ctb\")\n    )",
+        "Description": "Converts Between GeoJSON and simple feature objects. ",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/SymbolixAU/geojsonsf",
+        "BugReports": "https://github.com/SymbolixAU/geojsonsf/issues",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "Depends": "R (>= 4.0.0)",
+        "Imports": "Rcpp (>= 1.1.0)",
+        "LinkingTo": "geometries (>= 0.2.5), jsonify (>= 1.2.3), rapidjsonr (>=\n1.2.1), Rcpp, sfheaders (>= 0.4.5)",
+        "RoxygenNote": "7.3.3",
+        "Suggests": "covr, jsonify, knitr, rmarkdown, tinytest",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-11-26 08:50:31 UTC; david",
+        "Author": "David Cooley [aut, cre],\n  Andy Teucher [ctb]",
+        "Maintainer": "David Cooley <dcooley@symbolix.com.au>",
+        "Repository": "RSPM",
+        "Date/Publication": "2025-11-26 10:00:02 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2026-01-11 08:05:47 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "geojsonsf",
+        "RemotePkgRef": "geojsonsf",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "2.0.5"
+      }
+    },
+    "geometries": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Package": "geometries",
+        "Type": "Package",
+        "Title": "Convert Between R Objects and Geometric Structures",
+        "Date": "2025-11-23",
+        "Version": "0.2.5",
+        "Authors@R": "c(\n    person(\"David\", \"Cooley\", ,\"david.cooley.au@gmail.com\", role = c(\"aut\", \"cre\"))\n    )",
+        "Description": "Geometry shapes in 'R' are typically represented by matrices (points, lines), with more complex \n  shapes being lists of matrices (polygons). 'Geometries' will convert various 'R' objects into these shapes. \n  Conversion functions are available at both the 'R' level, and through 'Rcpp'.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://dcooley.github.io/geometries/",
+        "BugReports": "https://github.com/dcooley/geometries/issues",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.2.3",
+        "LinkingTo": "Rcpp",
+        "Imports": "Rcpp (>= 1.1.0)",
+        "Suggests": "covr, knitr, rmarkdown, tinytest",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-11-23 16:09:52 UTC; david",
+        "Author": "David Cooley [aut, cre]",
+        "Maintainer": "David Cooley <david.cooley.au@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2025-11-23 16:30:02 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2026-01-11 07:56:46 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "geometries",
+        "RemotePkgRef": "geometries",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "0.2.5"
+      }
+    },
     "ggplot2": {
       "Source": "CRAN",
       "Repository": "https://packagemanager.posit.co/cran/latest",
@@ -2214,6 +2326,42 @@
         "RemoteReposName": "CRAN",
         "RemotePkgPlatform": "source",
         "RemoteSha": "0.1.4"
+      }
+    },
+    "jsonify": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Package": "jsonify",
+        "Type": "Package",
+        "Title": "Convert Between 'R' Objects and Javascript Object Notation\n(JSON)",
+        "Version": "1.2.3",
+        "Date": "2025-11-24",
+        "Authors@R": "c(\n    person(\"David\", \"Cooley\", ,\"dcooley@symbolix.com.au\", role = c(\"aut\", \"cre\")),\n    person(\"Chris\", \"Muir\", role = \"ctb\"),\n    person(\"Brendan\", \"Knapp\", role = \"ctb\", comment = c(ORCID = \"0000-0003-3284-4972\"))\n    )",
+        "Description": "Conversions between 'R' objects and Javascript Object Notation (JSON) using \n    the 'rapidjsonr' library <https://CRAN.R-project.org/package=rapidjsonr>. ",
+        "License": "MIT + file LICENSE",
+        "Depends": "R (>= 4.0.0)",
+        "Imports": "Rcpp (>= 1.1.0)",
+        "LinkingTo": "rapidjsonr (>= 1.2.1), Rcpp",
+        "RoxygenNote": "7.3.2",
+        "Suggests": "covr, testthat, knitr, rmarkdown",
+        "Encoding": "UTF-8",
+        "URL": "https://symbolixau.github.io/jsonify/,\nhttps://github.com/SymbolixAU/jsonify",
+        "BugReports": "https://github.com/SymbolixAU/jsonify/issues",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-11-24 13:03:46 UTC; david",
+        "Author": "David Cooley [aut, cre],\n  Chris Muir [ctb],\n  Brendan Knapp [ctb] (ORCID: <https://orcid.org/0000-0003-3284-4972>)",
+        "Maintainer": "David Cooley <dcooley@symbolix.com.au>",
+        "Repository": "RSPM",
+        "Date/Publication": "2025-11-25 19:22:12 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2026-01-11 08:01:55 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "jsonify",
+        "RemotePkgRef": "jsonify",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "1.2.3"
       }
     },
     "jsonlite": {
@@ -2899,7 +3047,7 @@
     },
     "plogr": {
       "Source": "CRAN",
-      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "Repository": null,
       "description": {
         "Package": "plogr",
         "Title": "The 'plog' C++ Logging Library",
@@ -3281,6 +3429,37 @@
         "RemoteSha": "1.4.0"
       }
     },
+    "rapidjsonr": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Package": "rapidjsonr",
+        "Type": "Package",
+        "Title": "'Rapidjson' C++ Header Files",
+        "Version": "1.2.1",
+        "Date": "2025-11-23",
+        "Authors@R": "c(\n    person(\"David\", \"Cooley\", ,\"dcooley@symbolix.com.au\", role = c(\"aut\", \"cre\")),\n    person(\"Milo\", \"Yip\", , role = \"ctb\", comment = \"Author of c++ rapidjson library, provided through THL A29 Limited, a Tencent company\"),\n    person(\"Alexander\", \"Chemeris\", role = \"ctb\", comment = \"Author of c++ msinttypes library\")\n    )",
+        "Description": "Provides JSON parsing capability through the 'Rapidjson' 'C++' header-only library. ",
+        "License": "MIT + file LICENSE",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.1",
+        "SystemRequirements": "GNU make",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-11-23 16:12:43 UTC; david",
+        "Author": "David Cooley [aut, cre],\n  Milo Yip [ctb] (Author of c++ rapidjson library, provided through THL\n    A29 Limited, a Tencent company),\n  Alexander Chemeris [ctb] (Author of c++ msinttypes library)",
+        "Maintainer": "David Cooley <dcooley@symbolix.com.au>",
+        "Repository": "RSPM",
+        "Date/Publication": "2025-11-24 08:50:07 UTC",
+        "Built": "R 4.4.0; ; 2025-11-25 14:38:08 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "rapidjsonr",
+        "RemotePkgRef": "rapidjsonr",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "1.2.1"
+      }
+    },
     "rappdirs": {
       "Source": "CRAN",
       "Repository": "https://packagemanager.posit.co/cran/latest",
@@ -3599,6 +3778,42 @@
         "RemoteReposName": "CRAN",
         "RemotePkgPlatform": "source",
         "RemoteSha": "1.1.6"
+      }
+    },
+    "rmapshaper": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Type": "Package",
+        "Package": "rmapshaper",
+        "Title": "Client for 'mapshaper' for 'Geospatial' Operations",
+        "Version": "0.6.0",
+        "Authors@R": "\n    c(person(given = \"Andy\",\n             family = \"Teucher\",\n             role = c(\"aut\", \"cre\"),\n             comment = c(ORCID = \"0000-0002-7840-692X\"),\n             email = \"andy.teucher@gmail.com\"),\n      person(given = \"Kenton\",\n             family = \"Russell\",\n             role = \"aut\",\n             email = \"kent.russell@timelyportfolio.com\",\n             comment = \"JavaScript support\"),\n      person(given = \"Matthew\",\n             family = \"Bloch\",\n             role = \"cph\",\n             comment = \"mapshaper Javascript library\"))",
+        "Description": "Edit and simplify 'geojson', 'Spatial', and 'sf'\n    objects.  This is wrapper around the 'mapshaper' 'JavaScript' library\n    by Matthew Bloch <https://github.com/mbloch/mapshaper/> to perform\n    topologically-aware polygon simplification, as well as other\n    operations such as clipping, erasing, dissolving, and converting\n    'multi-part' to 'single-part' geometries.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/ateucher/rmapshaper,\nhttp://andyteucher.ca/rmapshaper/",
+        "BugReports": "https://github.com/ateucher/rmapshaper/issues",
+        "Imports": "methods, geojsonsf (>= 2.0.5), jsonify (>= 1.2.3), readr (>=\n2.1.0), sf (>= 1.0.0), sp (>= 1.4-0), V8 (>= 6.0.0)",
+        "Suggests": "knitr, magrittr, rmarkdown, testthat (>= 3.0.0), jsonlite,\ncovr, units, withr",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.3",
+        "Config/testthat/edition": "3",
+        "Config/testthat/parallel": "TRUE",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-12-04 00:45:55 UTC; andy",
+        "Author": "Andy Teucher [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-7840-692X>),\n  Kenton Russell [aut] (JavaScript support),\n  Matthew Bloch [cph] (mapshaper Javascript library)",
+        "Maintainer": "Andy Teucher <andy.teucher@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2025-12-04 12:50:08 UTC",
+        "Built": "R 4.4.0; ; 2025-12-04 16:34:42 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "rmapshaper",
+        "RemotePkgRef": "rmapshaper",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "0.6.0"
       }
     },
     "rmarkdown": {
@@ -3929,6 +4144,42 @@
         "RemoteSha": "1.0-21"
       }
     },
+    "sfheaders": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Package": "sfheaders",
+        "Type": "Package",
+        "Title": "Converts Between R Objects and Simple Feature Objects",
+        "Date": "2025-11-24",
+        "Version": "0.4.5",
+        "Authors@R": "c(\n    person(\"David\", \"Cooley\", ,\"david.cooley.au@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(given = \"Michael\", family = \"Sumner\", role = \"ctb\")\n    )",
+        "Description": "Converts between R and Simple Feature 'sf' objects, without depending\n  on the Simple Feature library. Conversion functions are available at both the R level, \n  and through 'Rcpp'.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://dcooley.github.io/sfheaders/",
+        "BugReports": "https://github.com/dcooley/sfheaders/issues",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.2",
+        "Depends": "R (>= 3.0.2)",
+        "LinkingTo": "geometries (>= 0.2.5), Rcpp",
+        "Imports": "Rcpp (>= 1.1.0)",
+        "Suggests": "covr, knitr, testthat",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-11-24 13:15:04 UTC; david",
+        "Author": "David Cooley [aut, cre],\n  Michael Sumner [ctb]",
+        "Maintainer": "David Cooley <david.cooley.au@gmail.com>",
+        "Repository": "RSPM",
+        "Date/Publication": "2025-11-25 19:20:02 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2026-01-11 08:00:27 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "sfheaders",
+        "RemotePkgRef": "sfheaders",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "0.4.5"
+      }
+    },
     "shiny": {
       "Source": "CRAN",
       "Repository": "https://packagemanager.posit.co/cran/latest",
@@ -3964,6 +4215,40 @@
         "RemoteReposName": "CRAN",
         "RemotePkgPlatform": "source",
         "RemoteSha": "1.11.1"
+      }
+    },
+    "shinyWidgets": {
+      "Source": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/latest",
+      "description": {
+        "Package": "shinyWidgets",
+        "Title": "Custom Inputs Widgets for Shiny",
+        "Version": "0.9.1",
+        "Authors@R": "c(\n  person(\"Victor\", \"Perrier\", email = \"victor.perrier@dreamrs.fr\", role = c(\"aut\", \"cre\", \"cph\")),\n  person(\"Fanny\", \"Meyer\", role = \"aut\"),\n  person(\"David\", \"Granjon\", role = \"aut\"),\n  person(\"Ian\", \"Fellows\", role = \"ctb\", comment = \"Methods for mutating vertical tabs & updateMultiInput\"),\n  person(\"Wil\", \"Davis\", role = \"ctb\", comment = \"numericRangeInput function\"),\n  person(\"Spencer\", \"Matthews\", role = \"ctb\", comment = \"autoNumeric methods\"),\n  person(family = \"JavaScript and CSS libraries authors\", role = c(\"ctb\", \"cph\"), comment = \"All authors are listed in LICENSE.md\")\n  )",
+        "Description": "Collection of custom input controls and user interface components for 'Shiny' applications. \n  Give your applications a unique and colorful style !",
+        "URL": "https://github.com/dreamRs/shinyWidgets,\nhttps://dreamrs.github.io/shinyWidgets/",
+        "BugReports": "https://github.com/dreamRs/shinyWidgets/issues",
+        "License": "GPL-3",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "7.3.3",
+        "Depends": "R (>= 3.1.0)",
+        "Imports": "bslib, sass, shiny (>= 1.6.0), htmltools (>= 0.5.1), jsonlite,\ngrDevices, rlang",
+        "Suggests": "testthat, covr, ggplot2, DT, scales, shinydashboard,\nshinydashboardPlus",
+        "NeedsCompilation": "no",
+        "Packaged": "2026-03-06 05:06:15 UTC; perri",
+        "Author": "Victor Perrier [aut, cre, cph],\n  Fanny Meyer [aut],\n  David Granjon [aut],\n  Ian Fellows [ctb] (Methods for mutating vertical tabs &\n    updateMultiInput),\n  Wil Davis [ctb] (numericRangeInput function),\n  Spencer Matthews [ctb] (autoNumeric methods),\n  JavaScript and CSS libraries authors [ctb, cph] (All authors are listed\n    in LICENSE.md)",
+        "Maintainer": "Victor Perrier <victor.perrier@dreamrs.fr>",
+        "Repository": "RSPM",
+        "Date/Publication": "2026-03-09 08:30:02 UTC",
+        "Built": "R 4.4.0; ; 2026-03-10 04:31:52 UTC; unix",
+        "RemoteType": "standard",
+        "RemoteRef": "shinyWidgets",
+        "RemotePkgRef": "shinyWidgets",
+        "RemoteRepos": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "source",
+        "RemoteSha": "0.9.1"
       }
     },
     "shinydashboard": {
@@ -5177,13 +5462,16 @@
       "checksum": "68b329da9893e34099c7d8ad5cb9c940"
     },
     ".RData": {
-      "checksum": "537daf890382d14ed73750b133f9cba1"
+      "checksum": "840d464068115008f1f443e87ed396ba"
     },
     ".Rprofile": {
-      "checksum": "53bd2d808fff21299cf91945fbc5091e"
+      "checksum": "4aaa88dc3d4dda6e21b63ad396e78a11"
+    },
+    "app_v2.R": {
+      "checksum": "56c209e4961ada914af7f90205fc329b"
     },
     "app.R": {
-      "checksum": "403561802ab1cdacb89c534bcab9de4a"
+      "checksum": "a9bec933ba962594aad39faaf86d789c"
     },
     "data-raw/aggregated_ussc_sentencing_data.csv": {
       "checksum": "7a0060d79fe4a8f5a86cf89d3ebcd438"
@@ -5196,6 +5484,9 @@
     },
     "data-raw/coding-csvs/CITWHERE.csv": {
       "checksum": "7e7e219c3d19e801d2c98b6a228aa2fb"
+    },
+    "data-raw/coding-csvs/COMBDRG2.csv": {
+      "checksum": "79115dc86010cafaaed67e403f4f3a93"
     },
     "data-raw/coding-csvs/districts_with_states.csv": {
       "checksum": "4a6b811cf1d44f9d04aeaf59d5e33f73"
@@ -5293,6 +5584,9 @@
     "data-raw/federal-individual-sentencing-supplemental-data/ussc_sup_fy17.zip": {
       "checksum": "3579ed0b534a6222d52187bdddc4420a"
     },
+    "data-raw/fsa_disqualifying_offenses.csv": {
+      "checksum": "8015aa782e08a5562e0f8a8bb9104b0c"
+    },
     "data-raw/po_office_locations.csv": {
       "checksum": "a47e29415ff8fc6af96ae14b0ba6df68"
     },
@@ -5314,11 +5608,23 @@
     "data/judicial_sf_data.rds": {
       "checksum": "47370b62fab6cce4cfa069ab4251a26a"
     },
+    "data/qualifying_offense_counts_by_statute.csv": {
+      "checksum": "2a0b7a2aa9ae477357b4f2c6d98e19cb"
+    },
+    "data/weed_df_agg.csv": {
+      "checksum": "efd9d5dec0b7eef30bd5ec09b800d17e"
+    },
     "logs/cronlogs.log": {
       "checksum": "81e656c41377ca96c497a721479f4ff3"
     },
+    "R/fsa-qualifying-offense-analysis.R": {
+      "checksum": "e4397d541a3312eed966347a01a1677f"
+    },
+    "R/parse-federal-supervised-release-data-clean.R": {
+      "checksum": "dbc98490f2cdbed596399a92736b5cce"
+    },
     "R/parse-federal-supervised-release-data.R": {
-      "checksum": "23cb1098667e0c64c259eaa92aeddfc8"
+      "checksum": "34a20076038f7c3ed7e40ba8f64fe231"
     },
     "R/prep-data-for-dashboard.R": {
       "checksum": "c8e86a842fc7730342bab31580e8fa45"
@@ -5330,10 +5636,10 @@
       "checksum": "099321effc00fb93bada8bafefa9e14a"
     },
     "R/utils-functions.R": {
-      "checksum": "0140d10fccde746c3817567c04ad2bcc"
+      "checksum": "dbcde7941b0f77539a81b401b107571e"
     },
     "renv.lock": {
-      "checksum": "d9046c4daf4bf24593ff07c7c1128b99"
+      "checksum": "ee89ff15cdce60e9cf5794d42d474fe5"
     }
   },
   "users": null
