@@ -251,20 +251,33 @@ ui <- navbarPage(
                                     choices = c("Year Range" = "range", "Single Year" = "single"),
                                     selected = "range", inline = FALSE)),
                    uiOutput("year_selector_state"),
-                   div(class = "reporting-note", "Note: Fiscal year selection applies to the trend line graph only. District bar chart shows all years for the selected state."),
                    div(class = "reporting-note", "Trends compare selected state to national average.")
                  ),
                  mainPanel(
                    width = 10,
                    fluidRow(
-                     box(width = 12,
+                     box(width = 6,
+                         title = "Demographics: Race",
                          div(style = "width:100%; padding:0; margin:0;",
-                             plotlyOutput("state_district_bar", height = 550, width = "100%")))
+                             plotlyOutput("state_demo_race", height = 450, width = "100%"))),
+                     box(width = 6,
+                         title = "Demographics: Gender",
+                         div(style = "width:100%; padding:0; margin:0;",
+                             plotlyOutput("state_demo_gender", height = 450, width = "100%")))
                    ),
                    fluidRow(
                      box(width = 12,
+                         title = "Offense Category Analysis: State vs. National",
                          div(style = "width:100%; padding:0; margin:0;",
-                             plotlyOutput("state_vs_national", height = 550, width = "100%")))
+                             plotlyOutput("state_offense_comparison", height = 550, width = "100%")))
+                   ),
+                   conditionalPanel(
+                     condition = "input.year_mode_state == 'range'",
+                     fluidRow(
+                       box(width = 12,
+                           div(style = "width:100%; padding:0; margin:0;",
+                               plotlyOutput("state_vs_national", height = 550, width = "100%")))
+                     )
                    )
                  )
                )
@@ -760,6 +773,237 @@ server <- function(input, output, session) {
       rename(value = all_of(input$state_outcome))
     
     build_barplot(df, "state_district", input$state_outcome, y_size = 7)
+  })
+  
+  # ---- State Dashboard Demographic Charts ----
+  # ---- State Dashboard Demographic and Offense Charts ----
+  output$state_demo_race <- renderPlotly({
+    # Get state data by race
+    state_race <- state_data() %>%
+      group_by(newrace_description) %>%
+      summarise(
+        probation_sentence_flag = sum(probation_sentence_flag, na.rm = TRUE),
+        supervised_release_flag = sum(supervised_release_flag, na.rm = TRUE),
+        probation_rate          = sum(probation_sentence_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        supervised_release_rate = sum(supervised_release_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        total_sentenced         = sum(total_sentenced, na.rm = TRUE),
+        .groups = "drop"
+      ) %>%
+      mutate(newrace_description = 
+               newrace_description %>% 
+               na_if("") %>% 
+               replace_na("Unknown/Unreported")) %>%
+      # filter(total_sentenced >= 10) %>%
+      mutate(group = input$state_sel)
+    
+    # Get national data by race for comparison
+    yr <- state_year_range()
+    national_race <- supervision_df %>%
+      filter(between(fiscal_year, yr[1], yr[2])) %>%
+      group_by(newrace_description) %>%
+      summarise(
+        probation_sentence_flag = sum(probation_sentence_flag, na.rm = TRUE),
+        supervised_release_flag = sum(supervised_release_flag, na.rm = TRUE),
+        probation_rate          = sum(probation_sentence_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        supervised_release_rate = sum(supervised_release_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        total_sentenced         = sum(total_sentenced, na.rm = TRUE),
+        .groups = "drop"
+      ) %>%
+      mutate(newrace_description = 
+               newrace_description %>% 
+               na_if("") %>% 
+               replace_na("Unknown/Unreported")) %>%
+      mutate(group = "National Average")
+    
+    # Combine and extract selected outcome
+    df <- bind_rows(state_race, national_race) %>%
+      mutate(
+        value = .data[[input$state_outcome]],
+        race_reorder = reorder(newrace_description, value),
+        hover_text = paste0(newrace_description, "\n",
+                            group, "\n",
+                            clean_outcome_label(input$state_outcome), ": ",
+                            if (is_rate_outcome(input$state_outcome))
+                              scales::percent(value, accuracy = 0.01)
+                            else
+                              scales::comma(value))
+      )
+    
+    is_rate <- is_rate_outcome(input$state_outcome)
+    y_label <- clean_outcome_label(input$state_outcome)
+    
+    {
+      ggplot(df, aes(x = value, y = race_reorder, fill = group, text = hover_text)) +
+        geom_col(position = "dodge") +
+        scale_fill_manual(values = c("#0072B2", "#E69F00"), name = "") +
+        scale_x_continuous(labels = if(is_rate) percent_format(accuracy = 0.1) else comma_format()) +
+        labs(x = y_label, y = "Race/Ethnicity", fill = "") +
+        theme_minimal() +
+        theme(
+          axis.text.y     = element_text(size = 10),
+          legend.position = "bottom",
+          legend.title    = element_blank(),
+          axis.title.x    = element_text(margin = margin(t = 10)),
+          axis.title.y    = element_text(margin = margin(r = 10)),
+          plot.margin     = margin(t = 5, r = 5, b = 5, l = 0)
+        )
+    } %>%
+      ggplotly(tooltip = "text") %>%
+      layout(
+        legend = list(orientation = "h", x = 0.5, xanchor = "center",
+                      y = -0.15, yanchor = "top", title = list(text = "")),
+        margin = list(l = 0, r = 10, t = 20, b = 60)
+      )
+  })
+  
+  output$state_demo_gender <- renderPlotly({
+    # Get state data by gender
+    state_gender <- state_data() %>%
+      group_by(monsex_description) %>%
+      summarise(
+        probation_sentence_flag = sum(probation_sentence_flag, na.rm = TRUE),
+        supervised_release_flag = sum(supervised_release_flag, na.rm = TRUE),
+        probation_rate          = sum(probation_sentence_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        supervised_release_rate = sum(supervised_release_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        total_sentenced         = sum(total_sentenced, na.rm = TRUE),
+        .groups = "drop"
+      ) %>%
+      mutate(monsex_description = 
+               monsex_description %>% 
+               na_if("") %>% 
+               replace_na("Unknown/Unreported")) %>%
+      mutate(group = input$state_sel)
+    
+    # Get national data by gender for comparison
+    yr <- state_year_range()
+    national_gender <- supervision_df %>%
+      filter(between(fiscal_year, yr[1], yr[2])) %>%
+      group_by(monsex_description) %>%
+      summarise(
+        probation_sentence_flag = sum(probation_sentence_flag, na.rm = TRUE),
+        supervised_release_flag = sum(supervised_release_flag, na.rm = TRUE),
+        probation_rate          = sum(probation_sentence_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        supervised_release_rate = sum(supervised_release_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        total_sentenced         = sum(total_sentenced, na.rm = TRUE),
+        .groups = "drop"
+      ) %>%
+      mutate(monsex_description = 
+               monsex_description %>% 
+               na_if("") %>% 
+               replace_na("Unknown/Unreported")) %>%
+      mutate(group = "National Average")
+    
+    # Combine and extract selected outcome
+    df <- bind_rows(state_gender, national_gender) %>%
+      mutate(
+        value = .data[[input$state_outcome]],
+        gender_reorder = reorder(monsex_description, value),
+        hover_text = paste0(monsex_description, "\n",
+                            group, "\n",
+                            clean_outcome_label(input$state_outcome), ": ",
+                            if (is_rate_outcome(input$state_outcome))
+                              scales::percent(value, accuracy = 0.01)
+                            else
+                              scales::comma(value))
+      )
+    
+    is_rate <- is_rate_outcome(input$state_outcome)
+    y_label <- clean_outcome_label(input$state_outcome)
+    
+    {
+      ggplot(df, aes(x = value, y = gender_reorder, fill = group, text = hover_text)) +
+        geom_col(position = "dodge") +
+        scale_fill_manual(values = c("#0072B2", "#E69F00"), name = "") +
+        scale_x_continuous(labels = if(is_rate) percent_format(accuracy = 0.1) else comma_format()) +
+        labs(x = y_label, y = "Gender", fill = "") +
+        theme_minimal() +
+        theme(
+          axis.text.y     = element_text(size = 11),
+          legend.position = "bottom",
+          legend.title    = element_blank(),
+          axis.title.x    = element_text(margin = margin(t = 10)),
+          axis.title.y    = element_text(margin = margin(r = 10)),
+          plot.margin     = margin(t = 5, r = 5, b = 5, l = 0)
+        )
+    } %>%
+      ggplotly(tooltip = "text") %>%
+      layout(
+        legend = list(orientation = "h", x = 0.5, xanchor = "center",
+                      y = -0.15, yanchor = "top", title = list(text = "")),
+        margin = list(l = 0, r = 10, t = 20, b = 60)
+      )
+  })
+  
+  output$state_offense_comparison <- renderPlotly({
+    # Get state data by offense
+    state_offense <- state_data() %>%
+      group_by(offguide_description) %>%
+      summarise(
+        probation_sentence_flag = sum(probation_sentence_flag, na.rm = TRUE),
+        supervised_release_flag = sum(supervised_release_flag, na.rm = TRUE),
+        probation_rate          = sum(probation_sentence_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        supervised_release_rate = sum(supervised_release_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        total_sentenced         = sum(total_sentenced, na.rm = TRUE),
+        .groups = "drop"
+      ) %>%
+      filter(!is.na(offguide_description), total_sentenced >= 10) %>%
+      mutate(group = input$state_sel)
+    
+    # Get national data by offense for comparison
+    yr <- state_year_range()
+    national_offense <- supervision_df %>%
+      filter(between(fiscal_year, yr[1], yr[2])) %>%
+      group_by(offguide_description) %>%
+      summarise(
+        probation_sentence_flag = sum(probation_sentence_flag, na.rm = TRUE),
+        supervised_release_flag = sum(supervised_release_flag, na.rm = TRUE),
+        probation_rate          = sum(probation_sentence_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        supervised_release_rate = sum(supervised_release_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
+        total_sentenced         = sum(total_sentenced, na.rm = TRUE),
+        .groups = "drop"
+      ) %>%
+      filter(!is.na(offguide_description)) %>%
+      mutate(group = "National Average")
+    
+    # Combine and extract selected outcome
+    df <- bind_rows(state_offense, national_offense) %>%
+      mutate(
+        value = .data[[input$state_outcome]],
+        offense_reorder = reorder(offguide_description, value),
+        hover_text = paste0(offguide_description, "\n",
+                            group, "\n",
+                            clean_outcome_label(input$state_outcome), ": ",
+                            if (is_rate_outcome(input$state_outcome))
+                              scales::percent(value, accuracy = 0.01)
+                            else
+                              scales::comma(value))
+      )
+    
+    is_rate <- is_rate_outcome(input$state_outcome)
+    y_label <- clean_outcome_label(input$state_outcome)
+    
+    {
+      ggplot(df, aes(x = value, y = offense_reorder, fill = group, text = hover_text)) +
+        geom_col(position = position_dodge(width = 0.7), width = 0.6) +  # Added width parameters for more spacing
+        scale_fill_manual(values = c("#0072B2", "#E69F00"), name = "") +
+        scale_x_continuous(labels = if(is_rate) percent_format(accuracy = 0.1) else comma_format()) +
+        labs(x = y_label, y = "Offense Category", fill = "") +
+        theme_minimal() +
+        theme(
+          axis.text.y     = element_text(size = 9),
+          legend.position = "bottom",
+          legend.title    = element_blank(),
+          axis.title.x    = element_text(margin = margin(t = 10)),
+          axis.title.y    = element_text(margin = margin(r = 10)),
+          plot.margin     = margin(t = 5, r = 5, b = 5, l = 0)
+        )
+    } %>%
+      ggplotly(tooltip = "text") %>%
+      layout(
+        legend = list(orientation = "h", x = 0.5, xanchor = "center",
+                      y = -0.15, yanchor = "top", title = list(text = "")),
+        margin = list(l = 0, r = 10, t = 20, b = 60)
+      )
   })
   
   output$state_vs_national <- renderPlotly({
