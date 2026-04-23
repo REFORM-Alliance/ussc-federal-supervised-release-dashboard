@@ -28,7 +28,11 @@ supervision_df <-
   "data-raw" %>%
   here("aggregated_ussc_sentencing_data.csv") %>%
   fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
-  clean_names()
+  clean_names() %>% 
+  mutate(across(c("state_name", "state_district", "po_office"), 
+                ~.x %>% 
+                  na_if("") %>% 
+                  replace_na("Unknown/Unreported")))
 
 states_sf <-
   states(cb = TRUE) %>%
@@ -47,8 +51,7 @@ po_office_df <-
   "data-raw" %>%
   here("po_office_locations.csv") %>%
   fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
-  clean_names() %>%
-  rename("po_office" = "po_office_name")
+  clean_names() 
 
 available_years_ussc <- sort(unique(supervision_df$fiscal_year), decreasing = TRUE)
 
@@ -165,6 +168,18 @@ ui <- navbarPage(
       .box-body {
         padding: 0 !important;
       }
+      
+      .dataTables_wrapper {
+        width: 100% !important;
+      }
+      
+      .dataTables_scroll {
+        width: 100% !important;
+      }
+      
+      .dataTables_scrollBody {
+        width: 100% !important;
+      }
   "))),
   
   # ---- Main Dashboard ----
@@ -178,7 +193,8 @@ ui <- navbarPage(
                                            "Supervised Release"        = "supervised_release_flag",
                                            "Total Sentenced"           = "total_sentenced",
                                            "Probation Rate"            = "probation_rate",
-                                           "Supervised Release Rate"   = "supervised_release_rate")),
+                                           "Supervised Release Rate"   = "supervised_release_rate"),
+                               selected = "supervised_release_rate"),
                    selectInput("geo_level", "Geography Level",
                                choices = c("State"    = "state_name",
                                            "District" = "state_district",
@@ -207,24 +223,35 @@ ui <- navbarPage(
                                choices = c("All", sort(unique(supervision_df$monsex_description))),
                                multiple = TRUE, selected = "All"),
                    selectInput("offense", "Offense Category",
-                               choices = c("All", sort(unique(supervision_df$offguide_description))),
+                               choices = c("All", sort(unique(supervision_df$offense_category))),
                                multiple = TRUE, selected = "All"),
                    selectInput("sentence", "Sentence Type",
                                choices = c("All", sort(unique(supervision_df$sentence_type_description))),
                                multiple = TRUE, selected = "All"),
-                   downloadButton("download_table", "Download Table"),
+                   # downloadButton("download_table", "Download Table"),
                    div(class = "reporting-note", "Note: Rates shown as share of total sentenced.")
                  ),
                  mainPanel(
                    width = 10,
                    fluidRow(
                      box(width = 7, leafletOutput("map", height = 500)),
-                     box(width = 5,
-                         style = "padding: 0; margin: 0; overflow: visible;",
-                         div(style = "width:100%; height:500px; padding:0; margin:0; transform: translateX(-20px);",
-                             plotlyOutput("barplot", height = "100%", width = "100%")))
+                     # box(width = 5,
+                     #     style = "padding: 0; margin: 0; overflow: visible;",
+                     #     div(style = "width:100%; height:500px; padding:0; margin:0; transform: translateX(-20px);",
+                     #         plotlyOutput("barplot", height = "100%", width = "100%")))
+                     box(width = 5, 
+                         align = "left",
+                         div(style = "width:95%; padding:0; margin:0; text-align:left;",
+                             plotlyOutput("barplot", height = 500, width = "100%")
+                         )
+                     )
                    ),
-                   fluidRow(box(width = 12, DTOutput("table")))
+                   fluidRow(box(width = 12, 
+                                align = "left",
+                                div(style = "width: 100%; padding: 0; margin: 0;",
+                                    DTOutput("table"))
+                                )
+                            )
                  )
                )
            )
@@ -240,11 +267,13 @@ ui <- navbarPage(
                                choices = sort(unique(na.omit(supervision_df$state_name))),
                                selected = "Alabama"),
                    selectInput("state_outcome", "Outcome Metric",
-                               choices = c("Probationers"             = "probation_sentence_flag",
-                                           "Supervised Release"        = "supervised_release_flag",
-                                           "Supervised Release Rate" = "supervised_release_rate",
-                                           "Probation Rate"          = "probation_rate",
-                                           "Total Sentenced"         = "total_sentenced"),
+                               # choices = c("Probationers"             = "probation_sentence_flag",
+                               #             "Supervised Release"        = "supervised_release_flag",
+                               #             "Supervised Release Rate" = "supervised_release_rate",
+                               #             "Probation Rate"          = "probation_rate",
+                               #             "Total Sentenced"         = "total_sentenced"),
+                               choices = c("Supervised Release Rate" = "supervised_release_rate",
+                                           "Probation Rate"          = "probation_rate"),
                                selected = "supervised_release_rate"),
                    div(class = "year-mode-toggle",
                        radioButtons("year_mode_state", "Year Selection Mode",
@@ -339,7 +368,7 @@ ui <- navbarPage(
                                        "Race"             = "newrace_description",
                                        "Education"        = "neweduc_description",
                                        "Gender"           = "monsex_description",
-                                       "Offense Category" = "offguide_description",
+                                       "Offense Category" = "offense_category",
                                        "Fiscal Year"      = "fiscal_year"),
                            selected = "state_name"),
                selectInput("custom_facet", "Facet By (max 2)",
@@ -349,7 +378,7 @@ ui <- navbarPage(
                                        "Race"             = "newrace_description",
                                        "Education"        = "neweduc_description",
                                        "Gender"           = "monsex_description",
-                                       "Offense Category" = "offguide_description",
+                                       "Offense Category" = "offense_category",
                                        "Fiscal Year"      = "fiscal_year"),
                            multiple = TRUE, selectize = TRUE),
                sliderInput("custom_age", "Age Range",
@@ -373,7 +402,7 @@ ui <- navbarPage(
                            choices = c("All", sort(unique(supervision_df$monsex_description))),
                            multiple = TRUE, selected = "All"),
                selectInput("custom_offense", "Offense Category",
-                           choices = c("All", sort(unique(supervision_df$offguide_description))),
+                           choices = c("All", sort(unique(supervision_df$offense_category))),
                            multiple = TRUE, selected = "All"),
                selectInput("custom_sentence", "Sentence Type",
                            choices = c("All", sort(unique(supervision_df$sentence_type_description))),
@@ -414,7 +443,7 @@ server <- function(input, output, session) {
         ("All" %in% race_inp    | newrace_description    %in% race_inp),
         ("All" %in% educ_inp    | neweduc_description    %in% educ_inp),
         ("All" %in% gender_inp  | monsex_description     %in% gender_inp),
-        ("All" %in% offense_inp | offguide_description   %in% offense_inp),
+        ("All" %in% offense_inp | offense_category   %in% offense_inp),
         ("All" %in% sentence_inp| sentence_type_description %in% sentence_inp)
       )
   }
@@ -717,8 +746,14 @@ server <- function(input, output, session) {
       mutate(
         supervised_release_rate = supervised_release_flag / total_sentenced,
         probation_rate          = probation_sentence_flag / total_sentenced,
-        across(ends_with("rate"), ~round(.x, 3)),
-        across(all_of(input$geo_level), ~replace_na(.x, "Missing/Not Applicable"))
+        across(ends_with("rate"), 
+               ~.x %>% 
+                 round(3) %>% 
+                 percent()),
+        across(c("supervised_release_flag", "probation_sentence_flag", "total_sentenced"), 
+               ~.x %>% 
+                 comma()),
+        across(all_of(input$geo_level), ~replace_na(.x, "Missing/Not Applicable")),
       ) %>%
       arrange(desc(.data[[input$outcome]])) %>%
       rename_with(~clean_outcome_label(.x) %>%
@@ -730,10 +765,10 @@ server <- function(input, output, session) {
         class = "compact stripe hover",
         filter = "top",
         options = list(
-          dom = "Bfrtip", buttons = c("copy", "csv", "excel"),
+          dom = "Bfrtpi", buttons = c("copy", "csv", "excel"),
           paging = FALSE, scrollY = "400px", scrollX = TRUE
         ),
-        style = "bootstrap", rownames = FALSE
+        style = "bootstrap", rownames = FALSE, width = "100%"
       )
   })
   
@@ -815,11 +850,15 @@ server <- function(input, output, session) {
                replace_na("Unknown/Unreported")) %>%
       mutate(group = "National Average")
     
+    state_order <- state_race %>%
+      arrange(.data[[input$state_outcome]]) %>%
+      pull(newrace_description)
+    
     # Combine and extract selected outcome
     df <- bind_rows(state_race, national_race) %>%
       mutate(
         value = .data[[input$state_outcome]],
-        race_reorder = reorder(newrace_description, value),
+        race_reorder = factor(newrace_description, levels = state_order),
         hover_text = paste0(newrace_description, "\n",
                             group, "\n",
                             clean_outcome_label(input$state_outcome), ": ",
@@ -893,11 +932,15 @@ server <- function(input, output, session) {
                replace_na("Unknown/Unreported")) %>%
       mutate(group = "National Average")
     
+    state_order <- state_gender %>%
+      arrange(.data[[input$state_outcome]]) %>%
+      pull(monsex_description)
+    
     # Combine and extract selected outcome
     df <- bind_rows(state_gender, national_gender) %>%
       mutate(
         value = .data[[input$state_outcome]],
-        gender_reorder = reorder(monsex_description, value),
+        gender_reorder = factor(monsex_description, levels = state_order),
         hover_text = paste0(monsex_description, "\n",
                             group, "\n",
                             clean_outcome_label(input$state_outcome), ": ",
@@ -937,7 +980,7 @@ server <- function(input, output, session) {
   output$state_offense_comparison <- renderPlotly({
     # Get state data by offense
     state_offense <- state_data() %>%
-      group_by(offguide_description) %>%
+      group_by(offense_category) %>%
       summarise(
         probation_sentence_flag = sum(probation_sentence_flag, na.rm = TRUE),
         supervised_release_flag = sum(supervised_release_flag, na.rm = TRUE),
@@ -946,14 +989,14 @@ server <- function(input, output, session) {
         total_sentenced         = sum(total_sentenced, na.rm = TRUE),
         .groups = "drop"
       ) %>%
-      filter(!is.na(offguide_description), total_sentenced >= 10) %>%
+      filter(!is.na(offense_category), total_sentenced >= 10) %>%
       mutate(group = input$state_sel)
     
     # Get national data by offense for comparison
     yr <- state_year_range()
     national_offense <- supervision_df %>%
       filter(between(fiscal_year, yr[1], yr[2])) %>%
-      group_by(offguide_description) %>%
+      group_by(offense_category) %>%
       summarise(
         probation_sentence_flag = sum(probation_sentence_flag, na.rm = TRUE),
         supervised_release_flag = sum(supervised_release_flag, na.rm = TRUE),
@@ -962,15 +1005,15 @@ server <- function(input, output, session) {
         total_sentenced         = sum(total_sentenced, na.rm = TRUE),
         .groups = "drop"
       ) %>%
-      filter(!is.na(offguide_description)) %>%
+      filter(!is.na(offense_category)) %>%
       mutate(group = "National Average")
     
     # Combine and extract selected outcome
     df <- bind_rows(state_offense, national_offense) %>%
       mutate(
         value = .data[[input$state_outcome]],
-        offense_reorder = reorder(offguide_description, value),
-        hover_text = paste0(offguide_description, "\n",
+        offense_reorder = reorder(offense_category, value),
+        hover_text = paste0(offense_category, "\n",
                             group, "\n",
                             clean_outcome_label(input$state_outcome), ": ",
                             if (is_rate_outcome(input$state_outcome))
@@ -1127,14 +1170,14 @@ server <- function(input, output, session) {
   
   output$nat_offense_bar <- renderPlotly({
     df <- nat_filtered() %>%
-      group_by(offguide_description) %>%
+      group_by(offense_category) %>%
       summarise(
         probation_rate          = sum(probation_sentence_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
         supervised_release_rate = sum(supervised_release_flag, na.rm = TRUE) / sum(total_sentenced, na.rm = TRUE),
         total_sentenced         = sum(total_sentenced, na.rm = TRUE),
         .groups = "drop"
       ) %>%
-      filter(!is.na(offguide_description)) %>%
+      filter(!is.na(offense_category)) %>%
       mutate(
         # Calculate max or sum for ordering
         max_rate = pmax(probation_rate, supervised_release_rate)  # or use: total_rate = probation_rate + supervised_release_rate
@@ -1143,8 +1186,8 @@ server <- function(input, output, session) {
                    names_to = "Outcome", values_to = "value") %>%
       mutate(
         Outcome     = clean_outcome_label(Outcome),
-        geo_reorder = reorder(offguide_description, max_rate),  # Order by max_rate
-        hover_text  = paste0(offguide_description, "\n",
+        geo_reorder = reorder(offense_category, max_rate),  # Order by max_rate
+        hover_text  = paste0(offense_category, "\n",
                              Outcome, ": ", scales::percent(value, accuracy = 0.01))
       )
     
