@@ -1,5 +1,6 @@
-po_office_name,state_name,state_abb,lat,long
+po_office,state_name,state_abb,lat,long
 Tucson,Arizona,AZ,32.2,-110.89
+San Diego,California,CA,32.81,-117.14
 Houston,Texas,TX,29.77,-95.39
 Austin,Texas,TX,30.31,-97.75
 Phoenix,Arizona,AZ,33.54,-112.07
@@ -12,25 +13,31 @@ Las Cruces,New Mexico,NM,32.34,-106.76
 El Paso,Texas,TX,31.85,-106.44
 Norfolk,Virginia,VA,36.92,-76.24
 Montgomery,Alabama,AL,32.35,-86.28
+Birmingham,Alabama,AL,33.53,-86.8
 Mobile,Alabama,AL,30.68,-88.09
+San Francisco,California,CA,37.77,-122.45
 Chula Vista,California,CA,32.63,-117.04
-San Diego,California,CA,32.81,-117.14
+Denver,Colorado,CO,39.77,-104.87
 Orlando,Florida,FL,28.5,-81.37
 Tampa,Florida,FL,27.96,-82.48
+Pensacola,Florida,FL,30.44,-87.19
 Fort Lauderdale,Florida,FL,26.14,-80.14
 Hollywood,Florida,FL,26.03,-80.16
 Miami,Florida,FL,25.78,-80.21
 West Palm Beach,Florida,FL,26.75,-80.13
+Columbus,Georgia,GA,32.51,-84.87
 Macon,Georgia,GA,32.84,-83.66
 Atlanta,Georgia,GA,33.76,-84.42
 Savannah,Georgia,GA,32.02,-81.13
 Boise,Idaho,ID,43.61,-116.23
+Springfield,Illinois,IL,39.78,-89.64
 Fort Wayne,Indiana,IN,41.07,-85.14
 Hammond,Indiana,IN,41.62,-87.49
 South Bend,Indiana,IN,41.68,-86.27
 Cedar Rapids,Iowa,IA,41.97,-91.67
 Sioux City,Iowa,IA,42.5,-96.39
 Des Moines,Iowa,IA,41.58,-93.62
+Kansas City,Kansas,KS,39.12,-94.73
 Wichita,Kansas,KS,37.69,-97.34
 Lexington,Kentucky,KY,38.04,-84.46
 Louisville,Kentucky,KY,38.22,-85.74
@@ -41,12 +48,16 @@ Flint,Michigan,MI,43.02,-83.69
 Grand Rapids,Michigan,MI,42.96,-85.66
 Minneapolis,Minnesota,MN,44.96,-93.27
 Gulfport,Mississippi,MS,30.39,-89.07
+Jackson,Mississippi,MS,32.32,-90.21
+Kansas City,Missouri,MO,39.12,-94.55
 Springfield,Missouri,MO,37.2,-93.29
 Great Falls,Montana,MT,47.5,-111.29
 Las Vegas,Nevada,NV,36.21,-115.22
 Trenton,New Jersey,NJ,40.22,-74.76
 Santa Fe,New Mexico,NM,35.68,-105.95
+Albany,New York,NY,42.67,-73.8
 Buffalo,New York,NY,42.89,-78.86
+Rochester,New York,NY,43.17,-77.62
 Raleigh,North Carolina,NC,35.82,-78.66
 Greensboro,North Carolina,NC,36.08,-79.83
 Charlotte,North Carolina,NC,35.2,-80.83
@@ -59,16 +70,21 @@ Dayton,Ohio,OH,39.78,-84.2
 Tulsa,Oklahoma,OK,36.13,-95.92
 Lawton,Oklahoma,OK,34.6,-98.42
 Oklahoma City,Oklahoma,OK,35.47,-97.51
+Portland,Oregon,OR,45.54,-122.66
 Philadelphia,Pennsylvania,PA,40.01,-75.13
 Scranton,Pennsylvania,PA,41.4,-75.67
 Providence,Rhode Island,RI,41.82,-71.42
 Columbia,South Carolina,SC,34.04,-80.89
+Greenville,South Carolina,SC,34.84,-82.37
 Pierre,South Dakota,SD,44.37,-100.34
 Rapid City,South Dakota,SD,44.08,-103.23
+Nashville,Tennessee,TN,36.17,-86.78
 Memphis,Tennessee,TN,35.11,-90.01
+Amarillo,Texas,TX,35.2,-101.82
 Dallas,Texas,TX,32.79,-96.77
 Fort Worth,Texas,TX,32.75,-97.34
 Lubbock,Texas,TX,33.58,-101.88
+San Angelo,Texas,TX,31.45,-100.45
 Brownsville,Texas,TX,25.93,-97.48
 Corpus Christi,Texas,TX,27.71,-97.29
 Laredo,Texas,TX,27.53,-99.49
@@ -77,45 +93,50 @@ San Antonio,Texas,TX,29.46,-98.51
 Waco,Texas,TX,31.57,-97.18
 Salt Lake City,Utah,UT,40.78,-111.93
 Alexandria,Virginia,VA,38.82,-77.09
+Newport News,Virginia,VA,37.08,-76.51
 Richmond,Virginia,VA,37.53,-77.47
+Roanoke,Virginia,VA,37.28,-79.96
 Spokane,Washington,WA,47.67,-117.41
 Seattle,Washington,WA,47.62,-122.35
 Tacoma,Washington,WA,47.25,-122.46
 Milwaukee,Wisconsin,WI,43.06,-87.97
+Madison,Wisconsin,WI,43.08,-89.39
 Casper,Wyoming,WY,42.83,-106.33
 Cheyenne,Wyoming,WY,41.15,-104.79
-Birmingham,Alabama,AL,33.53,-86.8
 Huntsville,Alabama,AL,34.71,-86.63
 Anchorage,Alaska,AK,61.18,-149.19
+Flagstaff,Arizona,AZ,35.19,-111.62
+Yuma,Arizona,AZ,32.68,-114.62
 Little Rock,Arkansas,AR,34.72,-92.35
 Fayetteville,Arkansas,AR,36.07,-94.16
 Santa Ana,California,CA,33.74,-117.88
 Fresno,California,CA,36.78,-119.79
 Sacramento,California,CA,38.57,-121.47
 Oakland,California,CA,37.77,-122.22
-San Francisco,California,CA,37.77,-122.45
+San Jose,California,CA,37.3,-121.85
 Colorado Springs,Colorado,CO,38.86,-104.76
-Denver,Colorado,CO,39.77,-104.87
+Bridgeport,Connecticut,CT,41.19,-73.2
 New Haven,Connecticut,CT,41.31,-72.92
 Wilmington,Delaware,DE,39.74,-75.53
 Fort Myers,Florida,FL,26.63,-81.85
-Pensacola,Florida,FL,30.44,-87.19
+Jacksonville,Florida,FL,30.33,-81.66
+Gainesville,Florida,FL,29.67,-82.34
 Tallahassee,Florida,FL,30.46,-84.28
-Columbus,Georgia,GA,32.51,-84.87
 Valdosta,Georgia,GA,30.85,-83.28
 Honolulu,Hawaii,HI,21.32,-157.8
 Coeur d'Alene,Idaho,ID,47.7,-116.78
 Pocatello,Idaho,ID,42.88,-112.47
 Peoria,Illinois,IL,40.74,-89.61
-Springfield,Illinois,IL,39.78,-89.64
+Chicago,Illinois,IL,41.84,-87.68
 Rockford,Illinois,IL,42.27,-89.06
 Evansville,Indiana,IN,37.98,-87.54
 Davenport,Iowa,IA,41.56,-90.6
-Kansas City,Kansas,KS,39.12,-94.73
 Topeka,Kansas,KS,39.04,-95.69
 Covington,Kentucky,KY,39.04,-84.51
+Bowling Green,Kentucky,KY,36.97,-86.44
 New Orleans,Louisiana,LA,30.07,-89.93
 Baton Rouge,Louisiana,LA,30.45,-91.13
+Alexandria,Louisiana,LA,31.29,-92.46
 Lake Charles,Louisiana,LA,30.21,-93.2
 Monroe,Louisiana,LA,32.51,-92.08
 Shreveport,Louisiana,LA,32.47,-93.8
@@ -125,19 +146,17 @@ Springfield,Massachusetts,MA,42.12,-72.54
 Ann Arbor,Michigan,MI,42.28,-83.73
 Kalamazoo,Michigan,MI,42.27,-85.59
 Lansing,Michigan,MI,42.71,-84.55
-Jackson,Mississippi,MS,32.32,-90.21
+Hattiesburg,Mississippi,MS,31.31,-89.31
 Jefferson City,Missouri,MO,38.57,-92.19
-Kansas City,Missouri,MO,39.12,-94.55
 Billings,Montana,MT,45.79,-108.54
 Helena,Montana,MT,46.6,-112.03
 Missoula,Montana,MT,46.87,-114.01
 Lincoln,Nebraska,NE,40.82,-96.69
+Reno,Nevada,NV,39.54,-119.82
 Concord,New Hampshire,NH,43.23,-71.56
 Camden,New Jersey,NJ,39.94,-75.11
 Newark,New Jersey,NJ,40.72,-74.17
-Albany,New York,NY,42.67,-73.8
 Syracuse,New York,NY,43.04,-76.14
-Rochester,New York,NY,43.17,-77.62
 Fayetteville,North Carolina,NC,35.07,-78.9
 Greenville,North Carolina,NC,35.6,-77.37
 Wilmington,North Carolina,NC,34.21,-77.91
@@ -146,109 +165,98 @@ Bismarck,North Dakota,ND,46.81,-100.77
 Akron,Ohio,OH,41.08,-81.52
 Cincinnati,Ohio,OH,39.14,-84.51
 Columbus,Ohio,OH,39.99,-82.99
-Portland,Oregon,OR,45.54,-122.66
+Allentown,Pennsylvania,PA,40.6,-75.48
 Harrisburg,Pennsylvania,PA,40.28,-76.88
 Pittsburgh,Pennsylvania,PA,40.44,-79.98
 Charleston,South Carolina,SC,32.79,-79.99
-Greenville,South Carolina,SC,34.84,-82.37
 Sioux Falls,South Dakota,SD,43.54,-96.73
 Chattanooga,Tennessee,TN,35.07,-85.26
 Knoxville,Tennessee,TN,35.97,-83.95
-Nashville,Tennessee,TN,36.17,-86.78
 Jackson,Tennessee,TN,35.63,-88.83
 Beaumont,Texas,TX,30.09,-94.14
+Plano,Texas,TX,33.05,-96.75
 Tyler,Texas,TX,32.33,-95.3
 Abilene,Texas,TX,32.45,-99.74
-Amarillo,Texas,TX,35.2,-101.82
-San Angelo,Texas,TX,31.45,-100.45
 Ogden,Utah,UT,41.23,-111.97
-Newport News,Virginia,VA,37.08,-76.51
 Danville,Virginia,VA,36.58,-79.41
 Lynchburg,Virginia,VA,37.4,-79.19
-Roanoke,Virginia,VA,37.28,-79.96
 Yakima,Washington,WA,46.59,-120.53
 Charleston,West Virginia,WV,38.35,-81.63
 Huntington,West Virginia,WV,38.41,-82.43
 Green Bay,Wisconsin,WI,44.52,-87.99
-Madison,Wisconsin,WI,43.08,-89.39
 Pine Bluff,Arkansas,AR,34.21,-92.02
-San Jose,California,CA,37.3,-121.85
+Hartford,Connecticut,CT,41.77,-72.68
 Dover,Delaware,DE,39.16,-75.53
-Jacksonville,Florida,FL,30.33,-81.66
 Ocala,Florida,FL,29.19,-82.13
 Albany,Georgia,GA,31.58,-84.18
-Chicago,Illinois,IL,41.84,-87.68
 Terre Haute,Indiana,IN,39.47,-87.38
 Frankfort,Kentucky,KY,38.2,-84.86
-Bowling Green,Kentucky,KY,36.97,-86.44
 Owensboro,Kentucky,KY,37.76,-87.12
 Worcester,Massachusetts,MA,42.27,-71.81
-Hattiesburg,Mississippi,MS,31.31,-89.31
-Reno,Nevada,NV,39.54,-119.82
 White Plains,New York,NY,41.02,-73.76
 Durham,North Carolina,NC,35.98,-78.91
 Eugene,Oregon,OR,44.05,-123.11
 Medford,Oregon,OR,42.34,-122.85
 Salem,Oregon,OR,44.92,-123.02
-Allentown,Pennsylvania,PA,40.6,-75.48
 Erie,Pennsylvania,PA,42.13,-80.09
-Plano,Texas,TX,33.05,-96.75
 Arlington,Texas,TX,32.69,-97.13
 Harrisonburg,Virginia,VA,38.44,-78.87
+Everett,Washington,WA,47.96,-122.2
 Eau Claire,Wisconsin,WI,44.82,-91.49
-Bridgeport,Connecticut,CT,41.19,-73.2
-Hartford,Connecticut,CT,41.77,-72.68
-Gainesville,Florida,FL,29.67,-82.34
-Alexandria,Louisiana,LA,31.29,-92.46
-Flagstaff,Arizona,AZ,35.19,-111.62
+Roswell,New Mexico,NM,33.37,-104.53
 Jacksonville,North Carolina,NC,34.76,-77.4
-Yuma,Arizona,AZ,32.68,-114.62
 Wichita Falls,Texas,TX,33.9,-98.52
 Jonesboro,Arkansas,AR,35.82,-90.69
 Vancouver,Washington,WA,45.63,-122.64
 Grand Junction,Colorado,CO,39.09,-108.55
 Reading,Pennsylvania,PA,40.34,-75.93
 Galveston,Texas,TX,29.3,-94.81
-Lafayette,Indiana,IN,40.41,-86.87
-Richland,Washington,WA,46.29,-119.29
 Riverside,California,CA,33.94,-117.4
+Lafayette,Indiana,IN,40.41,-86.87
+Binghamton,New York,NY,42.1,-75.91
+Richland,Washington,WA,46.29,-119.29
 Modesto,California,CA,37.66,-120.99
 Temple,Texas,TX,31.1,-97.36
 Sierra Vista,Arizona,AZ,31.57,-110.32
 Paterson,New Jersey,NJ,40.91,-74.16
-Binghamton,New York,NY,42.1,-75.91
 Tuscaloosa,Alabama,AL,33.24,-87.54
 Roseville,California,CA,38.76,-121.29
 Bakersfield,California,CA,35.36,-119
-Roswell,New Mexico,NM,33.37,-104.53
+Boca Raton,Florida,FL,26.37,-80.11
+Santa Barbara,California,CA,34.43,-119.72
 Santa Rosa,California,CA,38.45,-122.7
+Redding,California,CA,40.57,-122.36
 Brunswick,Georgia,GA,51.9996347,-0.3064121
 East St. Louis,Illinois,IL,38.6268666,-90.159707
-San Juan,Puerto Rico,PR,-12.1628581,-76.9635192
+San Juan,Puerto Rico,PR,18.465299,-66.116666
 McAllen,Texas,TX,26.204114,-98.2300605
+Pecos,Texas,TX,30.7857437,-102.8065415
 Manassas,Virginia,VA,38.7509488,-77.4752667
-"Washington, D.C.",District of Columbia,DC,38.8950368,-77.0365427
+"Washington, D.C.",District of Columbia,DC,38.8950982,-77.0363849
+Hagatna,Guam,GU,13.4738606,144.7520557
 Bay City,Michigan,MI,43.5962107,-83.8881711
 Marquette,Michigan,MI,46.4481521,-87.6305899
 Oxford,Mississippi,MS,34.3663773,-89.5187664
 Cape Girardeau,Missouri,MO,37.304731,-89.5176418
-St. Louis,Missouri,MO,38.6280278,-90.1910154
+St. Louis,Missouri,MO,38.6254063,-90.190009
 New York City,New York,NY,40.7127281,-74.0060152
 Winston Salem,North Carolina,NC,36.0998131,-80.2440518
-Statesville,North Carolina,NC,35.7826363,-80.8872959
+Statesville,North Carolina,NC,35.7827676,-80.8873574
 Muskogee,Oklahoma,OK,35.6630196,-95.3927706
 Greeneville,Tennessee,TN,36.1631575,-82.8309861
 Alpine,Texas,TX,30.3602181,-103.6628596
 Del Rio,Texas,TX,29.357515,-100.8987707
-Midland Odessa,Texas,TX,31.8330508,-102.360544
-Pecos,Texas,TX,30.7857437,-102.8065415
+Midland Odessa,Texas,TX,31.8321478,-102.362289
+Burlington,Vermont,VT,44.4761601,-73.212906
 Martinsburg,West Virginia,WV,39.4562528,-77.9639604
 Fairbanks,Alaska,AK,64.837845,-147.716675
 Hot Springs,Arkansas,AR,34.5038393,-93.0552437
+Woodland Hills,California,CA,34.1684364,-118.6058382
 Panama City,Florida,FL,30.1586518,-85.6602936
 Fort Pierce,Florida,FL,27.4467056,-80.3256056
+Key West,Florida,FL,24.5548262,-81.8020722
+Athens,Georgia,GA,33.9597677,-83.376398
 Augusta,Georgia,GA,33.4709714,-81.9748429
-Hagatna,Guam,GU,13.4738606,144.7520557
 Champaign/Urbana,Illinois,IL,40.1157948,-88.241194
 Rock Island,Illinois,IL,41.4411786,-90.5766144
 Benton,Illinois,IL,37.9967163,-88.9200685
@@ -267,53 +275,50 @@ Florence,South Carolina,SC,34.1984435,-79.7671658
 Aberdeen,South Dakota,SD,45.4649805,-98.487813
 Sherman,Texas,TX,36.2452294,-101.8858689
 Texarkana,Texas,TX,33.4466745,-94.0771483
-St. George,Utah,UT,37.104153,-113.584131
-Burlington,Vermont,VT,44.4761601,-73.212906
+St. George,Utah,UT,37.1098772,-113.5832063
 Abingdon,Virginia,VA,36.7104018,-81.975249
 Charlottesville,Virginia,VA,38.029306,-78.4766781
 St. Thomas,Virgin Islands,VI,18.3429082,-64.9188997
 Clarksburg,West Virginia,WV,39.2806451,-80.3445341
 Elkins,West Virginia,WV,38.925927,-79.8466552
 Wheeling,West Virginia,WV,40.0639616,-80.7209149
+Beckley,West Virginia,WV,37.7781702,-81.1881557
 Bluefield,West Virginia,WV,37.2698395,-81.2223195
 ,,,48.8763363,2.3396808
 Ventura,California,CA,34.2768173,-119.299657
-Woodland Hills,California,CA,34.1684364,-118.6058382
-Key West,Florida,FL,24.5548262,-81.8020722
 Lisle,Illinois,IL,41.801159,-88.0747687
 Paducah,Kentucky,KY,37.0833893,-88.6000478
+Bangor,Maine,ME,44.8016255,-68.7713289
 Greenville,Mississippi,MS,33.4111051,-91.0635857
 Tupelo,Mississippi,MS,34.2576067,-88.7033859
+Butte,Montana,MT,46.0131505,-112.536508
 Central Islip,New York,NY,40.7807275,-73.192822
+Saipan,North Mariana Islands,MP,15.1909825,145.746743
 Spartanburg,South Carolina,SC,34.9498007,-81.9320157
+Columbia,Tennessee,TN,35.6148165,-87.0338464
 St. Croix,Virgin Islands,VI,17.729124,-64.7589156
-Beckley,West Virginia,WV,37.7781702,-81.1881557
-Athens,Georgia,GA,33.9597677,-83.376398
 Gainesville,Georgia,GA,34.2978794,-83.8240663
 Pikeville,Kentucky,KY,37.4792672,-82.5187629
-Bangor,Maine,ME,44.8016255,-68.7713289
 Glasgow,Montana,MT,48.1955915,-106.635556
+Brattleboro,Vermont,VT,42.8507588,-72.5572913
+Fergus Falls,Minnesota,MN,46.283015,-96.077558
 Tukwila,Washington,WA,47.4627356,-122.2559156
 Florence,Alabama,AL,29.425701,-98.4674863
 Durango,Colorado,CO,37.2769484,-107.8766
-Saipan,North Mariana Islands,MP,15.1909825,145.746743
+Lufkin,Texas,TX,31.3386242,-94.7288558
 Lander,Wyoming,WY,38.110021,-84.5317774
-Fergus Falls,Minnesota,MN,46.283015,-96.077558
-Butte,Montana,MT,46.0131505,-112.536508
-Columbia,Tennessee,TN,35.6148165,-87.0338464
-Brattleboro,Vermont,VT,42.8507588,-72.5572913
+Rome,Georgia,GA,34.257038,-85.1646726
 Durant,Oklahoma,OK,33.9919761,-96.3776762
 Colonial Heights,Virginia,VA,37.2555718,-77.4112016
-Lufkin,Texas,TX,31.3386242,-94.7288558
+Newnan,Georgia,GA,33.3806716,-84.7996573
+Ashland,Kentucky,KY,38.4784144,-82.6379387
 Studio City,California,CA,34.1483989,-118.3961877
-Rome,Georgia,GA,34.257038,-85.1646726
 New Albany,Indiana,IN,38.2856247,-85.8241312
 New Town,North Dakota,ND,47.980848,-102.49018
 Wilkes Barre,Pennsylvania,PA,41.2464824,-75.8817316
-Newnan,Georgia,GA,33.3806716,-84.7996573
+Big Stone Gap,Virginia,VA,36.8677938,-82.7742267
 Statesboro,Georgia,GA,32.4490141,-81.7832912
 Williamsburg,Virginia,VA,37.2708788,-76.7074042
 Rio Grande City,Texas,TX,26.3827771,-98.8205251
-Big Stone Gap,Virginia,VA,36.8677938,-82.7742267
 Middletown,New York,NY,41.45011,-74.4164807
 Rock Island,Iowa,IA,41.5239641,-95.4367014

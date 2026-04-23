@@ -14,6 +14,7 @@ library(RPostgres)
 library(glue)
 library(tidygeocoder)
 library(readr)
+library(sf)
 
 
 ####Connect to Database####
@@ -52,7 +53,7 @@ us.cities <- maps::us.cities
 ##PO Office
 po_office_df <-
   supervision_df %>% 
-  dplyr::select(po_office_name, state_name) %>% 
+  dplyr::select(po_office, state_name) %>% 
   distinct() %>% 
   left_join(data.frame(state_name = state.name, 
                        state_abb = state.abb) %>% 
@@ -63,17 +64,17 @@ po_office_df <-
                                                   "North Mariana Islands"), 
                                    state_abb = c("DC", "PR", "GU", "VI", "MP"))), 
             by = "state_name") %>% 
-  mutate(po_office_name_full = 
-           po_office_name %>% 
+  mutate(po_office_full = 
+           po_office %>% 
            paste(state_abb, sep = " ")) %>% 
-  left_join(us.cities, by = c("po_office_name_full" = "name")) %>%
+  left_join(us.cities, by = c("po_office_full" = "name")) %>%
   (\(df) 
    bind_rows(
      df,
      df %>%
        filter(is.na(lat) == TRUE & is.na(long) == TRUE) %>% 
        dplyr::select(-c(lat, long)) %>% 
-       geocode(po_office_name_full, 
+       geocode(po_office_full, 
                method = "osm", 
                lat = "latitude", 
                long = "longitude")
@@ -85,7 +86,7 @@ po_office_df <-
          long = 
            ifelse(is.na(long) == TRUE, longitude, long)) %>% 
   dplyr::select(-c(latitude, longitude)) %>% 
-  dplyr::select(po_office_name, state_name, state_abb, lat, long)
+  dplyr::select(po_office, state_name, state_abb, lat, long)
 
 fwrite(po_office_df, here("data-raw", "po_office_locations.csv"), sep = ",", row.names = FALSE)
 

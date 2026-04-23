@@ -251,3 +251,16 @@ safe_insert_table_new <- function(con, df, table_name, schema) {
   
   invisible()
 }
+
+db_remove_empty_cols <- function(remote_tbl) {
+  # 1. Ask the DB for a count of non-NA values per column
+  presence_counts <- remote_tbl %>%
+    summarise(across(everything(), ~ sum(as.integer(!is.na(.x)), na.rm = TRUE))) %>%
+    collect()
+  
+  # 2. Keep only columns where count > 0
+  non_empty_names <- names(presence_counts)[presence_counts[1, ] > 0]
+  
+  # 3. Return the lazy query with only those columns selected
+  remote_tbl %>% select(all_of(non_empty_names))
+}

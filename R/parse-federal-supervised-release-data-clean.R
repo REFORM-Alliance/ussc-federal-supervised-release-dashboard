@@ -33,12 +33,23 @@ source(here("R", "utils-functions.R"))
 
 
 ####Read in Data####
-##Parse Data 
-years <- c(2014:2024)
-years %>% 
+##Individual Sentencing Data
+"data-raw" %>% 
+  here("federal-individual-sentencing-data") %>% 
+  list.files(full.names = TRUE) %>% 
+  str_subset("opafy24nid.zip$", negate = TRUE) %>% 
+  str_subset("zip$") %>% 
   map(~{
-    ##Parse Individual Data File
-    year = .x
+    file = .x
+    
+    short_year = 
+      file %>% 
+      str_replace_all(getwd(), "") %>% 
+      str_replace_all("^/data-raw/federal-individual-sentencing-data/opafy", "") %>% 
+      str_sub(1, 2)
+    
+    year = paste0("20", short_year)
+    
     dir <- 
       "data-raw" %>% 
       here("federal-individual-sentencing-data") %>% 
@@ -51,16 +62,8 @@ years %>%
     dir %>% 
       dir.create()
     
-    short_year <- 
-      year %>% 
-      str_sub(3, 4)
-    
     if(year >= 2024){
-      "data-raw" %>% 
-        here("federal-individual-sentencing-data") %>% 
-        list.files(full.names = TRUE) %>% 
-        str_subset(short_year) %>% 
-        str_subset("_csv[.]zip$") %>% 
+      file %>% 
         unzip(exdir = 
                 "data-raw" %>% 
                 here("federal-individual-sentencing-data") %>% 
@@ -76,13 +79,25 @@ years %>%
         clean_names() %>% 
         mutate(across(everything(),
                       ~.x %>% 
-                        as.character()))
+                        as.character())) %>% 
+        dplyr::select(any_of(c("usscidn", "offguide", "circdist", "citizen", "citwhere", 
+                               "district", "educatn", "hisporig", "moncirc", "monrace", 
+                               "monsex", "newcit", "neweduc", "newrace", "numdepen", 
+                               "pooffice", "years", "suprdum", "suprel", "supermax", 
+                               "supermin", "senspcap")), 
+                      starts_with("dob"), starts_with("age"),
+                      starts_with("depart"), starts_with("reas"),
+                      starts_with("sent"), starts_with("crim"),
+                      starts_with("ofbeg"), starts_with("ofend"), 
+                      starts_with("offtyp"), starts_with("prob"),
+                      starts_with("tot"), starts_with("timeserv"), 
+                      starts_with("combdrg"), ends_with("_crim_hist"), 
+                      starts_with("nwstat")) %>% 
+        mutate(fiscal_year = year)
+      
+      safe_insert_table(con = con, df = df_raw, table_name = "federal_individual_sentencing_data", schema = "ussc_federal_data")
     }else{
-      "data-raw" %>% 
-        here("federal-individual-sentencing-data") %>% 
-        list.files(full.names = TRUE) %>% 
-        str_subset(short_year) %>% 
-        str_subset("zip$") %>% 
+      file %>% 
         unzip(exdir = 
                 "data-raw" %>% 
                 here("federal-individual-sentencing-data") %>% 
@@ -147,7 +162,23 @@ years %>%
         read_fwf(col_positions = colspecs, 
                  progress = TRUE, 
                  col_types = cols(.default = col_character())) %>% 
-        clean_names() 
+        clean_names() %>% 
+        dplyr::select(any_of(c("usscidn", "offguide", "circdist", "citizen", "citwhere", 
+                               "district", "educatn", "hisporig", "moncirc", "monrace", 
+                               "monsex", "newcit", "neweduc", "newrace", "numdepen", 
+                               "pooffice", "years", "suprdum", "suprel", "supermax", 
+                               "supermin", "senspcap")), 
+                      starts_with("dob"), starts_with("age"),
+                      starts_with("depart"), starts_with("reas"),
+                      starts_with("sent"), starts_with("crim"),
+                      starts_with("ofbeg"), starts_with("ofend"), 
+                      starts_with("offtyp"), starts_with("prob"),
+                      starts_with("tot"), starts_with("timeserv"), 
+                      starts_with("combdrg"), ends_with("_crim_hist"), 
+                      starts_with("nwstat")) %>% 
+        mutate(fiscal_year = year)
+      
+      safe_insert_table(con = con, df = df_raw, table_name = "federal_individual_sentencing_data", schema = "ussc_federal_data")
     }
     
     "data-raw" %>% 
@@ -155,7 +186,24 @@ years %>%
       here(year) %>% 
       unlink(recursive = TRUE)
     
-    ##Parse Supplemental Data File
+    print(glue::glue("Individual Sentencing Data Read, Parsed, and Written in Database for USSC FY{short_year}"))
+  })
+
+##Supplemental Data Files
+"data-raw" %>% 
+  here("federal-individual-sentencing-supplemental-data") %>% 
+  list.files(full.names = TRUE) %>% 
+  map(~{
+    file = .x
+    
+    short_year <- 
+      file %>% 
+      str_replace_all(getwd(), "") %>% 
+      str_replace_all("^/data-raw/federal-individual-sentencing-supplemental-data/ussc_sup_fy", "") %>% 
+      str_sub(1, 2)
+    
+    year <- paste0("20", short_year)
+    
     dir <- 
       "data-raw" %>% 
       here("federal-individual-sentencing-supplemental-data") %>% 
@@ -165,64 +213,63 @@ years %>%
       unlink(dir, recursive = TRUE)
     }
     
-    supplement_data_file <- 
-      "data-raw" %>% 
+    dir.create("data-raw" %>% 
+                 here("federal-individual-sentencing-supplemental-data") %>% 
+                 here(year))
+    
+    file %>% 
+      unzip(exdir = 
+              "data-raw" %>% 
+              here("federal-individual-sentencing-supplemental-data") %>% 
+              here(year))
+    
+    df_raw_supp <- 
+      read.SAScii(
+        "data-raw" %>% 
+          here("federal-individual-sentencing-supplemental-data") %>% 
+          here(year) %>% 
+          list.files(full.names = TRUE) %>% 
+          str_subset("[.]dat$"),
+        "data-raw" %>% 
+          here("federal-individual-sentencing-supplemental-data") %>% 
+          here(year) %>% 
+          list.files(full.names = TRUE) %>% 
+          str_subset("[.]sas$")
+      ) %>% 
+      mutate(fiscal_year = year) %>% 
+      clean_names() %>% 
+      mutate(usscidn = 
+               usscidn %>% 
+               as.character())
+    
+    safe_insert_table(con = con, df = df_raw_supp, table_name = "federal_individual_sentencing_supplemental_data", schema = "ussc_federal_data")
+    
+    "data-raw" %>% 
       here("federal-individual-sentencing-supplemental-data") %>% 
-      list.files(full.names = TRUE) %>% 
-      str_subset(short_year)
+      here(year) %>% 
+      unlink(recursive = TRUE)
     
-    if(length(supplement_data_file) > 0){
+    print(glue::glue("Individual Sentencing Supplemental Data Read, Parsed, and Written in Database for USSC FY{short_year}"))
       
-      dir.create("data-raw" %>% 
-                   here("federal-individual-sentencing-supplemental-data") %>% 
-                   here(year))
-      
-      "data-raw" %>% 
-        here("federal-individual-sentencing-supplemental-data") %>% 
-        list.files(full.names = TRUE) %>% 
-        str_subset(short_year) %>% 
-        str_subset("zip$") %>% 
-        unzip(exdir = 
-                "data-raw" %>% 
-                here("federal-individual-sentencing-supplemental-data") %>% 
-                here(year))
-      
-      df_raw_supp <- 
-        read.SAScii(
-          "data-raw" %>% 
-            here("federal-individual-sentencing-supplemental-data") %>% 
-            here(year) %>% 
-            list.files(full.names = TRUE) %>% 
-            str_subset("[.]dat$"),
-          "data-raw" %>% 
-            here("federal-individual-sentencing-supplemental-data") %>% 
-            here(year) %>% 
-            list.files(full.names = TRUE) %>% 
-            str_subset("[.]sas$")
-          )
-      
-      "data-raw" %>% 
-        here("federal-individual-sentencing-supplemental-data") %>% 
-        here(year) %>% 
-        unlink(recursive = TRUE)
-        
-      df_plus_supp <- 
-        df_raw %>% 
-        left_join(df_raw_supp %>% 
-                    clean_names() %>% 
-                    mutate(usscidn = 
-                             usscidn %>% 
-                             as.character()), 
-                  by = "usscidn")
-      
-      rm(df_raw)
-      rm(df_raw_supp)
-    }else{
-      df_plus_supp <- df_raw
-      rm(df_raw)
-    }
+  })
+
+##Criminal History Data Files
+"data-raw" %>% 
+  here("federal-criminal-history-data") %>% 
+  list.files(full.names = TRUE) %>% 
+  str_subset("crimhist24nid[.]zip$", negate = TRUE) %>% 
+  str_subset("zip$") %>% 
+  map(~{
+    file = .x
     
-    ##Parse Criminal History Data File
+    short_year <- 
+      file %>% 
+      str_replace_all(getwd(), "") %>% 
+      str_replace_all("^/data-raw/federal-criminal-history-data/crimhist", "") %>% 
+      str_sub(1, 2)
+    
+    year <- paste0("20", short_year)
+    
     dir <- 
       "data-raw" %>% 
       here("federal-criminal-history-data") %>% 
@@ -232,27 +279,16 @@ years %>%
       unlink(dir, recursive = TRUE)
     }
     
-    criminal_history_data_file <- 
-      "data-raw" %>% 
-      here("federal-criminal-history-data") %>% 
-      list.files(full.names = TRUE) %>% 
-      str_subset(short_year)
+    dir %>% 
+      dir.create()
     
-    if(length(criminal_history_data_file) == 1){
-      dir.create("data-raw" %>% 
-                   here("federal-criminal-history-data") %>% 
-                   here(year))
-      
-      "data-raw" %>% 
-        here("federal-criminal-history-data") %>% 
-        list.files(full.names = TRUE) %>% 
-        str_subset(short_year) %>% 
-        str_subset("zip$") %>% 
-        unzip(exdir = 
-                "data-raw" %>% 
-                here("federal-criminal-history-data") %>% 
-                here(year))
-      
+    file %>% 
+      unzip(exdir = 
+              "data-raw" %>% 
+              here("federal-criminal-history-data") %>% 
+              here(year))
+    
+    if(year < 2024){
       sas_data_parsed_crim <- 
         "data-raw" %>% 
         here("federal-criminal-history-data") %>% 
@@ -322,42 +358,36 @@ years %>%
         read_fwf(col_positions = colspecs_crim, 
                  progress = TRUE, 
                  col_types = cols(.default = col_character())) %>% 
-        clean_names()
-      
-      "data-raw" %>% 
-        here("federal-criminal-history-data") %>% 
-        here(year) %>% 
-        unlink(recursive = TRUE)
-      
-      df_plus_crim <- 
-        df_plus_supp %>% 
-        left_join(df_raw_crim %>% 
-                    clean_names() %>% 
-                    mutate(usscidn = 
-                             usscidn %>% 
-                             as.character()) %>% 
-                    rename_with(~.x %>% 
-                                  paste0("_crim_hist") %>% 
-                                  str_replace_all("usscidn_crim_hist", "usscidn")), 
-                  by = "usscidn")
-      
-      rm(df_plus_supp)
-      rm(df_raw_crim)
-    }else if(length(criminal_history_data_file) > 1){
-      dir.create("data-raw" %>% 
-                   here("federal-criminal-history-data") %>% 
-                   here(year))
-      
-      "data-raw" %>% 
-        here("federal-criminal-history-data") %>% 
-        list.files(full.names = TRUE) %>% 
-        str_subset(short_year) %>% 
-        str_subset("_csv[.]zip$") %>% 
-        unzip(exdir = 
-                "data-raw" %>% 
-                here("federal-criminal-history-data") %>% 
-                here(year))
-      
+        clean_names() %>% 
+        mutate(fiscal_year = year,
+               across(c(matches("\\d$")), 
+                      ~.x %>% 
+                        as.character())) %>% 
+        pivot_longer(cols = matches("\\d$"), 
+                     names_to = "col",
+                     values_to = "val") %>% 
+        mutate(col_num = 
+                 col %>% 
+                 str_extract_all("\\d+$") %>% 
+                 as.numeric(), 
+               col_clean = 
+                 col %>% 
+                 str_replace_all("\\d+$", "") %>% 
+                 str_replace_all("_$", ""), 
+               eventnum = 
+                 eventnum %>% 
+                 as.numeric()) %>% 
+        filter(eventnum >= col_num) %>% 
+        dplyr::select(-col) %>% 
+        pivot_wider(names_from = "col_clean", 
+                    values_from = "val") %>% 
+        rename("total_eventnum" = "eventnum", 
+               "eventnum" = "col_num") %>% 
+        mutate(across(where(is.character), 
+                      ~.x %>% 
+                        iconv(from = "latin1", to = "UTF-8", sub = "")))
+        
+    }else{
       df_raw_crim <- 
         "data-raw" %>% 
         here("federal-criminal-history-data") %>% 
@@ -365,165 +395,99 @@ years %>%
         list.files(full.names = TRUE) %>% 
         str_subset("[.csv]$") %>% 
         fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>% 
-        clean_names() 
-      
-      "data-raw" %>% 
-        here("federal-criminal-history-data") %>% 
-        here(year) %>% 
-        unlink(recursive = TRUE)
-      
-      df_plus_crim <- 
-        df_plus_supp %>% 
-        left_join(df_raw_crim %>% 
-                    mutate(usscidn = 
-                             usscidn %>% 
-                             as.character()) %>% 
-                    rename_with(~.x %>% 
-                                  paste0("_crim_hist") %>% 
-                                  str_replace_all("usscidn_crim_hist", "usscidn")), 
-                  by = "usscidn") 
-      
-      rm(df_plus_supp)
-      rm(df_raw_crim)
-    }else{
-      df_plus_crim <- df_plus_supp
-      rm(df_plus_supp)
-    }
-    
-    ##Finalize Data and Write to DB
-    if(length(criminal_history_data_file) > 0){
-      df_final <- 
-        df_plus_crim %>% 
-        dplyr::select(any_of(c("usscidn", "offguide", "circdist", "citizen", "citwhere", 
-                               "district", "educatn", "hisporig", "moncirc", "monrace", 
-                               "monsex", "newcit", "neweduc", "newrace", "numdepen", 
-                               "pooffice", "years", "suprdum", "suprel", "supermax", 
-                               "supermin", "senspcap")), 
-                      starts_with("dob"), starts_with("age"),
-                      starts_with("depart"), starts_with("reas"),
-                      starts_with("sent"), starts_with("crim"),
-                      starts_with("ofbeg"), starts_with("ofend"), 
-                      starts_with("offtyp"), starts_with("prob"),
-                      starts_with("tot"), starts_with("timeserv"), 
-                      starts_with("combdrg"), ends_with("_crim_hist"), 
-                      starts_with("nwstat")) %>% 
-        mutate(across(where(is_character), 
-                      ~.x %>% 
-                        na_if("") %>% 
-                        iconv(from = "", to = "UTF-8", sub = "byte")),
-               across(any_of(c("offguide", "senspcap", "sentrnge", "senttcap")), 
-                      ~.x %>% 
-                        as.double()),
-               across(c(any_of(c("circdist", "citizen", "eventnum_crim_hist", "combdrg2")), 
-                        matches("^chpts\\d{1,3}_crim_hist$"),
-                        matches("^choff\\d_\\d{1,3}_crim_hist$"),
-                        matches("^chfed\\d{1,3}_crim_hist$"),
-                        matches("^chtrib\\d{1,3}_crim_hist$"),
-                        matches("^chsndt\\d{1,3}_crim_hist$"),
-                        matches("^chage\\d{1,3}_crim_hist$"),
-                        matches("^chardt\\d{1,3}_crim_hist$"), 
-                        starts_with("nwstat")),
-                      ~.x %>% 
-                        as.character()),
-               fiscal_year = 
-                 year %>% 
-                 as.numeric()) %>% 
-        select(where(~ !all(is.na(.x)))) %>% 
-        pivot_longer(cols = c(ends_with("_crim_hist"), -eventnum_crim_hist), 
-                     names_to = "crim_hist_var", 
-                     values_to = "crim_hist_val") %>% 
-        filter(is.na(crim_hist_val) == FALSE) %>% 
-        mutate(crim_hist_event_num = 
-                 crim_hist_var %>% 
-                 str_replace_all("_crim_hist", "") %>% 
+        clean_names() %>% 
+        mutate(fiscal_year = year,
+               across(c(matches("\\d$")), 
+                        ~.x %>% 
+                          as.character())) %>% 
+        pivot_longer(cols = matches("\\d$"), 
+                     names_to = "col",
+                     values_to = "val") %>% 
+        mutate(col_num = 
+                 col %>% 
                  str_extract_all("\\d+$") %>% 
-                 str_replace_all("_$", "") %>% 
-                 as.numeric(),
-               crim_hist_var = 
-                 crim_hist_var %>% 
-                 str_replace_all("_crim_hist", "") %>% 
+                 as.numeric(), 
+               col_clean = 
+                 col %>% 
                  str_replace_all("\\d+$", "") %>% 
-                 str_replace_all("_$", "") %>% 
-                 paste0("_crim_hist")) %>% 
-        pivot_wider(names_from = "crim_hist_var",
-                    values_from = "crim_hist_val") %>% 
-        mutate(across(c(ends_with("dt"), ends_with("df_crim_hist")), 
+                 str_replace_all("_$", ""), 
+               eventnum = 
+                 eventnum %>% 
+                 as.numeric()) %>% 
+        filter(eventnum >= col_num) %>% 
+        dplyr::select(-col) %>% 
+        pivot_wider(names_from = "col_clean", 
+                    values_from = "val") %>% 
+        rename("total_eventnum" = "eventnum", 
+               "eventnum" = "col_num") %>% 
+        mutate(across(where(is.character), 
                       ~.x %>% 
-                        as.Date(format = "%d-%b-%Y")), 
-               across(c(offguide:numdepen, years:eventnum_crim_hist, fiscal_year:crim_hist_event_num), 
+                        iconv(from = "latin1", to = "UTF-8", sub = "")), 
+               across(c("fiscal_year", "usscidn"), 
                       ~.x %>% 
-                        as.numeric()), 
-               across(c("chpts_crim_hist", "chfed_crim_hist", "chage_crim_hist", starts_with("choff")), 
-                      ~.x %>% 
-                        as.numeric()),
-               combdrg2 = 
-                 combdrg2 %>% 
-                 as.character(),
-               across(c(starts_with("nwstat")), 
-                      ~.x %>% 
-                        as.character())) %>% 
-        rename("total_crim_hist_event_num" = "eventnum_crim_hist")
-      
-      rm(df_plus_crim)
-    }else{
-      df_final <- 
-        df_plus_crim %>% 
-        dplyr::select(any_of(c("usscidn", "offguide", "circdist", "citizen", "citwhere", 
-                               "district", "educatn", "hisporig", "moncirc", "monrace", 
-                               "monsex", "newcit", "neweduc", "newrace", "numdepen", 
-                               "pooffice", "years", "suprdum", "suprel", "supermax", 
-                               "supermin", "senspcap")), 
-                      starts_with("dob"), starts_with("age"),
-                      starts_with("depart"), starts_with("reas"),
-                      starts_with("sent"), starts_with("crim"),
-                      starts_with("ofbeg"), starts_with("ofend"), 
-                      starts_with("offtyp"), starts_with("prob"),
-                      starts_with("tot"), starts_with("timeserv"), 
-                      starts_with("combdrg"), ends_with("_crim_hist"), 
-                      starts_with("nwstat")) %>% 
-        mutate(across(where(is_character), 
-                      ~.x %>% 
-                        na_if("") %>% 
-                        iconv(from = "", to = "UTF-8", sub = "byte")),
-               across(any_of(c("offguide", "senspcap", "sentrnge", "senttcap")), 
-                      ~.x %>% 
-                        as.double()),
-               across(c(any_of(c("circdist", "citizen", "eventnum_crim_hist", "combdrg2")), 
-                        matches("^chpts\\d{1,3}_crim_hist$"),
-                        matches("^choff\\d_\\d{1,3}_crim_hist$"),
-                        matches("^chfed\\d{1,3}_crim_hist$"),
-                        matches("^chtrib\\d{1,3}_crim_hist$"),
-                        matches("^chsndt\\d{1,3}_crim_hist$"),
-                        matches("^chage\\d{1,3}_crim_hist$"),
-                        matches("^chardt\\d{1,3}_crim_hist$"), 
-                        starts_with("nwstat")),
-                      ~.x %>% 
-                        as.character()),
-               across(c(ends_with("dt"), ends_with("df_crim_hist")), 
-                      ~.x %>% 
-                        as.Date(format = "%d-%b-%Y")), 
-               across(c(offguide:numdepen, years:timeserv), 
-                      ~.x %>% 
-                        as.numeric()), 
-               across(c(any_of(c("chpts_crim_hist", "chfed_crim_hist", "chage_crim_hist")), starts_with("choff")), 
-                      ~.x %>% 
-                        as.numeric()),
-               fiscal_year = 
-                 year %>% 
-                 as.numeric(),
-               combdrg2 = 
-                 combdrg2 %>% 
-                 as.character()) %>% 
-        select(where(~ !all(is.na(.x)))) 
-      
-      rm(df_plus_crim)
+                        as.character()))
     }
     
-    ##Write Table into DB
-    safe_insert_table(con = con, df = df_final, table_name = "sentencing_data_full", schema = "ussc_federal_data")
-    print(glue::glue("Data Read, Parsed, and Written in Database for USSC FY{short_year}"))
-    rm(df_final)
+    "data-raw" %>% 
+      here("federal-criminal-history-data") %>% 
+      here(year) %>% 
+      unlink(recursive = TRUE)
+    
+    safe_insert_table(con = con, df = df_raw_crim, table_name = "federal_criminal_history_data", schema = "ussc_federal_data")
+    
+    print(glue::glue("Individual Criminal History Data Read, Parsed, and Written in Database for USSC FY{short_year}"))
   })
+
+##Merge Raw Datasets and Write to DB
+merge_ussc_data_sql <- 
+  con %>% 
+  tbl(DBI::Id("ussc_federal_data", "federal_individual_sentencing_data")) %>%
+  filter(fiscal_year %in% c("2014", "2015", "2016", "2017")) %>% 
+  db_remove_empty_cols() %>% 
+  left_join(con %>% 
+              tbl(DBI::Id("ussc_federal_data", "federal_individual_sentencing_supplemental_data")) %>% 
+              filter(fiscal_year %in% c("2014", "2015", "2016", "2017")) %>% 
+              db_remove_empty_cols(), 
+            by = c("usscidn", "fiscal_year")) %>% 
+  mutate(across(any_of(c("offguide", "senspcap", "sentrnge", "senttcap")), 
+                ~.x %>% 
+                  as.double())) %>% 
+  union_all(con %>% 
+              tbl(DBI::Id("ussc_federal_data", "federal_individual_sentencing_data")) %>%
+              mutate(fiscal_year = 
+                       fiscal_year %>% 
+                       as.numeric()) %>% 
+              filter(fiscal_year > 2017) %>% 
+              mutate(fiscal_year = 
+                       fiscal_year %>% 
+                       as.character(),
+                     across(any_of(c("offguide", "senspcap", "sentrnge", "senttcap")), 
+                            ~.x %>% 
+                              as.double())) %>% 
+              db_remove_empty_cols()) %>% 
+  left_join(con %>% 
+              tbl(DBI::Id("ussc_federal_data", "federal_criminal_history_data")) %>% 
+              rename_with(~.x %>% 
+                            paste0("_crim_hist") %>% 
+                            str_replace_all("^usscidn_crim_hist$", "usscidn") %>% 
+                            str_replace_all("^fiscal_year_crim_hist$", "fiscal_year")), 
+            by = c("usscidn", "fiscal_year")) %>% 
+  mutate(across(c("total_eventnum_crim_hist", "eventnum_crim_hist"), 
+                ~ifelse(is.na(.x) == TRUE, "1", .x)),
+         across(c(ends_with("dt"), ends_with("dt_crim_hist")),
+                ~TO_DATE(.x, "DD-Mon-YYYY")),
+         across(c(any_of(c("circdist", "citizen", "citwhere", "district", "educatn", "hisporig",
+                  "moncirc", "monrace", "monsex", "newcit", "neweduc", "newrace", "numdepen",
+                  "years", "suprdum", "suprel", "dobmon", "dobyr", "age", "timeserv",
+                  "combdrg2", "fiscal_year", "supermax", "supermin", "offguide", "sentrnge",
+                  "senspcap", "agecat", "chpts_crim_hist", "chfed_crim_hist", "chage_crim_hist")),
+                  starts_with("reas"), starts_with("sent"), starts_with("crim"), starts_with("offtyp"),
+                  starts_with("prob"), starts_with("tot"), ends_with("dept"), starts_with("choff")),
+                ~.x %>%
+                  as.numeric())) %>% 
+  sql_render()
+
+dbExecute(con, paste0("CREATE TABLE ", qualify_table("ussc_federal_data", "sentencing_data_full"), " AS ", merge_ussc_data_sql))
 
 
 ####Transform Data####
@@ -730,10 +694,8 @@ merge_sql_call <-
              sentrnge == 7 ~ "Government Sponsored Variance",
              sentrnge == 8 ~ "Below Range Variance",
              TRUE ~ NA
-           ),
-         across(ends_with("dt_crim_hist"),
-                ~sql(paste0("to_date(", cur_column(), ", 'DD-Mon-YYYY')")),
-                .names = "{.col}_clean")) %>% 
+           )
+         ) %>% 
   left_join(con %>% 
               tbl(in_schema("ussc_federal_data", "POOFFICE")) %>% 
               mutate(state_district = 
@@ -807,15 +769,24 @@ dbExecute(con, paste0("CREATE TABLE ", qualify_table("ussc_federal_data", "sente
 dashboard_df_sql <- 
   con %>% 
   tbl(in_schema("ussc_federal_data", "sentencing_data_full_parsed")) %>%
-  group_by(usscidn, crim_hist_event_num) %>% 
+  group_by(usscidn, total_eventnum_crim_hist) %>% 
   slice_sample(n = 1) %>% 
   ungroup() %>% 
-  dplyr::select(usscidn, age, state_name, state_district, po_office_name, fiscal_year, sentyr,
+  mutate(offense_category = 
+           case_when(offguide %in% c(9, 10) ~ "Drug Trafficking",
+                     offguide == 17 ~ "Immigration",
+                     offguide == 13 ~ "Firearms",
+                     offguide == 16 ~ "Fraud",
+                     offguide == 7 ~ "Sexual Offense",   # Child Pornography
+                     offguide == 27 ~ "Sexual Offense",   # Sex Abuse
+                     offguide %in% c(4, 19, 20, 22, 26, 28) ~ "Violent Offense",
+                     TRUE ~ "Other")) %>% 
+  dplyr::select(usscidn, age, state_name, state_district, po_office_name, fiscal_year, sentyr, offense_category,
                 starts_with("dob"), ends_with("description"), ends_with("flag")) %>% 
   distinct() %>% 
   dplyr::select(age, state_name, state_district, po_office_name, fiscal_year,
                 offguide_description, neweduc_description, newrace_description, 
-                monsex_description, sentence_type_description, ends_with("flag")) %>% 
+                monsex_description, sentence_type_description, ends_with("flag"), offense_category) %>% 
   group_by(across(-ends_with("flag"))) %>% 
   dplyr::summarize(across(ends_with("flag"), 
                           ~.x %>% 
