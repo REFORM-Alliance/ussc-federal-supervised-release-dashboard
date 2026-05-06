@@ -5462,19 +5462,22 @@
       "checksum": "68b329da9893e34099c7d8ad5cb9c940"
     },
     ".RData": {
-      "checksum": "840d464068115008f1f443e87ed396ba"
+      "checksum": "041c89c0f3b4a1e3d16dd730a788a1d7"
     },
     ".Rprofile": {
-      "checksum": "4aaa88dc3d4dda6e21b63ad396e78a11"
+      "checksum": "f5baba5e62f82c459ad49bf45ae7f1af"
     },
-    "app_v2.R": {
-      "checksum": "56c209e4961ada914af7f90205fc329b"
+    "app_old.R": {
+      "checksum": "d0719e0881667508f67dc5c7424d5811"
     },
     "app.R": {
-      "checksum": "a9bec933ba962594aad39faaf86d789c"
+      "checksum": "da53b85bb60a8dea485f041312db305a"
     },
     "data-raw/aggregated_ussc_sentencing_data.csv": {
-      "checksum": "7a0060d79fe4a8f5a86cf89d3ebcd438"
+      "checksum": "eecb4c97cf3d373738e83b9c0c5dd9a6"
+    },
+    "data-raw/aggregated_ussc_sentencing_long_data.csv": {
+      "checksum": "5a6d8c057ac62a4dd3e61249d3e69a26"
     },
     "data-raw/coding-csvs/CIRCDIST.csv": {
       "checksum": "c42beb1131dba471e5650a6fbe9ca92f"
@@ -5588,7 +5591,7 @@
       "checksum": "8015aa782e08a5562e0f8a8bb9104b0c"
     },
     "data-raw/po_office_locations.csv": {
-      "checksum": "a47e29415ff8fc6af96ae14b0ba6df68"
+      "checksum": "b4376b5f259b4381a55c25019468a376"
     },
     "data-raw/shp/US_District_Courts.cpg": {
       "checksum": "ae3b3df9970b49b6523e608759bc957d"
@@ -5621,13 +5624,13 @@
       "checksum": "e4397d541a3312eed966347a01a1677f"
     },
     "R/parse-federal-supervised-release-data-clean.R": {
-      "checksum": "dbc98490f2cdbed596399a92736b5cce"
+      "checksum": "d090c5f0e6f0434839e264a30c38b249"
     },
     "R/parse-federal-supervised-release-data.R": {
       "checksum": "34a20076038f7c3ed7e40ba8f64fe231"
     },
     "R/prep-data-for-dashboard.R": {
-      "checksum": "c8e86a842fc7730342bab31580e8fa45"
+      "checksum": "65e3f12bd91e6f76bd9e6585ff414470"
     },
     "R/ussc-dashboard_v1.R": {
       "checksum": "a2a64672af1d7887b73d667d09e3c78a"
@@ -5636,7 +5639,7 @@
       "checksum": "099321effc00fb93bada8bafefa9e14a"
     },
     "R/utils-functions.R": {
-      "checksum": "dbcde7941b0f77539a81b401b107571e"
+      "checksum": "66f3ae70e48160038983b9ddff274ffc"
     },
     "renv.lock": {
       "checksum": "ee89ff15cdce60e9cf5794d42d474fe5"

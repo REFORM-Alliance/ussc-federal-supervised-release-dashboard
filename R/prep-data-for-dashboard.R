@@ -36,16 +36,38 @@ supervision_df <-
   con %>%
   tbl(in_schema("ussc_federal_data", "sentencing_data_aggregated_dashboard")) %>%
   collect() %>%
-  mutate(across(ends_with("_flag"),
+  mutate(across(c(ends_with("_flag"), starts_with("total_sentenced")),
                 ~.x %>%
+                  as.numeric() %>% 
                   replace_na(0))) %>%
-  rename("total_sentenced" = "total_count") %>%
-  mutate(total_sentenced =
-           total_sentenced %>%
-           as.numeric()) %>%
   rename("po_office" = "po_office_name")
 
 fwrite(supervision_df, here("data-raw", "aggregated_ussc_sentencing_data.csv"), row.names = FALSE)
+
+##Make Data Long
+supervision_df_long <- 
+  supervision_df %>% 
+  pivot_longer(cols = c(state_name, state_district, po_office), 
+               names_to = "geo_level_type", 
+               values_to = "geo_level") %>% 
+  group_by(across(-c(ends_with("_flag"), starts_with("total_sentenced")))) %>% 
+  dplyr::summarize(across(c(ends_with("_flag"), starts_with("total_sentenced")), 
+                          ~.x %>% 
+                            sum(na.rm = TRUE))) %>% 
+  ungroup() %>% 
+  {
+    df <- .
+    df %>% 
+      bind_rows(df %>% 
+                  group_by(across(-c(ends_with("_flag"), starts_with("total_sentenced"), "geo_level"))) %>% 
+                  dplyr::summarize(across(c(ends_with("_flag"), starts_with("total_sentenced")), 
+                                          ~.x %>% 
+                                            sum(na.rm = TRUE))) %>% 
+                  ungroup() %>% 
+                  mutate(geo_level = "National Total"))
+  }
+
+fwrite(supervision_df_long, here("data-raw", "aggregated_ussc_sentencing_long_data.csv"), row.names = FALSE)
 
 ##Load US Cities Data
 us.cities <- maps::us.cities

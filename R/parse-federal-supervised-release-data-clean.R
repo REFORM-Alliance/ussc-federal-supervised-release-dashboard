@@ -638,18 +638,20 @@ merge_sql_call <-
                      TRUE ~ NA),
          newcit_description = 
            case_when(
-             newcit == 1 ~ "U.S. Citizen",
-             newcit == 2 ~ "Resident/Legal Alien",
-             newcit == 3 ~ "Illegal Alien",
-             newcit == 4 ~ "Not a U.S. Citizen/Alien Status Unknown",
-             newcit == 5 ~ "Extradited Alien",
+             newcit == 0 ~ "U.S. Citizen",
+             newcit == 1 ~ "Non-U.S. Citizen",
              TRUE ~ NA
            ),
          numdepen = 
            numdepen %>% 
            na_if(97),
          supervised_release_flag = 
-           ifelse(suprdum == 1, 1, 0),
+           case_when(suprdum == 1 & sentimp %in% c(1, 2) ~ 1,
+                     TRUE ~ 0),
+         total_sentenced = 1,
+         total_sentenced_fsr = 
+           case_when(sentimp %in% c(1, 2) ~ 1, 
+                     TRUE ~ 0),
          age_cat_description = 
            case_when(
              years == 1 ~ "< 21",
@@ -670,8 +672,13 @@ merge_sql_call <-
              sentimp == 4 ~ "Probation Only",
              TRUE ~ NA
            ),
+         # probation_sentence_flag = 
+         #   case_when(senttot0 == 0 ~ 1,
+         #             sentimp == 3 ~ 1,  
+         #             sentimp == 4 ~ 1, 
+         #             TRUE ~ 0),
          probation_sentence_flag = 
-           case_when(senttot0 == 0 ~ 1,
+           case_when((probdum == 1 & sentimp != 1) ~ 1,
                      sentimp == 3 ~ 1,  
                      sentimp == 4 ~ 1, 
                      TRUE ~ 0),
@@ -777,21 +784,20 @@ dashboard_df_sql <-
                      offguide == 17 ~ "Immigration",
                      offguide == 13 ~ "Firearms",
                      offguide == 16 ~ "Fraud",
-                     offguide == 7 ~ "Sexual Offense",   # Child Pornography
-                     offguide == 27 ~ "Sexual Offense",   # Sex Abuse
+                     offguide == 7 ~ "Sexual Offense",   
+                     offguide == 27 ~ "Sexual Offense", 
                      offguide %in% c(4, 19, 20, 22, 26, 28) ~ "Violent Offense",
                      TRUE ~ "Other")) %>% 
   dplyr::select(usscidn, age, state_name, state_district, po_office_name, fiscal_year, sentyr, offense_category,
-                starts_with("dob"), ends_with("description"), ends_with("flag")) %>% 
+                starts_with("dob"), ends_with("description"), ends_with("flag"), starts_with("total_sentenced")) %>% 
   distinct() %>% 
   dplyr::select(age, state_name, state_district, po_office_name, fiscal_year,
-                offguide_description, neweduc_description, newrace_description, 
-                monsex_description, sentence_type_description, ends_with("flag"), offense_category) %>% 
-  group_by(across(-ends_with("flag"))) %>% 
-  dplyr::summarize(across(ends_with("flag"), 
+                offguide_description, neweduc_description, newrace_description, citizen_description, newcit_description,
+                monsex_description, sentence_type_description, ends_with("flag"), starts_with("total_sentenced"), offense_category) %>% 
+  group_by(across(-c(ends_with("flag"), starts_with("total_sentenced")))) %>% 
+  dplyr::summarize(across(c(ends_with("flag"), starts_with("total_sentenced")), 
                           ~.x %>% 
-                            sum(na.rm = TRUE)),
-                   total_count = n()) %>% 
+                            sum(na.rm = TRUE))) %>% 
   ungroup() %>% 
   sql_render()
 
