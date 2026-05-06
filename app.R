@@ -24,14 +24,27 @@ library(rmapshaper)
 
 
 ####Read in Data####
-supervision_df <-
-  "data-raw" %>%
-  here("aggregated_ussc_sentencing_long_data.csv") %>%
-  fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
-  clean_names() %>% 
-  mutate(geo_level = 
-           geo_level %>% 
-           na_if("") %>% 
+# supervision_df <-
+#   "data-raw" %>%
+#   here("aggregated_ussc_sentencing_long_data.csv") %>%
+#   fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
+#   clean_names() %>% 
+#   mutate(geo_level = 
+#            geo_level %>% 
+#            na_if("") %>% 
+#            replace_na("Unknown/Unreported"))
+
+supervision_df <- 
+  "data-raw" %>% 
+  list.files(full.names = TRUE) %>% 
+  str_subset("aggregated_ussc_sentencing_data_") %>% 
+  map(~.x %>% 
+        fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
+        clean_names()) %>% 
+  bind_rows() %>% 
+  mutate(geo_level =
+           geo_level %>%
+           na_if("") %>%
            replace_na("Unknown/Unreported"))
 
 geo_crosswalk <- 
@@ -1671,9 +1684,9 @@ server <- function(input, output, session) {
       )
     
     # ---- BEFORE FIRST CLICK ----
-    # if (is.null(input$generate_plot) || input$generate_plot == 0) {
-    #   return(empty_state)
-    # }
+    if (is.null(input$generate_plot) || input$generate_plot == 0) {
+      return(empty_state)
+    }
     
     if (plot_reset() > input$generate_plot) {
       return(empty_state)

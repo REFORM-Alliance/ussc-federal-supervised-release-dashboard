@@ -5459,25 +5459,31 @@
   },
   "files": {
     ".gitattributes": {
-      "checksum": "68b329da9893e34099c7d8ad5cb9c940"
+      "checksum": "3165f590e2bd80ba17eb68435bec63c4"
     },
     ".RData": {
-      "checksum": "041c89c0f3b4a1e3d16dd730a788a1d7"
+      "checksum": "e9804558e5f88e970a19b9f87430e6d5"
     },
     ".Rprofile": {
-      "checksum": "f5baba5e62f82c459ad49bf45ae7f1af"
+      "checksum": "e3895b9c8684099c720030dbe764f6c7"
     },
     "app_old.R": {
       "checksum": "d0719e0881667508f67dc5c7424d5811"
     },
     "app.R": {
-      "checksum": "da53b85bb60a8dea485f041312db305a"
+      "checksum": "205b076d13d9f6d48514e7f5efca2b44"
+    },
+    "data-raw/aggregated_ussc_sentencing_data_po_office.csv": {
+      "checksum": "f7cd565561801a56cc0d42392a0ede66"
+    },
+    "data-raw/aggregated_ussc_sentencing_data_state_district.csv": {
+      "checksum": "a5626d7458271986e28dba1ee8be8ab2"
+    },
+    "data-raw/aggregated_ussc_sentencing_data_state_name.csv": {
+      "checksum": "7a2a88f67bc71f8a5ead89bda723e75c"
     },
     "data-raw/aggregated_ussc_sentencing_data.csv": {
-      "checksum": "eecb4c97cf3d373738e83b9c0c5dd9a6"
-    },
-    "data-raw/aggregated_ussc_sentencing_long_data.csv": {
-      "checksum": "5a6d8c057ac62a4dd3e61249d3e69a26"
+      "checksum": "6c62ab97070874818ac6075fa244a20b"
     },
     "data-raw/coding-csvs/CIRCDIST.csv": {
       "checksum": "c42beb1131dba471e5650a6fbe9ca92f"
@@ -5591,7 +5597,7 @@
       "checksum": "8015aa782e08a5562e0f8a8bb9104b0c"
     },
     "data-raw/po_office_locations.csv": {
-      "checksum": "b4376b5f259b4381a55c25019468a376"
+      "checksum": "5838216f70eed116f23c1400597c0356"
     },
     "data-raw/shp/US_District_Courts.cpg": {
       "checksum": "ae3b3df9970b49b6523e608759bc957d"
@@ -5624,13 +5630,13 @@
       "checksum": "e4397d541a3312eed966347a01a1677f"
     },
     "R/parse-federal-supervised-release-data-clean.R": {
-      "checksum": "d090c5f0e6f0434839e264a30c38b249"
+      "checksum": "7d8d510c3e96697842b6cb5c1b18d66d"
     },
     "R/parse-federal-supervised-release-data.R": {
       "checksum": "34a20076038f7c3ed7e40ba8f64fe231"
     },
     "R/prep-data-for-dashboard.R": {
-      "checksum": "65e3f12bd91e6f76bd9e6585ff414470"
+      "checksum": "8ed78a6a3c54da1e4c13b90995b96da6"
     },
     "R/ussc-dashboard_v1.R": {
       "checksum": "a2a64672af1d7887b73d667d09e3c78a"
