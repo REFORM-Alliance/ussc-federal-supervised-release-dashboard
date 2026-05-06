@@ -142,6 +142,17 @@ judicial_sf <-
 judicial_sf %>% 
   write_rds(file = here("data", "judicial_sf_data.rds"))
 
+##Geo Crosswalk
+geo_crosswalk <- 
+  "data-raw" %>%
+  here("aggregated_ussc_sentencing_data.csv") %>%
+  fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
+  clean_names() %>% 
+  dplyr::select(state_name, state_district, po_office) %>% 
+  distinct()
+
+fwrite(geo_crosswalk, here("data-raw", "geo_crosswalk.csv"), sep = ",", row.names = FALSE)
+
 
 
 

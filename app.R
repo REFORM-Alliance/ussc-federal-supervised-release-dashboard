@@ -40,11 +40,9 @@ supervision_df <-
 
 geo_crosswalk <- 
   "data-raw" %>%
-  here("aggregated_ussc_sentencing_data.csv") %>%
+  here("geo_crosswalk.csv") %>%
   fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
-  clean_names() %>% 
-  dplyr::select(state_name, state_district, po_office) %>% 
-  distinct()
+  clean_names() 
 
 states_list <- 
   supervision_df %>% 
