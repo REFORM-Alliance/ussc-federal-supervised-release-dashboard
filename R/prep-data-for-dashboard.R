@@ -67,17 +67,19 @@ supervision_df_long <-
                   mutate(geo_level = "National Total"))
   }
 
-supervision_df_long %>% 
-  group_split(geo_level_type, .keep = TRUE) %>% 
-  map(~{
-    df <- .x
-    key <- 
-      df %>% 
-      pull(geo_level_type) %>% 
-      unique()
-    
-    fwrite(df, here("data-raw", paste0("aggregated_ussc_sentencing_data_", key, ".csv")), row.names = FALSE)
-  })
+fwrite(supervision_df_long, here("data-raw", "aggregated_ussc_sentencing_long_data.csv"), row.names = FALSE)
+
+# supervision_df_long %>% 
+#   group_split(geo_level_type, .keep = TRUE) %>% 
+#   map(~{
+#     df <- .x
+#     key <- 
+#       df %>% 
+#       pull(geo_level_type) %>% 
+#       unique()
+#     
+#     fwrite(df, here("data-raw", paste0("aggregated_ussc_sentencing_data_", key, ".csv")), row.names = FALSE)
+#   })
 
 ##Load US Cities Data
 us.cities <- maps::us.cities

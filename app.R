@@ -24,18 +24,28 @@ library(rmapshaper)
 
 
 ####Read in Data####
-supervision_df <- 
-  "data-raw" %>% 
-  list.files(full.names = TRUE) %>% 
-  str_subset("aggregated_ussc_sentencing_data_") %>% 
-  map(~.x %>% 
-        fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
-        clean_names()) %>% 
-  bind_rows() %>% 
+supervision_df <-
+  "data-raw" %>%
+  here("aggregated_ussc_sentencing_long_data.csv") %>%
+  fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
+  clean_names() %>%
   mutate(geo_level =
            geo_level %>%
            na_if("") %>%
            replace_na("Unknown/Unreported"))
+
+# supervision_df <- 
+#   "data-raw" %>% 
+#   list.files(full.names = TRUE) %>% 
+#   str_subset("aggregated_ussc_sentencing_data_") %>% 
+#   map(~.x %>% 
+#         fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
+#         clean_names()) %>% 
+#   bind_rows() %>% 
+#   mutate(geo_level =
+#            geo_level %>%
+#            na_if("") %>%
+#            replace_na("Unknown/Unreported"))
 
 geo_crosswalk <- 
   "data-raw" %>%
