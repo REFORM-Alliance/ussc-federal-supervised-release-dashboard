@@ -634,6 +634,8 @@ server <- function(input, output, session) {
     }else if(geo == "po_office"){
       map_data <- 
         po_office_df %>% 
+        dplyr::select(po_office, lat, long) %>% 
+        distinct() %>% 
         left_join(df, by = c("po_office" = "geo_level"))
       
       build_map(map_data, "po_office", "po_office", value, is_rate, lbl,
