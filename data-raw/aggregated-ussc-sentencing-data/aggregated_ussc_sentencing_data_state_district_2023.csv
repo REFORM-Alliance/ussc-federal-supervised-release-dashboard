@@ -3335,7 +3335,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 23,2023,Sex Abuse,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Tennessee Eastern,1,0,1,1
 23,2023,Sex Abuse,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Texas Northern,1,0,1,1
 23,2023,Sex Abuse,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Virginia Eastern,1,0,1,1
-23,2023,Sex Abuse,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,,1,0,1,1
 23,2023,Sex Abuse,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,Kansas,1,0,1,1
 23,2023,Sex Abuse,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Maryland,1,0,1,1
 23,2023,Sex Abuse,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Texas Northern,1,0,1,1
@@ -5460,7 +5459,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 25,2023,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Idaho,1,0,1,1
 25,2023,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Texas Southern,1,0,1,1
 25,2023,Sex Abuse,Some College,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,New Mexico,1,0,1,1
-25,2023,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,,1,0,1,1
 25,2023,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Arkansas Western,1,0,1,1
 25,2023,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Indiana Southern,1,0,1,1
 25,2023,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Missouri Western,1,0,1,1
@@ -5961,7 +5959,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,West Virginia Northern,1,0,1,1
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Wisconsin Eastern,3,0,3,3
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Wisconsin Western,1,0,1,1
-26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,,1,0,1,1
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Firearms,state_district,Alabama Northern,0,1,1,0
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Firearms,state_district,Maryland,0,1,1,0
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Firearms,state_district,Pennsylvania Middle,0,1,1,0
@@ -6871,7 +6868,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Western,1,0,1,1
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,West Virginia Southern,2,0,2,2
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Wisconsin Western,1,0,1,1
-27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Arkansas Eastern,0,1,1,0
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,District of Columbia,0,1,1,0
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Vermont,0,1,1,0
@@ -8107,7 +8103,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,West Virginia Northern,1,0,1,1
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Wisconsin Western,1,0,1,1
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Wyoming,1,0,1,1
-28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Georgia Southern,0,1,1,0
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,West Virginia Northern,0,1,1,0
 28,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,Texas Northern,1,0,1,1
@@ -12191,7 +12186,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Western,7,0,7,7
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Utah,1,0,1,1
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Washington Eastern,2,0,2,2
-31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Florida Middle,1,0,1,1
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Florida Southern,2,0,2,2
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Puerto Rico,2,0,2,2
@@ -12558,7 +12552,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Washington Western,1,0,1,1
 31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Wisconsin Eastern,1,0,1,1
 31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Wyoming,1,0,1,1
-31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,,1,0,1,1
 31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Firearms,state_district,Alabama Middle,0,1,1,0
 31,2023,Firearms,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Maryland,1,0,1,1
 31,2023,Firearms,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Oklahoma Western,1,0,1,1
@@ -13283,7 +13276,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 32,2023,Child Pornography,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Nebraska,1,0,1,1
 32,2023,Child Pornography,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Texas Southern,1,0,1,1
 32,2023,Child Pornography,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Wisconsin Eastern,1,0,1,1
-32,2023,Child Pornography,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,,1,0,1,1
 32,2023,Child Pornography,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,New York Eastern,1,0,1,1
 32,2023,Child Pornography,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Puerto Rico,1,0,1,1
 32,2023,Child Pornography,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Florida Middle,2,0,2,2
@@ -14915,7 +14907,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Northern,7,0,7,7
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Southern,3,0,3,3
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Western,7,0,7,7
-33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Ohio Northern,0,1,1,0
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Texas Western,0,1,1,0
 33,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,Hawaii,1,0,1,1
@@ -15776,7 +15767,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Utah,3,0,4,4
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Vermont,1,0,1,1
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Washington Eastern,2,0,2,2
-33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,,0,0,1,1
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,Texas Western,0,3,3,0
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,Utah,0,2,2,0
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Immigration,state_district,Texas Western,1,0,1,1
@@ -19160,7 +19150,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Western,1,0,1,1
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Utah,3,0,3,3
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Virginia Eastern,1,0,1,1
-36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,California Southern,0,1,1,0
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Tennessee Middle,0,1,1,0
 36,2023,Drug Trafficking,Less Than H.S. Graduate,Black,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Virgin Islands,1,0,1,1
@@ -19525,7 +19514,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 36,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Texas Western,1,0,1,1
 36,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Utah,2,0,2,2
 36,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Washington Eastern,1,0,1,1
-36,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,,1,0,1,1
 36,2023,Firearms,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,New Mexico,2,0,2,2
 36,2023,Firearms,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Oklahoma Eastern,1,0,1,1
 36,2023,Firearms,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Oklahoma Northern,1,0,1,1
@@ -20225,7 +20213,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 36,2023,Sex Abuse,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Oklahoma Eastern,1,0,1,1
 36,2023,Sex Abuse,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,Missouri Western,1,0,1,1
 36,2023,Sex Abuse,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Virginia Eastern,1,0,1,1
-36,2023,Sex Abuse,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,,1,0,1,1
 36,2023,Sex Abuse,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Florida Middle,1,0,1,1
 36,2023,Sex Abuse,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Wisconsin Eastern,1,0,1,1
 36,2023,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Florida Southern,1,0,1,1
@@ -21949,7 +21936,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,West Virginia Southern,2,0,2,2
 38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Wisconsin Eastern,1,0,1,1
 38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Wyoming,2,0,2,2
-38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Drug Trafficking,state_district,Missouri Western,0,1,1,0
 38,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,New Mexico,1,0,1,1
 38,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,Rhode Island,1,0,1,1
@@ -22327,7 +22313,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Utah,1,0,1,1
 38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Vermont,1,0,1,1
 38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,West Virginia Northern,1,0,1,1
-38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,,1,0,1,1
 38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Firearms,state_district,Virginia Eastern,0,1,1,0
 38,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Firearms,state_district,Nevada,1,0,1,1
 38,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Alabama Middle,2,0,2,2
@@ -26922,7 +26907,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 42,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Northern,1,0,1,1
 42,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Utah,1,0,1,1
 42,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Washington Western,1,0,1,1
-42,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 42,2023,Drug Trafficking,H.S. Graduate,White,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,North Carolina Western,1,0,1,1
 42,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,Florida Northern,1,0,1,1
 42,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,New Mexico,1,0,1,1
@@ -27418,7 +27402,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Utah,0,0,1,1
 42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,Washington Western,0,0,1,1
 42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,West Virginia Southern,1,0,1,1
-42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,,1,0,1,1
 42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Firearms,state_district,South Carolina,0,1,1,0
 42,2023,Food and Drug,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Other,state_district,Kansas,1,0,1,1
 42,2023,Food and Drug,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Other,state_district,Minnesota,0,1,1,0
@@ -29300,7 +29283,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Washington Western,1,0,1,1
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,West Virginia Southern,1,0,1,1
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Wyoming,1,0,1,1
-44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Georgia Southern,0,1,1,0
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Oklahoma Northern,0,1,1,0
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Pennsylvania Western,0,1,1,0
@@ -31400,7 +31382,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,Florida Middle,1,0,1,1
 46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,Kansas,1,0,1,1
 46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Southern,1,0,1,1
-46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,,1,0,1,1
 46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,California Eastern,1,0,1,1
 46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,California Southern,1,0,1,1
 46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Connecticut,1,0,1,1
@@ -33939,7 +33920,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 49,2023,Fraud/Theft/Embezzlement,College Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,Texas Southern,0,1,1,0
 49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,Arkansas Eastern,1,0,1,1
 49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,Kentucky Western,1,0,1,1
-49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,,1,0,1,1
 49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Fraud,state_district,Arkansas Eastern,0,1,1,0
 49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,state_district,Missouri Western,0,1,1,0
 49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,Illinois Northern,1,0,1,1
@@ -38950,7 +38930,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,New York Southern,1,0,1,1
 58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,North Carolina Western,1,0,1,1
 58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,Hawaii,0,1,1,0
-58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,,0,1,1,0
 58,2023,Fraud/Theft/Embezzlement,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,Texas Southern,0,0,1,1
 58,2023,Fraud/Theft/Embezzlement,,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,Texas Western,0,1,1,0
 58,2023,Immigration,College Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Southern,0,0,1,1
@@ -39675,7 +39654,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 60,2023,National Defense,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,California Eastern,1,0,1,1
 60,2023,National Defense,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,Maryland,1,0,1,1
 60,2023,Obscenity/Other Sex Offenses,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Other,state_district,Rhode Island,0,1,1,0
-60,2023,Obscenity/Other Sex Offenses,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,,1,0,1,1
 60,2023,Obscenity/Other Sex Offenses,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,Texas Southern,1,0,1,1
 60,2023,Obscenity/Other Sex Offenses,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,New York Northern,1,0,1,1
 60,2023,Obscenity/Other Sex Offenses,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,Tennessee Western,1,0,1,1
@@ -43470,7 +43448,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 23,2023,Sex Abuse,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 23,2023,Sex Abuse,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,2,0,2,2
 23,2023,Sex Abuse,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,5,0,5,5
-23,2023,Sex Abuse,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,8,0,8,8
+23,2023,Sex Abuse,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,7,0,7,7
 23,2023,Sex Abuse,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 23,2023,Sex Abuse,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,3,0,3,3
 23,2023,Sex Abuse,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
@@ -44293,7 +44271,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 25,2023,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 25,2023,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,2,0,2,2
 25,2023,Sex Abuse,Some College,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
-25,2023,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 25,2023,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,5,0,5,5
 25,2023,Stalking/Harassing,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_district,National Total,1,0,1,1
 25,2023,Stalking/Harassing,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_district,National Total,2,0,2,2
@@ -44438,7 +44415,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Firearms,state_district,National Total,3,0,3,3
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Firearms,state_district,National Total,0,1,1,0
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Firearms,state_district,National Total,1,0,1,1
-26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,83,0,83,83
+26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,82,0,82,82
 26,2023,Firearms,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Firearms,state_district,National Total,0,4,4,0
 26,2023,Firearms,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,2,0,2,2
 26,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,22,0,22,22
@@ -44821,7 +44798,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,3,0,3,3
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,state_district,National Total,0,2,2,0
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
-27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,38,0,38,38
+27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,37,0,37,37
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,3,3,0
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Extradited Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 27,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
@@ -45251,7 +45228,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,23,0,23,23
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,state_district,National Total,0,1,1,0
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
-28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,39,0,40,40
+28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,38,0,39,39
 28,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,2,2,0
 28,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
 28,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,4,0,4,4
@@ -46640,7 +46617,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,4,0,4,4
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,61,0,61,61
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Extradited Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,2,0,2,2
-31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,51,0,53,53
+31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,50,0,52,52
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,5,0,5,5
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,2,0,2,2
 31,2023,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,4,0,4,4
@@ -46708,7 +46685,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 31,2023,Firearms,Less Than H.S. Graduate,Black,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,1,0,1,1
 31,2023,Firearms,Less Than H.S. Graduate,Black,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,1,0,1,1
 31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Firearms,state_district,National Total,2,0,2,2
-31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,79,0,80,80
+31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,78,0,79,79
 31,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Firearms,state_district,National Total,0,1,1,0
 31,2023,Firearms,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,2,0,4,4
 31,2023,Firearms,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,2,0,2,2
@@ -47055,7 +47032,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 32,2023,Burglary/Trespass,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,National Total,2,0,2,2
 32,2023,Burglary/Trespass,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,National Total,1,0,1,1
 32,2023,Child Pornography,College Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
-32,2023,Child Pornography,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,5,0,5,5
+32,2023,Child Pornography,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,4,0,4,4
 32,2023,Child Pornography,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,2,0,2,2
 32,2023,Child Pornography,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,13,0,13,13
 32,2023,Child Pornography,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
@@ -47606,7 +47583,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,11,0,11,11
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Drug Trafficking,state_district,National Total,0,1,1,0
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,2,0,2,2
-33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,60,0,60,60
+33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,59,0,59,59
 33,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,2,2,0
 33,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
 33,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,2,0,2,2
@@ -47813,7 +47790,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 33,2023,Immigration,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,1,1
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,state_district,National Total,5,0,8,8
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Probation Only,Immigration,state_district,National Total,0,1,1,0
-33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,246,0,374,374
+33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,246,0,373,373
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,National Total,0,5,5,0
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Immigration,state_district,National Total,1,0,1,1
 33,2023,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,state_district,National Total,2,0,2,2
@@ -49082,7 +49059,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,16,0,16,16
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
-36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,64,0,64,64
+36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,63,0,63,63
 36,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,2,2,0
 36,2023,Drug Trafficking,Less Than H.S. Graduate,Black,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 36,2023,Drug Trafficking,Less Than H.S. Graduate,Black,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
@@ -49150,7 +49127,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 36,2023,Firearms,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,1,0,1,1
 36,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Firearms,state_district,National Total,1,0,1,1
 36,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Firearms,state_district,National Total,2,0,2,2
-36,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,21,0,21,21
+36,2023,Firearms,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,20,0,20,20
 36,2023,Firearms,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,5,0,5,5
 36,2023,Firearms,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Probation Only,Firearms,state_district,National Total,0,1,1,0
 36,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Firearms,state_district,National Total,2,0,2,2
@@ -49443,7 +49420,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 36,2023,Sex Abuse,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 36,2023,Sex Abuse,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 36,2023,Sex Abuse,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
-36,2023,Sex Abuse,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,2,0,2,2
+36,2023,Sex Abuse,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 36,2023,Sex Abuse,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 36,2023,Sex Abuse,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 36,2023,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,3,0,3,3
@@ -50044,7 +50021,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,22,0,22,22
 38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,state_district,National Total,0,2,2,0
 38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
-38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,91,0,91,91
+38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,90,0,90,90
 38,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Drug Trafficking,state_district,National Total,0,1,1,0
 38,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
 38,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
@@ -50111,7 +50088,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Firearms,state_district,National Total,2,0,2,2
 38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Firearms,state_district,National Total,0,1,1,0
 38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Firearms,state_district,National Total,3,0,3,3
-38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,36,0,36,36
+38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,35,0,35,35
 38,2023,Firearms,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Firearms,state_district,National Total,0,1,1,0
 38,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Firearms,state_district,National Total,1,0,1,1
 38,2023,Firearms,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,47,0,47,47
@@ -51798,7 +51775,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 42,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,state_district,National Total,0,1,1,0
 42,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,3,0,3,3
 42,2023,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,43,0,43,43
-42,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,7,0,7,7
+42,2023,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,6,0,6,6
 42,2023,Drug Trafficking,H.S. Graduate,White,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 42,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,2,0,2,2
 42,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,16,0,16,16
@@ -51888,7 +51865,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 42,2023,Firearms,Some College,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,1,0,1,1
 42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Firearms,state_district,National Total,0,1,1,0
 42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Firearms,state_district,National Total,2,0,2,2
-42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,13,0,15,15
+42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Firearms,state_district,National Total,12,0,14,14
 42,2023,Firearms,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Firearms,state_district,National Total,0,1,1,0
 42,2023,Food and Drug,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Other,state_district,National Total,1,0,1,1
 42,2023,Food and Drug,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Other,state_district,National Total,0,1,1,0
@@ -52645,7 +52622,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,9,0,9,9
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
-44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,72,0,72,72
+44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,71,0,71,71
 44,2023,Drug Trafficking,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,4,4,0
 44,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 44,2023,Drug Trafficking,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,2,0,2,2
@@ -53408,7 +53385,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 46,2023,Drug Trafficking,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,26,0,26,26
 46,2023,Drug Trafficking,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 46,2023,Drug Trafficking,Some College,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
-46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,6,0,6,6
+46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,5,0,5,5
 46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,10,0,10,10
 46,2023,Drug Trafficking,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Drug Trafficking,state_district,National Total,0,1,1,0
 46,2023,Drug Trafficking,Some College,Other,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
@@ -54462,7 +54439,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 49,2023,Fraud/Theft/Embezzlement,College Graduate,Other,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,National Total,2,0,2,2
 49,2023,Fraud/Theft/Embezzlement,College Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,National Total,1,0,1,1
 49,2023,Fraud/Theft/Embezzlement,College Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,National Total,0,1,1,0
-49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,National Total,3,0,3,3
+49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,National Total,2,0,2,2
 49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Fraud,state_district,National Total,0,1,1,0
 49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,state_district,National Total,0,1,1,0
 49,2023,Fraud/Theft/Embezzlement,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,National Total,14,0,14,14
@@ -56948,7 +56925,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,National Total,3,0,3,3
 58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Fraud,state_district,National Total,0,1,1,0
 58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,National Total,7,0,8,8
-58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,National Total,0,2,2,0
+58,2023,Fraud/Theft/Embezzlement,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,National Total,0,1,1,0
 58,2023,Fraud/Theft/Embezzlement,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,National Total,0,0,1,1
 58,2023,Fraud/Theft/Embezzlement,,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,National Total,0,1,1,0
 58,2023,Immigration,College Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,2,0,3,3
@@ -57371,7 +57348,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 60,2023,Murder,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_district,National Total,1,0,1,1
 60,2023,National Defense,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,National Total,2,0,2,2
 60,2023,Obscenity/Other Sex Offenses,College Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Other,state_district,National Total,0,1,1,0
-60,2023,Obscenity/Other Sex Offenses,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,National Total,1,0,1,1
 60,2023,Obscenity/Other Sex Offenses,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,National Total,1,0,1,1
 60,2023,Obscenity/Other Sex Offenses,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,National Total,1,0,1,1
 60,2023,Obscenity/Other Sex Offenses,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_district,National Total,1,0,1,1

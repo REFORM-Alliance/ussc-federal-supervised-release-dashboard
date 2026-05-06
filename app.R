@@ -32,11 +32,7 @@ supervision_df <-
   map(~.x %>%
         fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
         clean_names()) %>%
-  bind_rows() %>%
-  mutate(geo_level =
-           geo_level %>%
-           na_if("") %>%
-           replace_na("Unknown/Unreported"))
+  bind_rows() 
 
 geo_crosswalk <- 
   "data-raw" %>%
@@ -808,8 +804,12 @@ server <- function(input, output, session) {
   output$table <- renderDT({
     df <- 
       agg_data() %>%
+      group_by(geo_level_type, geo_level) %>% 
+      mutate(group_id = cur_group_id()) %>% 
+      ungroup() %>% 
       pivot_wider(names_from = "geo_level_type",
                   values_from = "geo_level") %>% 
+      dplyr::select(-group_id) %>% 
       mutate(across(ends_with("rate"), 
                     ~.x %>% 
                       as.numeric() %>% 
@@ -1276,7 +1276,8 @@ server <- function(input, output, session) {
         geo_crosswalk %>% 
           pivot_longer(cols = c(state_district, po_office),
                        names_to = "geo_level_type",
-                       values_to = "geo_level"),
+                       values_to = "geo_level") %>% 
+          distinct(),
         by = c("geo_level_type", "geo_level")
       ) %>%
       mutate(state_name = ifelse(is.na(state_name) & geo_level_type == "state_name",

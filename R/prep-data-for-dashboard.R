@@ -40,7 +40,18 @@ supervision_df <-
                 ~.x %>%
                   as.numeric() %>% 
                   replace_na(0))) %>%
-  rename("po_office" = "po_office_name")
+  rename("po_office" = "po_office_name") %>% 
+  left_join(data.frame(state_name = state.name, 
+                       state_abb = state.abb) %>% 
+              bind_rows(data.frame(state_name = c("Puerto Rico", "District of Columbia", 
+                                                  "Guam", "Virgin Islands", "North Mariana Islands"), 
+                                   state_abb = c("PR", "DC", "GU", "VI", "MP"))), 
+            by = "state_name") %>% 
+  filter(is.na(state_abb) == FALSE) %>% 
+  mutate(po_office = 
+           paste0(po_office, ", ", state_abb) %>% 
+           str_replace_all("Washington, D[.]C[.], DC", "Washington, DC")) %>% 
+  dplyr::select(-state_abb)
 
 fwrite(supervision_df, here("data-raw", "aggregated_ussc_sentencing_data.csv"), row.names = FALSE)
 
@@ -65,7 +76,11 @@ supervision_df_long <-
                                             sum(na.rm = TRUE))) %>% 
                   ungroup() %>% 
                   mutate(geo_level = "National Total"))
-  }
+  } %>%
+  mutate(geo_level =
+           geo_level %>%
+           na_if("") %>%
+           replace_na("Unknown/Unreported"))
 
 # fwrite(supervision_df_long, here("data-raw", "aggregated_ussc_sentencing_long_data.csv"), row.names = FALSE)
 
@@ -90,18 +105,9 @@ po_office_df <-
   supervision_df %>% 
   dplyr::select(po_office, state_name) %>% 
   distinct() %>% 
-  left_join(data.frame(state_name = state.name, 
-                       state_abb = state.abb) %>% 
-              bind_rows(data.frame(state_name = c("District of Columbia", 
-                                                  "Puerto Rico", 
-                                                  "Guam", 
-                                                  "Virgin Islands", 
-                                                  "North Mariana Islands"), 
-                                   state_abb = c("DC", "PR", "GU", "VI", "MP"))), 
-            by = "state_name") %>% 
   mutate(po_office_full = 
            po_office %>% 
-           paste(state_abb, sep = " ")) %>% 
+           str_replace_all(",", "")) %>% 
   left_join(us.cities, by = c("po_office_full" = "name")) %>%
   (\(df) 
    bind_rows(
@@ -121,7 +127,7 @@ po_office_df <-
          long = 
            ifelse(is.na(long) == TRUE, longitude, long)) %>% 
   dplyr::select(-c(latitude, longitude)) %>% 
-  dplyr::select(po_office, state_name, state_abb, lat, long)
+  dplyr::select(po_office, state_name, lat, long)
 
 fwrite(po_office_df, here("data-raw", "po_office_locations.csv"), sep = ",", row.names = FALSE)
 
@@ -149,7 +155,10 @@ geo_crosswalk <-
   fread(sep = ",", header = TRUE, stringsAsFactors = FALSE) %>%
   clean_names() %>% 
   dplyr::select(state_name, state_district, po_office) %>% 
-  distinct()
+  distinct() %>% 
+  mutate(across(where(is_character), 
+                ~.x %>% 
+                  na_if("")))
 
 fwrite(geo_crosswalk, here("data-raw", "geo_crosswalk.csv"), sep = ",", row.names = FALSE)
 
