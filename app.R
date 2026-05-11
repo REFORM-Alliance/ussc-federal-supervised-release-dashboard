@@ -1894,7 +1894,10 @@ server <- function(input, output, session) {
                    fiscal_year
                  }else{
                    .data[[x_var]]
-                 })
+                 }, 
+               value = 
+                 value %>% 
+                 replace_na(0))
       
       # Dynamic y-axis font size based on number of unique groups
       n_groups <- n_distinct(df_long[[x_var]])
@@ -1940,10 +1943,25 @@ server <- function(input, output, session) {
         df_long %>%
         mutate(hover_text = 
                  if(input$custom_chart_type == "line" && length(outcome_vars) > 1){
-                   paste0("Fiscal Year: ", fiscal_year, "\n", outcome, ": ", fmt_value(value),
-                          ifelse(facet_text != "", paste0("\n", facet_text), ""))
+                   paste0("Fiscal Year: ", fiscal_year,
+                          ifelse(facet_text != "", paste0("\n", facet_text), ""), 
+                          "\n",
+                          outcome, ": ", fmt_value(value))
                  }else{
-                   paste0(clean_geo_label(x_var), ": ", group_label, "\n",
+                   paste0(x_var %>% 
+                            clean_geo_label() %>% 
+                            clean_outcome_label() %>% 
+                            str_replace_all("Newrace Description",   "Race") %>%
+                            str_replace_all("newrace_description",   "Race") %>%
+                            str_replace_all("neweduc_description",   "Education") %>%
+                            str_replace_all("Neweduc Description",   "Education") %>%
+                            str_replace_all("monsex_description",    "Gender") %>%
+                            str_replace_all("Monsex Description",    "Gender") %>%
+                            str_replace_all("offense_category",      "Offense Category") %>%
+                            str_replace_all("Offense Category",      "Offense Category") %>%
+                            str_replace_all("citizen_description",   "Citizenship Status") %>%
+                            str_replace_all("Citizen Description",   "Citizenship Status") %>%
+                            str_replace_all("fiscal_year",           "Fiscal Year"), ": ", group_label, "\n",
                           outcome, ": ", fmt_value(value),
                           ifelse(facet_text != "", paste0("\n", facet_text), ""))
                  })
