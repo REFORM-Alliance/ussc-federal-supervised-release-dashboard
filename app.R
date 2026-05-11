@@ -2213,8 +2213,8 @@ server <- function(input, output, session) {
       plotly::plotly_empty(type = "scatter", mode = "markers") %>%
         layout(
           annotations = list(
-            # text = "Click 'Generate Plot' to display.",
-            text = paste("Error:", conditionMessage(e)),
+            text = "Click 'Generate Plot' to display.",
+            # text = paste("Error:", conditionMessage(e)),
             x = 0.5, y = 0.5,
             showarrow = FALSE,
             xref = "paper",
