@@ -38,12 +38,12 @@ source(here("R", "utils-functions.R"))
 qualifying_offense_agg_df <- 
   con %>% 
   tbl(DBI::Id("ussc_federal_data", "sentencing_data_full_parsed")) %>% 
-  group_by(fiscal_year, usscidn) %>% 
+  group_by(fiscal_year, usscidn, supervised_release_flag) %>% 
   dplyr::summarize(fsa_qualifying_offense = 
                      fsa_qualifying_offense %>% 
                      max(na.rm = TRUE)) %>% 
   ungroup() %>% 
-  group_by(fiscal_year, fsa_qualifying_offense) %>% 
+  group_by(fiscal_year, fsa_qualifying_offense, supervised_release_flag) %>% 
   dplyr::summarize(count = n()) %>% 
   ungroup() %>% 
   mutate(fsa_qualifying_offense = 
@@ -71,7 +71,7 @@ qualifying_offense_agg_df <-
 qualifying_offense_by_statute_df <- 
   con %>% 
   tbl(DBI::Id("ussc_federal_data", "sentencing_data_full_parsed")) %>% 
-  filter(fiscal_year >= 2022) %>% 
+  filter(fiscal_year >= 2022, supervised_release_flag == 1) %>% 
   group_by(title, title_name, chapter, section, violation_summary) %>% 
   dplyr::summarize(sentence_count = 
                      fsa_qualifying_offense %>% 

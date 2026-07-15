@@ -359,7 +359,7 @@ ui <- navbarPage(
                            choices = c("Bar Chart"                      = "bar",
                                        "Line Chart"                     = "line",
                                        # "Scatterplot (needs 2 outcomes)" = "scatter",
-                                       # "Violin Plot"                    = "violinplot",
+                                       "Violin Plot"                    = "violinplot",
                                        "Boxplot"                        = "boxplot")),
                selectInput("custom_outcome", "Outcome Metric(s)",
                            choices = c("Probationers"           = "probation_sentence_flag",
@@ -369,16 +369,6 @@ ui <- navbarPage(
                                        "Supervised Release Rate" = "supervised_release_rate", 
                                        "Unfiltered Supervised Release Rate" = "unfiltered_supervised_release_rate"),
                            selected = "probation_sentence_flag", multiple = TRUE),
-               # selectInput("custom_group", "Group By",
-               #             choices = c("State"            = "state_name",
-               #                         "District"         = "state_district",
-               #                         "PO Office"        = "po_office",
-               #                         "Race"             = "newrace_description",
-               #                         "Education"        = "neweduc_description",
-               #                         "Gender"           = "monsex_description",
-               #                         "Offense Category" = "offense_category",
-               #                         "Fiscal Year"      = "fiscal_year"),
-               #             selected = "state_name"),
                uiOutput("custom_group_ui"),
                uiOutput("custom_variance_ui"),
                selectInput("custom_facet", "Facet By (max 2)",
@@ -447,7 +437,7 @@ ui <- navbarPage(
 ####Server####
 server <- function(input, output, session) {
   
-  plot_reset <- reactiveVal(0)
+  # plot_reset <- reactiveVal(0)
   
   # ---- Shared filter helper ----
   apply_filters <- function(df, age_inp, year_inp, race_inp, educ_inp, gender_inp, 
@@ -808,43 +798,6 @@ server <- function(input, output, session) {
     barplot_main
   })
   
-  # output$table <- renderDT({
-  #   df <- 
-  #     agg_data() %>%
-  #     group_by(geo_level_type, geo_level) %>% 
-  #     mutate(group_id = cur_group_id()) %>% 
-  #     ungroup() %>% 
-  #     pivot_wider(names_from = "geo_level_type",
-  #                 values_from = "geo_level") %>% 
-  #     dplyr::select(-group_id) %>% 
-  #     mutate(across(ends_with("rate"), 
-  #                   ~.x %>% 
-  #                     as.numeric() %>% 
-  #                     round(3) %>% 
-  #                     percent()),
-  #            across(c(ends_with("_flag"), starts_with("total_sentenced")), 
-  #                   ~.x %>% 
-  #                     as.numeric() %>% 
-  #                     comma())) %>%
-  #     relocate(any_of(c("state_name", "po_office", "state_district")), .before = 1) %>% 
-  #     arrange(desc(.data[[input$outcome]])) %>%
-  #     rename_with(~.x %>% 
-  #                   clean_outcome_label() %>%
-  #                   str_replace_all("Po Office", "PO Office") %>%
-  #                   str_replace_all("State Name", "State") %>%
-  #                   str_replace_all("State District", "District")) %>%
-  #     datatable(
-  #       extensions = "Buttons",
-  #       class = "compact stripe hover",
-  #       filter = "top",
-  #       options = list(
-  #         dom = "Bfrtpi", buttons = c("copy", "csv", "excel"),
-  #         paging = FALSE, scrollY = "400px", scrollX = TRUE
-  #       ),
-  #       style = "bootstrap", rownames = FALSE, width = "100%"
-  #     )
-  # })
-  
   output$table <- renderDT({
     df <-
       agg_data() %>%
@@ -888,8 +841,8 @@ server <- function(input, output, session) {
       rownames = FALSE,
       width    = "100%"
     ) %>%
-      formatPercentage(rate_cols,  digits = 1) %>%   # display only: "75.3%"
-      formatRound(count_cols, digits = 0, mark = ",") # display only: "1,234"
+      formatPercentage(rate_cols,  digits = 1) %>%   
+      formatRound(count_cols, digits = 0, mark = ",")
   })
   
   output$download_table <- downloadHandler(
@@ -1149,13 +1102,13 @@ server <- function(input, output, session) {
         ggplot(aes(x = fiscal_year, y = rate, color = geo_level, group = geo_level, text = hover_text)) +
         geom_line(linewidth = 1) +
         geom_point(size = 2) +
-        scale_color_manual(values = c("#0072B2", "#E69F00"), name = "") +  # Empty name
+        scale_color_manual(values = c("#0072B2", "#E69F00"), name = "") +  
         labs(x = "Fiscal Year", y = y_label,
              title = paste0(y_label, ": ", input$state_sel, " vs. National Total")) +
         theme_minimal() +
         theme(strip.text   = element_text(size = 12, face = "bold"),
               legend.position = "bottom",
-              legend.title = element_blank(),  # Remove legend title
+              legend.title = element_blank(), 
               axis.title.x = element_text(margin = margin(t = 15)),
               axis.title.y = element_text(margin = margin(r = 20)),
               plot.title   = element_text(size = 13, face = "bold", hjust = 0.5)) + 
@@ -1169,7 +1122,7 @@ server <- function(input, output, session) {
           xanchor = "center",
           y = -0.15, 
           yanchor = "top",
-          title = list(text = "")  # Explicitly remove legend title
+          title = list(text = "")  
         ),
         margin = list(l = 80, r = 50, t = 50, b = 55),
         yaxis = list(
@@ -1194,8 +1147,6 @@ server <- function(input, output, session) {
       ungroup() %>% 
       mutate(probation_rate = 
                probation_sentence_flag/total_sentenced, 
-             # unfiltered_supervised_release_rate = 
-             #   supervised_release_flag/total_sentenced,
              supervised_release_rate = 
                supervised_release_flag/total_sentenced_fsr) %>% 
       rename_with(~.x %>% 
@@ -1287,24 +1238,6 @@ server <- function(input, output, session) {
   })
   
   # ---- Custom Visualization ----
-  # custom_inputs <- eventReactive(input$generate_plot, {
-  #   list(
-  #     chart_type = input$custom_chart_type,
-  #     outcome    = input$custom_outcome,
-  #     group      = input$custom_group,
-  #     facet      = input$custom_facet,
-  #     age        = input$custom_age,
-  #     year       = input$custom_year,
-  #     state      = input$custom_state,
-  #     race       = input$custom_race,
-  #     educ       = input$custom_educ,
-  #     gender     = input$custom_gender,
-  #     offense    = input$custom_offense,
-  #     sentence   = input$custom_sentence,
-  #     citizen    = input$custom_citizen
-  #   )
-  # })
-  
   custom_inputs <- eventReactive(input$generate_plot, {
     list(
       chart_type = input$custom_chart_type,
@@ -1362,79 +1295,6 @@ server <- function(input, output, session) {
       filter("All" %in% inp$state | state_name %in% inp$state)
   })
   
-  # custom_agg <- eventReactive(input$generate_plot, {
-  #   # req(input$custom_outcome, input$custom_group)
-  #   
-  #   # group_cols <- 
-  #   #   c(input$custom_group, input$custom_facet) %>%
-  #   #   discard(is.null) %>% 
-  #   #   discard(~.x == "")
-  #   
-  #   # group_cols <- c(
-  #   #   input$custom_group,
-  #   #   if (!is.null(input$custom_facet)) input$custom_facet else NULL
-  #   # )
-  #   # 
-  #   # group_cols <- group_cols[group_cols != ""]
-  #   
-  #   req(custom_inputs())
-  #   inp <- custom_inputs()
-  #   
-  #   df <- custom_filtered()
-  #   
-  #   group_cols <- c(inp$group, inp$facet)
-  #   group_cols <- group_cols[group_cols != ""]
-  #   
-  #   group_by_geo <- ifelse(any(c("state_name", "state_district", "po_office") %in% group_cols), TRUE, FALSE)
-  #   
-  #   if(group_by_geo == TRUE){
-  #     group_cols_full = c(group_cols, "geo_level_type", "geo_level")
-  #     
-  #     custom_filtered_df <- 
-  #       custom_filtered() %>% 
-  #       filter(geo_level_type %in% group_cols) %>%
-  #       group_by(across(c(any_of(group_cols_full)))) %>%
-  #       dplyr::summarize(across(c(ends_with("_flag"), "total_sentenced"), 
-  #                               ~.x %>% 
-  #                                 sum(na.rm = TRUE))) %>% 
-  #       ungroup() %>% 
-  #       mutate(probation_rate = 
-  #                probation_sentence_flag/total_sentenced, 
-  #              supervised_release_rate = 
-  #                supervised_release_flag/total_sentenced) %>%
-  #       dplyr::select(any_of(c(group_cols_full, input$custom_outcome))) %>% 
-  #       dplyr::select(-any_of(c("state_name"))) %>% 
-  #       group_by(geo_level_type, geo_level) %>% 
-  #       mutate(group_id = cur_group_id()) %>% 
-  #       ungroup() %>% 
-  #       pivot_wider(names_from = "geo_level_type",
-  #                   values_from = "geo_level") %>% 
-  #       dplyr::select(-group_id)
-  #     
-  #   }else{
-  #     group_cols_full = group_cols
-  #     
-  #     custom_filtered_df <- 
-  #       custom_filtered() %>% 
-  #       filter(geo_level_type == "state_name") %>%
-  #       group_by(across(c(all_of(group_cols_full)))) %>%
-  #       dplyr::summarize(across(c(ends_with("_flag"), "total_sentenced"), 
-  #                               ~.x %>% 
-  #                                 sum(na.rm = TRUE))) %>% 
-  #       ungroup() %>% 
-  #       mutate(probation_rate = 
-  #                probation_sentence_flag/total_sentenced, 
-  #              supervised_release_rate = 
-  #                supervised_release_flag/total_sentenced) %>%
-  #       dplyr::select(all_of(c(group_cols_full, input$custom_outcome)))
-  #   }
-  #   custom_filtered_df %>%
-  #     mutate(across(where(is.character), 
-  #                   ~.x %>% 
-  #                     na_if("") %>% 
-  #                     replace_na("Missing/Not Applicable")))
-  # })
-  
   custom_agg <- eventReactive(input$generate_plot, {
     req(custom_inputs())
     inp <- custom_inputs()
@@ -1454,7 +1314,6 @@ server <- function(input, output, session) {
       group_cols <- unique(c(group_cols, inp$variance_by))
     }
     
-    # detect geo grouping
     group_by_geo <- any(c("state_name", "state_district", "po_office") %in% group_cols)
     
     # -----------------------------
@@ -1511,64 +1370,12 @@ server <- function(input, output, session) {
                       na_if("") %>%
                       replace_na("Missing/Not Applicable")))
   })
-    
-  #   if (group_by_geo) {
-  #     
-  #     group_cols_full <- unique(c(group_cols, "geo_level_type", "geo_level"))
-  #     
-  #     df_geo <- df %>%
-  #       filter(geo_level_type %in% group_cols) %>%
-  #       group_by(across(any_of(group_cols_full))) %>%
-  #       summarise(
-  #         across(
-  #           c(ends_with("_flag"), "total_sentenced"),
-  #           ~sum(.x, na.rm = TRUE)
-  #         ),
-  #         .groups = "drop"
-  #       ) %>%
-  #       mutate(
-  #         probation_rate = probation_sentence_flag / total_sentenced,
-  #         supervised_release_rate = supervised_release_flag / total_sentenced
-  #       ) %>%
-  #       select(any_of(c(group_cols_full, inp$outcome))) %>%
-  #       mutate(across(where(is.character),
-  #                     ~na_if(.x, "") %>% replace_na("Missing/Not Applicable")))
-  #     
-  #     # pivot wide ONLY after aggregation
-  #     df_geo %>%
-  #       group_by(geo_level_type, geo_level) %>%
-  #       mutate(group_id = cur_group_id()) %>%
-  #       ungroup() %>%
-  #       pivot_wider(
-  #         names_from = "geo_level_type",
-  #         values_from = "geo_level"
-  #       ) %>%
-  #       select(-group_id)
-  #     
-  #   } else {
-  #     
-  #     # -----------------------------
-  #     # CASE 2: NO GEO GROUPING
-  #     # -----------------------------
-  #     df %>%
-  #       filter(geo_level_type == "state_name") %>%
-  #       group_by(across(any_of(group_cols))) %>%
-  #       summarise(
-  #         across(
-  #           c(ends_with("_flag"), "total_sentenced"),
-  #           ~sum(.x, na.rm = TRUE)
-  #         ),
-  #         .groups = "drop"
-  #       ) %>%
-  #       mutate(
-  #         probation_rate = probation_sentence_flag / total_sentenced,
-  #         supervised_release_rate = supervised_release_flag / total_sentenced
-  #       ) %>%
-  #       select(all_of(c(group_cols, inp$outcome))) %>%
-  #       mutate(across(where(is.character),
-  #                     ~na_if(.x, "") %>% replace_na("Missing/Not Applicable")))
-  #   }
-  # })
+  
+  last_generate <- reactiveVal(0)
+  
+  observeEvent(input$generate_plot, {
+    last_generate(input$generate_plot)
+  })
   
   observeEvent({
     input$custom_chart_type
@@ -1583,9 +1390,10 @@ server <- function(input, output, session) {
     input$custom_gender
     input$custom_offense
     input$custom_sentence
-    input$cutsom_citizen
+    input$custom_citizen
+    input$custom_variance_by
   }, {
-    plot_reset(plot_reset() + 1)
+    last_generate(0)
   })
   
   output$custom_group_ui <- renderUI({
@@ -1634,174 +1442,6 @@ server <- function(input, output, session) {
                 selected = available_choices[1])
   })
   
-  # output$custom_group_ui <- renderUI({
-  #   if (input$custom_chart_type == "line") {
-  #     # No group selector shown — fiscal year is implicit
-  #     tags$div(
-  #       class = "reporting-note",
-  #       "Line charts automatically group by Fiscal Year."
-  #     )
-  #   } else {
-  #     selectInput("custom_group", "Group By",
-  #                 choices = c("State"            = "state_name",
-  #                             "District"         = "state_district",
-  #                             "PO Office"        = "po_office",
-  #                             "Race"             = "newrace_description",
-  #                             "Education"        = "neweduc_description",
-  #                             "Gender"           = "monsex_description",
-  #                             "Offense Category" = "offense_category",
-  #                             "Fiscal Year"      = "fiscal_year", 
-  #                             "Citizenship Status" = "citizen_description"),
-  #                 selected = "state_name")
-  #   }
-  # })
-  
-  # output$custom_plot <- renderPlotly({
-  #   if(is.null(input$generate_plot) || input$generate_plot == 0){
-  #     plot.new()
-  #     text(0.5, 0.5, "Click 'Generate Plot' to display.", cex = 1.5, col = "darkgreen")
-  #     return()
-  #   }
-  #   
-  #   df <- 
-  #     custom_agg() 
-  #   
-  #   if(!all(input$custom_outcome %in% names(df)) || nrow(df) == 0){
-  #     plot.new()
-  #     text(0.5, 0.5, "No data. Adjust filters and click 'Generate Plot'.", cex = 1.5)
-  #     return()
-  #   }
-  #   
-  #   x_lab  <- 
-  #     input$custom_group %>% 
-  #     clean_geo_label() %>% 
-  #     clean_outcome_label()
-  #   
-  #   y_labs <- paste(clean_outcome_label(input$custom_outcome), collapse = " / ")
-  #   
-  #   df_long <- 
-  #     df %>%
-  #     pivot_longer(cols = all_of(input$custom_outcome),
-  #                  names_to = "outcome", 
-  #                  values_to = "value") %>%
-  #     mutate(outcome = 
-  #              outcome %>% 
-  #              clean_outcome_label(), 
-  #            custom_group_text = 
-  #              input$custom_group %>% 
-  #              str_replace_all("state_name", "State") %>% 
-  #              str_replace_all("state_district", "Federal District") %>% 
-  #              str_replace_all("po_office", "PO Office"),
-  #            hover_text = 
-  #              paste0(custom_group_text, ": ", .data[[input$custom_group]], "\n",
-  #                     outcome, ": ",
-  #                     ifelse(
-  #                       outcome %in% c("Probation Rate", "Supervised Release Rate"),
-  #                       scales::percent(value, accuracy = 0.01),
-  #                       scales::comma(value)
-  #                     )))
-  #   
-  #   p <- 
-  #     if(input$custom_chart_type == "bar"){
-  #       if(length(input$custom_outcome) > 1){
-  #         df_long %>%
-  #           ggplot(aes(x = reorder(.data[[input$custom_group]], value),
-  #                      y = value, 
-  #                      fill = outcome, 
-  #                      text = hover_text)) +
-  #           geom_col(position = "dodge") +
-  #           coord_flip() +
-  #           scale_fill_brewer(palette = "Set2") +
-  #           labs(x = x_lab, y = y_labs, fill = "Outcome") +
-  #           theme_minimal() + 
-  #           theme(legend.position = "bottom")
-  #       }else{
-  #         df_long %>%
-  #           ggplot(aes(x = reorder(.data[[input$custom_group]], value),
-  #                      y = value, 
-  #                      fill = outcome,
-  #                      text = hover_text)) +
-  #           geom_col(position = "dodge") +
-  #           coord_flip() +
-  #           scale_fill_brewer(palette = "Set2") +
-  #           labs(x = x_lab, y = y_labs, fill = "Outcome") +
-  #           theme_minimal() + 
-  #           theme(legend.position = "none")
-  #       }
-  #     }else if(input$custom_chart_type == "line"){
-  #       if(length(input$custom_outcome) > 1){
-  #         df_long %>%
-  #           ggplot(aes(x = .data[[input$custom_group]], 
-  #                      y = value,
-  #                      color = outcome, 
-  #                      group = outcome,
-  #                      text = hover_text)) +
-  #           geom_line(linewidth = 1.2) + geom_point() +
-  #           scale_color_brewer(palette = "Set2") +
-  #           labs(x = x_lab, y = y_labs, color = "Outcome") +
-  #           theme_minimal() +
-  #           theme(legend.position = "bottom")
-  #       }else{
-  #         df_long %>%
-  #           ggplot(aes(x = .data[[input$custom_group]], 
-  #                      y = value,
-  #                      color = outcome, 
-  #                      group = outcome,
-  #                      text = hover_text)) +
-  #           geom_line(linewidth = 1.2) + geom_point() +
-  #           scale_color_brewer(palette = "Set2") +
-  #           labs(x = x_lab, y = y_labs, color = "Outcome") +
-  #           theme_minimal() +
-  #           theme(legend.position = "none")
-  #       }
-  #     }else if(input$custom_chart_type == "scatter"){
-  #       req(length(input$custom_outcome) == 2)
-  #       
-  #       df %>%
-  #         ggplot(aes(x = .data[[input$custom_outcome[1]]],
-  #                    y = .data[[input$custom_outcome[2]]],
-  #                    label = .data[[input$custom_group]],
-  #                    text = hover_text)) +
-  #         geom_point(size = 3, alpha = 0.7, color = "#009E73") +
-  #         geom_text(vjust = -0.5, size = 3) +
-  #         labs(x = clean_outcome_label(input$custom_outcome[1]),
-  #              y = clean_outcome_label(input$custom_outcome[2])) +
-  #         theme_minimal()
-  #     }else if(input$custom_chart_type == "boxplot"){
-  #       df_long %>%
-  #         ggplot(aes(x = .data[[input$custom_group]], 
-  #                    y = value, 
-  #                    fill = outcome,
-  #                    text = hover_text)) +
-  #         geom_boxplot() + coord_flip() +
-  #         scale_fill_brewer(palette = "Set2") +
-  #         labs(x = x_lab, y = y_labs, fill = "Outcome") +
-  #         theme_minimal()
-  #     }
-  #   
-  #   if(length(input$custom_facet) == 1){
-  #     p <- 
-  #       p + 
-  #       facet_wrap(vars(.data[[input$custom_facet[1]]])) 
-  #   }else if(length(input$custom_facet) == 2){
-  #     p <- 
-  #       p + 
-  #       facet_grid(rows = vars(.data[[input$custom_facet[1]]]),
-  #                  cols = vars(.data[[input$custom_facet[2]]]))
-  #   }else{
-  #     p <- p
-  #   }
-  #   
-  #   p <- 
-  #     p %>%
-  #     ggplotly(tooltip = "text") %>%
-  #     layout(legend = list(orientation = "h", x = 0.5, xanchor = "center",
-  #                          y = -0.15, yanchor = "top", title = list(text = "")),
-  #            margin = list(l = 0, r = 10, t = 20, b = 60))
-  #   
-  #   p
-  # })
-  
   output$custom_plot <- renderPlotly({
     empty_state <- plotly::plotly_empty(type = "scatter", mode = "markers") %>%
       layout(
@@ -1817,12 +1457,15 @@ server <- function(input, output, session) {
         yaxis = list(visible = FALSE)
       )
     
-    # ---- BEFORE FIRST CLICK ----
-    if (is.null(input$generate_plot) || input$generate_plot == 0) {
-      return(empty_state)
-    }
+    # if (is.null(input$generate_plot) || input$generate_plot == 0) {
+    #   return(empty_state)
+    # }
+    # 
+    # if (plot_reset() > input$generate_plot) {
+    #   return(empty_state)
+    # }
     
-    if (plot_reset() > input$generate_plot) {
+    if (is.null(input$generate_plot) || last_generate() == 0) {
       return(empty_state)
     }
     
@@ -1848,7 +1491,6 @@ server <- function(input, output, session) {
       facet_vars <- input$custom_facet
       facet_vars <- facet_vars[!is.null(facet_vars) & facet_vars != ""]
       
-      # detect rate vs count
       is_rate <- any(str_detect(outcome_vars, "rate"))
       
       fmt_value <- function(x) {
@@ -1899,7 +1541,6 @@ server <- function(input, output, session) {
                  value %>% 
                  replace_na(0))
       
-      # Dynamic y-axis font size based on number of unique groups
       n_groups <- n_distinct(df_long[[x_var]])
       y_size <- case_when(
         n_groups > 80 ~ 4,
@@ -2227,27 +1868,6 @@ server <- function(input, output, session) {
     })
   })
   
-  # output$custom_table <- renderDT({
-  #   if (is.null(input$generate_plot) || input$generate_plot == 0)
-  #     return(datatable(data.frame(Message = "Click 'Generate Plot' to view table")))
-  #   
-  #   df <- custom_agg()
-  #   if (!all(input$custom_outcome %in% names(df)) || nrow(df) == 0)
-  #     return(datatable(data.frame(Message = "No data available.")))
-  #   
-  #   df %>%
-  #     rename_with(~clean_outcome_label(.x) %>%
-  #                   clean_geo_label() %>%
-  #                   str_replace_all("Newrace Description", "Race") %>%
-  #                   str_replace_all("Neweduc Description", "Education") %>%
-  #                   str_replace_all("Monsex Description",  "Gender") %>%
-  #                   str_replace_all("Offguide Description","Offense Category")) %>%
-  #     datatable(extensions = "Buttons", class = "compact stripe hover",
-  #               filter = "top",
-  #               options = list(paging = FALSE, scrollY = "400px", scrollX = TRUE),
-  #               style = "bootstrap", rownames = FALSE)
-  # })
-  
   output$custom_table <- renderDT({
     if (is.null(input$generate_plot) || input$generate_plot == 0)
       return(datatable(data.frame(Message = "Click 'Generate Plot' to view table")))
@@ -2259,7 +1879,7 @@ server <- function(input, output, session) {
     df_renamed <- 
       df %>%
       mutate(across(any_of("fiscal_year"), as.character)) %>% 
-      relocate(any_of(input$custom_outcome), .after = last_col()) %>%  # <- push outcomes to end
+      relocate(any_of(input$custom_outcome), .after = last_col()) %>%  
       rename_with(~.x %>% 
                     clean_outcome_label() %>%
                     clean_geo_label() %>%
@@ -2297,7 +1917,6 @@ server <- function(input, output, session) {
   output$download_custom_plot <- downloadHandler(
     filename = function() paste0("custom_plot_", Sys.Date(), ".png"),
     content  = function(file) {
-      # Re-render the plot for saving — mirrors renderPlot logic above
       ggsave(file, width = 10, height = 7)
     }
   )
