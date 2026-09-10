@@ -5499,7 +5499,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 26,2024,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Louisiana Middle,1,0,1,1
 26,2024,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Mississippi Southern,1,0,1,1
 26,2024,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,New Jersey,1,0,1,1
-26,2024,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Texas Eastern,1,0,1,1
 26,2024,Commercialized Vice,Some College,Black,Resident/Legal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Other,state_district,Maine,1,0,1,1
 26,2024,Drug Possession,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,North Dakota,1,0,1,1
 26,2024,Drug Possession,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Northern,1,0,1,1
@@ -24594,7 +24593,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Colorado,1,0,1,1
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Delaware,1,0,1,1
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Florida Middle,2,0,2,2
-41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Illinois Northern,1,0,1,1
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Kentucky Western,1,0,1,1
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,New Jersey,2,0,2,2
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,New Mexico,2,0,2,2
@@ -35465,7 +35463,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,New Mexico,2,0,6,6
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Puerto Rico,1,0,1,1
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Rhode Island,1,0,1,1
-53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Southern,9,0,27,27
+53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Southern,9,0,28,28
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Western,48,0,49,49
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,Texas Southern,0,1,1,0
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,Texas Western,0,2,2,0
@@ -43200,7 +43198,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 26,2024,Child Pornography,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 26,2024,Child Pornography,Some College,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 26,2024,Child Pornography,Some College,White,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
-26,2024,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,6,0,6,6
+26,2024,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,5,0,5,5
 26,2024,Commercialized Vice,Some College,Black,Resident/Legal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Other,state_district,National Total,1,0,1,1
 26,2024,Drug Possession,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,2,0,2,2
 26,2024,Drug Possession,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
@@ -50008,7 +50006,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,No Prison/Probation (Fine Only),Drug Trafficking,state_district,National Total,0,0,1,0
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,6,0,6,6
 41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
-41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,40,0,40,40
+41,2024,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,39,0,39,39
 41,2024,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,3,0,3,3
 41,2024,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
 41,2024,Drug Trafficking,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,3,0,3,3
@@ -54375,7 +54373,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 53,2024,Immigration,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,1,1
 53,2024,Immigration,Less Than H.S. Graduate,Black,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,2,0,2,2
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,state_district,National Total,3,0,4,4
-53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,90,0,119,119
+53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,90,0,120,120
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,National Total,0,4,4,0
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,1,1
 53,2024,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,1,1

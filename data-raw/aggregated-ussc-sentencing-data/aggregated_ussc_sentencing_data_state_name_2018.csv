@@ -9634,7 +9634,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,New Hampshire,1,0,1,1
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_name,Ohio,0,1,1,0
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_name,Oklahoma,0,1,1,0
-29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,Virginia,0,0,1,1
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,state_name,Texas,0,1,1,0
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Oklahoma,0,0,1,1
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Virginia,0,0,1,1
@@ -10534,7 +10533,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Pennsylvania,7,0,9,9
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Puerto Rico,1,0,1,1
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Tennessee,0,0,3,3
-29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Texas,20,0,59,59
+29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Texas,20,0,60,60
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Virginia,2,0,3,3
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_name,Texas,0,20,20,0
 29,2018,Immigration,,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Arkansas,1,0,1,1
@@ -43349,7 +43348,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 29,2018,Drug Possession,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_name,National Total,0,1,1,0
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,1,0,1,1
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_name,National Total,0,2,2,0
-29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,0,0,1,1
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,state_name,National Total,0,1,1,0
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,0,0,2,2
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_name,National Total,0,1,1,0
@@ -43648,7 +43646,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 29,2018,Immigration,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,1,0,1,1
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,state_name,National Total,5,0,11,11
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Probation Only,Immigration,state_name,National Total,0,1,1,0
-29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,56,0,123,123
+29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,56,0,124,124
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_name,National Total,0,20,20,0
 29,2018,Immigration,,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,4,0,5,5
 29,2018,Immigration,,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,state_name,National Total,2,0,2,2

@@ -5078,6 +5078,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Pennsylvania Middle,1,0,1,1
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Western,3,0,4,4
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,West Virginia Northern,1,0,1,1
+24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,Texas Western,0,1,1,0
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,,Prison Only (No Alternatives),Immigration,state_district,Texas Western,0,0,1,1
 24,2015,Individual Rights,,Black,U.S. Citizen,U.S. Citizen,Male,No Prison/Probation (Fine Only),Other,state_district,Michigan Western,0,0,1,0
 24,2015,Kidnapping,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_district,South Carolina,1,0,1,1
@@ -5752,6 +5753,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,New Mexico,2,0,2,2
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,New York Eastern,1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,New York Southern,6,0,6,6
+25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,New York Western,1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Oregon,1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Pennsylvania Middle,1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Puerto Rico,9,0,9,9
@@ -17221,7 +17223,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,New York Eastern,1,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,New York Southern,0,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,North Dakota,1,0,1,1
-33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Southern,3,0,3,3
+33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Southern,2,0,2,2
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Virginia Eastern,1,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Wisconsin Eastern,0,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Florida Southern,1,0,1,1
@@ -20073,6 +20075,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 34,2015,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,California Eastern,1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,Alabama Northern,1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,Nebraska,1,0,1,1
+34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Colorado,1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Florida Middle,1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,North Carolina Eastern,1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Texas Northern,1,0,1,1
@@ -25687,7 +25690,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 39,2015,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,Arizona,0,0,1,1
 39,2015,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Arizona,0,0,41,41
 39,2015,Drug Possession,,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,Arizona,0,0,1,1
-39,2015,Drug Possession,,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Virginia Eastern,0,1,1,0
 39,2015,Drug Possession,,,U.S. Citizen,U.S. Citizen,,Prison Only (No Alternatives),Drug Trafficking,state_district,Texas Western,0,0,1,1
 39,2015,Drug Trafficking,College Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,Florida Southern,1,0,1,1
 39,2015,Drug Trafficking,College Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Kentucky Western,0,1,1,0
@@ -30977,7 +30979,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,state_district,Georgia Middle,0,1,1,0
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,state_district,Louisiana Western,0,1,1,0
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,state_district,Mississippi Northern,0,1,1,0
-43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Fraud,state_district,Nevada,1,0,1,1
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,Florida Southern,3,0,3,3
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,Georgia Northern,1,0,1,1
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,Georgia Southern,2,0,2,2
@@ -31178,7 +31179,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Maryland,0,0,1,1
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,New Mexico,0,0,2,2
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Southern,0,0,1,1
-43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Western,1,0,2,2
+43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Western,2,0,3,3
 43,2015,Immigration,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Immigration,state_district,Florida Middle,0,1,1,0
 43,2015,Immigration,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Southern,1,0,1,1
 43,2015,Immigration,Some College,Other,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,New York Eastern,0,0,1,1
@@ -47537,6 +47538,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 24,2015,Immigration,,Hispanic,,,Male,Probation Only,Immigration,state_district,National Total,0,1,1,0
 24,2015,Immigration,,White,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,0,0,1,1
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,5,0,8,8
+24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,National Total,0,1,1,0
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,,Prison Only (No Alternatives),Immigration,state_district,National Total,0,0,1,1
 24,2015,Individual Rights,,Black,U.S. Citizen,U.S. Citizen,Male,No Prison/Probation (Fine Only),Other,state_district,National Total,0,0,1,0
 24,2015,Kidnapping,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_district,National Total,1,0,1,1
@@ -47807,7 +47809,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,2,0,2,2
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,16,0,16,16
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_district,National Total,1,0,1,1
-25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,66,0,66,66
+25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,67,0,67,67
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,1,1,0
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,,,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,2,0,2,2
@@ -52097,7 +52099,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 33,2015,Drug Trafficking,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,95,0,95,95
 33,2015,Drug Trafficking,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,1,1,0
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
-33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,15,0,18,18
+33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,14,0,17,17
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,8,0,8,8
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,6,0,6,6
@@ -53084,7 +53086,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 34,2015,Sex Abuse,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,2,0,2,2
 34,2015,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,2,0,2,2
-34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,3,0,3,3
+34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,4,0,4,4
 34,2015,Stalking/Harassing,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_district,National Total,1,0,1,1
 34,2015,Stalking/Harassing,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_district,National Total,1,0,1,1
 34,2015,Stalking/Harassing,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Violent Offense,state_district,National Total,1,0,1,1
@@ -55179,7 +55181,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 39,2015,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,0,0,1,1
 39,2015,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,0,0,41,41
 39,2015,Drug Possession,,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,0,0,1,1
-39,2015,Drug Possession,,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,1,1,0
 39,2015,Drug Possession,,,U.S. Citizen,U.S. Citizen,,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,0,0,1,1
 39,2015,Drug Trafficking,College Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 39,2015,Drug Trafficking,College Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,1,1,0
@@ -57226,7 +57227,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,state_district,National Total,6,0,6,6
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Fraud,state_district,National Total,0,1,1,0
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,state_district,National Total,0,4,4,0
-43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Fraud,state_district,National Total,1,0,1,1
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,state_district,National Total,16,0,16,16
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,state_district,National Total,0,1,1,0
 43,2015,Fraud/Theft/Embezzlement,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Probation Only,Fraud,state_district,National Total,0,1,1,0
@@ -57300,7 +57300,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2015,Immigration,Some College,Black,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,1,1
 43,2015,Immigration,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,1,1
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,1,1
-43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,3,0,9,9
+43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,4,0,10,10
 43,2015,Immigration,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Immigration,state_district,National Total,0,1,1,0
 43,2015,Immigration,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,1,1
 43,2015,Immigration,Some College,Other,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,1,0,2,2

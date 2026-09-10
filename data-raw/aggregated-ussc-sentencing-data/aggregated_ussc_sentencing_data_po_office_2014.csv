@@ -30183,6 +30183,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 39,2014,Drug Possession,,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"El Paso, TX",1,0,1,1
 39,2014,Drug Possession,,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Phoenix, AZ",0,0,3,3
 39,2014,Drug Possession,,White,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Tucson, AZ",0,0,1,1
+39,2014,Drug Possession,,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,"Norfolk, VA",0,1,1,0
 39,2014,Drug Possession,,,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,"Tucson, AZ",0,0,1,1
 39,2014,Drug Possession,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Phoenix, AZ",0,0,1,1
 39,2014,Drug Possession,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Tucson, AZ",0,0,1,1
@@ -35324,7 +35325,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,"Los Angeles, CA",1,0,1,1
 42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,"Tulsa, OK",1,0,1,1
 42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Brownsville, TX",1,0,1,1
-42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Del Rio, TX",2,0,2,2
+42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Del Rio, TX",1,0,1,1
 42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"El Paso, TX",0,0,1,1
 42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Omaha, NE",1,0,1,1
 42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Phoenix, AZ",6,0,6,6
@@ -36370,6 +36371,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,po_office,"Chicago, IL",0,1,1,0
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,po_office,"Columbia, SC",0,1,1,0
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,po_office,"Indianapolis, IN",0,2,2,0
+43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Fraud,po_office,"Las Vegas, NV",1,0,1,1
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,po_office,"Atlanta, GA",1,0,1,1
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,po_office,"Chicago, IL",2,0,2,2
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,po_office,"Mobile, AL",1,0,1,1
@@ -62779,6 +62781,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 39,2014,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,24,24
 39,2014,Drug Possession,,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,1,0,4,4
 39,2014,Drug Possession,,White,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,1,1
+39,2014,Drug Possession,,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
 39,2014,Drug Possession,,,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,1,1
 39,2014,Drug Possession,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,2,2
 39,2014,Drug Possession,,,Illegal Alien,Non-U.S. Citizen,,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,1,1
@@ -64566,7 +64569,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 42,2014,Immigration,Less Than H.S. Graduate,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,0,0,1,1
 42,2014,Immigration,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Immigration,po_office,National Total,0,1,1,0
 42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,2,0,2,2
-42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,10,0,11,11
+42,2014,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,9,0,10,10
 42,2014,Immigration,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,1,0,1,1
 42,2014,Immigration,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,2,0,2,2
 42,2014,Immigration,Some College,White,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,0,0,1,1
@@ -64990,6 +64993,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,po_office,National Total,6,0,6,6
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Fraud,po_office,National Total,0,3,3,0
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,po_office,National Total,0,4,4,0
+43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Fraud,po_office,National Total,1,0,1,1
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,po_office,National Total,9,0,9,9
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Fraud,po_office,National Total,0,2,2,0
 43,2014,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,po_office,National Total,0,3,3,0

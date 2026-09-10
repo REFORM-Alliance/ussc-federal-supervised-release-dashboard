@@ -996,7 +996,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Oregon,1,0,1,1
 21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Pennsylvania,1,0,1,1
 21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Tennessee,1,0,1,1
-21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Texas,2,0,2,2
+21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Texas,1,0,1,1
 21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Washington,1,0,1,1
 21,2021,Drug Trafficking,Some College,Black,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,Vermont,1,0,1,1
 21,2021,Drug Trafficking,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,California,1,0,1,1
@@ -2288,7 +2288,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,Minnesota,1,0,1,1
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,Tennessee,1,0,1,1
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,Texas,4,0,4,4
-23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,state_name,California,0,1,1,0
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_name,Arizona,1,0,1,1
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_name,Massachusetts,1,0,1,1
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_name,New Hampshire,1,0,1,1
@@ -10970,7 +10969,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,Indiana,1,0,1,1
 31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,Louisiana,1,0,1,1
 31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,North Carolina,1,0,1,1
-31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,Pennsylvania,1,0,1,1
+31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,Pennsylvania,2,0,2,2
 31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,Wisconsin,1,0,1,1
 31,2021,Robbery,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,Colorado,1,0,1,1
 31,2021,Robbery,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,Probation Only,Violent Offense,state_name,Oklahoma,0,1,1,0
@@ -20391,7 +20390,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 40,2021,Money Launder,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,Oregon,1,0,1,1
 40,2021,Money Launder,H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,Texas,1,0,1,1
 40,2021,Money Launder,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Other,state_name,California,1,0,1,1
-40,2021,Money Launder,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,New York,1,0,1,1
 40,2021,Money Launder,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Other,state_name,Florida,0,1,1,0
 40,2021,Money Launder,H.S. Graduate,Other,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,South Carolina,1,0,1,1
 40,2021,Money Launder,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Other,state_name,Nevada,1,0,1,1
@@ -22096,7 +22094,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Puerto Rico,1,0,1,1
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,South Carolina,1,0,1,1
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Tennessee,1,0,1,1
-42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Texas,83,0,163,163
+42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Texas,84,0,164,164
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Utah,2,0,2,2
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,Washington,1,0,2,2
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_name,Florida,0,1,1,0
@@ -24482,7 +24480,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 45,2021,Prison Offenses,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,California,0,0,1,1
 45,2021,Prison Offenses,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,Georgia,1,0,1,1
 45,2021,Prison Offenses,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,Iowa,1,0,1,1
-45,2021,Prison Offenses,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,West Virginia,1,0,1,1
 45,2021,Prison Offenses,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,New Jersey,1,0,1,1
 45,2021,Prison Offenses,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,Texas,0,0,1,1
 45,2021,Prison Offenses,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,Arkansas,0,0,2,2
@@ -33803,7 +33800,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 21,2021,Drug Trafficking,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,1,0,1,1
 21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_name,National Total,1,0,1,1
 21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,2,0,2,2
-21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,10,0,10,10
+21,2021,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,9,0,9,9
 21,2021,Drug Trafficking,Some College,Black,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,1,0,1,1
 21,2021,Drug Trafficking,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,2,0,2,2
 21,2021,Drug Trafficking,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,0,0,2,2
@@ -34443,7 +34440,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,4,0,4,4
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_name,National Total,1,0,1,1
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,18,0,18,18
-23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,state_name,National Total,0,1,1,0
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,state_name,National Total,4,0,4,4
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,60,0,60,60
 23,2021,Drug Trafficking,Less Than H.S. Graduate,Other,Resident/Legal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_name,National Total,1,0,1,1
@@ -38145,7 +38141,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 31,2021,Robbery,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,National Total,1,0,1,1
 31,2021,Robbery,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,National Total,2,0,2,2
 31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Violent Offense,state_name,National Total,1,0,1,1
-31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,National Total,8,0,8,8
+31,2021,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,National Total,9,0,9,9
 31,2021,Robbery,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,National Total,1,0,1,1
 31,2021,Robbery,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,Probation Only,Violent Offense,state_name,National Total,0,1,1,0
 31,2021,Robbery,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,state_name,National Total,1,0,1,1
@@ -41924,7 +41920,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 40,2021,Money Launder,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,1,0,2,2
 40,2021,Money Launder,H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,1,0,1,1
 40,2021,Money Launder,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Other,state_name,National Total,1,0,1,1
-40,2021,Money Launder,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,1,0,1,1
 40,2021,Money Launder,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation + Confinement Conditions (Alternatives),Other,state_name,National Total,0,1,1,0
 40,2021,Money Launder,H.S. Graduate,Other,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,1,0,1,1
 40,2021,Money Launder,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Other,state_name,National Total,2,0,2,2
@@ -42634,7 +42629,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 42,2021,Immigration,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,2,0,2,2
 42,2021,Immigration,Less Than H.S. Graduate,Black,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,1,0,1,1
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,state_name,National Total,6,0,12,12
-42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,195,0,304,304
+42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,196,0,305,305
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_name,National Total,0,2,2,0
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_name,National Total,1,0,1,1
 42,2021,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Immigration,state_name,National Total,1,0,1,1
@@ -43760,7 +43755,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 45,2021,Other,,,,,Male,No Prison/Probation (Fine Only),Other,state_name,National Total,0,0,2,0
 45,2021,Other,,,,,Male,Probation Only,Other,state_name,National Total,0,1,1,0
 45,2021,Prison Offenses,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,2,0,4,4
-45,2021,Prison Offenses,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,1,0,1,1
 45,2021,Prison Offenses,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,1,0,1,1
 45,2021,Prison Offenses,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,0,0,1,1
 45,2021,Prison Offenses,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,state_name,National Total,0,0,2,2

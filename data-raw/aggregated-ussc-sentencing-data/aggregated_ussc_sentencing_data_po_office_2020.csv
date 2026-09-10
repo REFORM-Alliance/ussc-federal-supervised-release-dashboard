@@ -2225,6 +2225,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,"Tucson, AZ",2,0,2,2
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Drug Trafficking,po_office,"El Paso, TX",0,1,1,0
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,po_office,"El Paso, TX",0,1,1,0
+22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,po_office,"San Diego, CA",0,1,1,0
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,po_office,"Las Cruces, NM",1,0,1,1
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Albuquerque, NM",1,0,1,1
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Atlanta, GA",1,0,1,1
@@ -43015,7 +43016,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,po_office,National Total,1,0,1,1
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,14,0,14,14
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Drug Trafficking,po_office,National Total,0,1,1,0
-22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
+22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,po_office,National Total,0,2,2,0
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,po_office,National Total,1,0,1,1
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,49,0,49,49
 22,2020,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0

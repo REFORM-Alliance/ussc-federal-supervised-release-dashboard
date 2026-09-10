@@ -10133,7 +10133,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"San Antonio, TX",1,0,1,1
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,po_office,"Del Rio, TX",0,1,1,0
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Immigration,po_office,"San Diego, CA",1,0,1,1
-27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,"Corpus Christi, TX",3,0,3,3
+27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,"Corpus Christi, TX",4,0,4,4
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,"Del Rio, TX",1,0,1,1
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Immigration,po_office,"Laredo, TX",0,1,1,0
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Immigration,po_office,"Phoenix, AZ",0,1,1,0
@@ -51003,7 +51003,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,3,0,5,5
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,po_office,National Total,0,1,1,0
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Immigration,po_office,National Total,1,0,1,1
-27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,4,0,4,4
+27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,5,0,5,5
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Immigration,po_office,National Total,0,2,2,0
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Immigration,po_office,National Total,0,1,1,0
 27,2017,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Immigration,po_office,National Total,2,0,2,2

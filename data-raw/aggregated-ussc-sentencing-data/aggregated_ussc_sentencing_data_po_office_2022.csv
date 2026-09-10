@@ -2111,6 +2111,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,"St. Louis, MO",1,0,1,1
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,po_office,"Portland, ME",0,1,1,0
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Alexandria, VA",1,0,1,1
+22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Brownsville, TX",1,0,1,1
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Cleveland, OH",1,0,1,1
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Columbia, SC",1,0,1,1
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Concord, NH",1,0,1,1
@@ -15373,7 +15374,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,"Fort Lauderdale, FL",2,0,2,2
 31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,"Kansas City, MO",1,0,1,1
 31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,"Los Angeles, CA",1,0,1,1
-31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,"Pittsburgh, PA",1,0,1,1
 31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,"San Francisco, CA",1,0,1,1
 31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,"St. Louis, MO",2,0,2,2
 31,2022,Robbery,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Violent Offense,po_office,"Honolulu, HI",1,0,1,1
@@ -30343,6 +30343,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 41,2022,Money Launder,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"San Juan, PR",1,0,1,1
 41,2022,Money Launder,H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Other,po_office,"Miami, FL",1,0,1,1
 41,2022,Money Launder,H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"Miami, FL",0,0,1,1
+41,2022,Money Launder,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"New York City, NY",1,0,1,1
 41,2022,Money Launder,H.S. Graduate,White,Extradited Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"Brooklyn, NY",0,0,1,1
 41,2022,Money Launder,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"Dallas, TX",1,0,1,1
 41,2022,Money Launder,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"Kansas City, MO",1,0,1,1
@@ -32737,7 +32738,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Dallas, TX",1,0,1,1
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Del Rio, TX",17,0,17,17
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Denver, CO",1,0,1,1
-43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"El Paso, TX",10,0,14,14
+43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"El Paso, TX",9,0,13,13
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Fort Lauderdale, FL",1,0,1,1
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Fort Myers, FL",1,0,1,1
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Fort Worth, TX",2,0,2,2
@@ -35099,6 +35100,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 45,2022,Other,,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Other,po_office,"Tulsa, OK",0,1,1,0
 45,2022,Other,,White,,,Female,No Prison/Probation (Fine Only),Other,po_office,"Seattle, WA",0,0,1,0
 45,2022,Prison Offenses,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"Little Rock, AR",0,0,1,1
+45,2022,Prison Offenses,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"Beckley, WV",1,0,1,1
 45,2022,Prison Offenses,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"Tucson, AZ",1,0,1,1
 45,2022,Prison Offenses,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,"Little Rock, AR",0,0,1,1
 45,2022,Prison Offenses,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Other,po_office,"San Diego, CA",1,0,1,1
@@ -47638,7 +47640,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,po_office,National Total,1,0,1,1
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,4,0,4,4
 22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
-22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,12,0,12,12
+22,2022,Drug Trafficking,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,13,0,13,13
 22,2022,Drug Trafficking,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,3,0,3,3
 22,2022,Drug Trafficking,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,6,0,6,6
 22,2022,Drug Trafficking,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,1,0,1,1
@@ -51917,7 +51919,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 31,2022,Robbery,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,4,0,4,4
 31,2022,Robbery,Less Than H.S. Graduate,Black,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,1,0,1,1
 31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Violent Offense,po_office,National Total,1,0,1,1
-31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,11,0,11,11
+31,2022,Robbery,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,10,0,10,10
 31,2022,Robbery,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Violent Offense,po_office,National Total,1,0,1,1
 31,2022,Robbery,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,3,0,3,3
 31,2022,Robbery,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,1,0,1,1
@@ -56445,6 +56447,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 41,2022,Money Launder,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,2,0,2,2
 41,2022,Money Launder,H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Other,po_office,National Total,1,0,1,1
 41,2022,Money Launder,H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,0,0,1,1
+41,2022,Money Launder,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,1,0,1,1
 41,2022,Money Launder,H.S. Graduate,White,Extradited Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,0,0,1,1
 41,2022,Money Launder,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,3,0,3,3
 41,2022,Money Launder,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Other,po_office,National Total,0,1,1,0
@@ -57255,7 +57258,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2022,Immigration,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Immigration,po_office,National Total,0,1,1,0
 43,2022,Immigration,Less Than H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,1,0,1,1
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,4,0,8,8
-43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,209,0,337,337
+43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,208,0,336,336
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,po_office,National Total,0,2,2,0
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,3,0,3,3
 43,2022,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,10,0,10,10
@@ -58084,6 +58087,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 45,2022,Other,,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Other,po_office,National Total,0,2,2,0
 45,2022,Other,,White,,,Female,No Prison/Probation (Fine Only),Other,po_office,National Total,0,0,1,0
 45,2022,Prison Offenses,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,0,0,1,1
+45,2022,Prison Offenses,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,1,0,1,1
 45,2022,Prison Offenses,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,1,0,1,1
 45,2022,Prison Offenses,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Other,po_office,National Total,0,0,1,1
 45,2022,Prison Offenses,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Other,po_office,National Total,1,0,1,1

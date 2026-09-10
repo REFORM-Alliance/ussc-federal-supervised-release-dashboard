@@ -5611,6 +5611,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Pecos, TX",1,0,1,1
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Scranton, PA",1,0,1,1
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Waco, TX",2,0,2,2
+24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,po_office,"Midland Odessa, TX",0,1,1,0
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,,Prison Only (No Alternatives),Immigration,po_office,"Pecos, TX",0,0,1,1
 24,2015,Individual Rights,,Black,U.S. Citizen,U.S. Citizen,Male,No Prison/Probation (Fine Only),Other,po_office,"Grand Rapids, MI",0,0,1,0
 24,2015,Kidnapping,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,"Columbia, SC",1,0,1,1
@@ -6323,6 +6324,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Boston, MA",1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Brooklyn, NY",1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Brownsville, TX",1,0,1,1
+25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Buffalo, NY",1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Cedar Rapids, IA",1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Chicago, IL",1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Chula Vista, CA",1,0,1,1
@@ -18941,7 +18943,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Fargo, ND",1,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Indianapolis, IN",1,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Kansas City, MO",1,0,1,1
-33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Laredo, TX",2,0,2,2
+33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Laredo, TX",1,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"McAllen, TX",1,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Milwaukee, WI",0,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"New Orleans, LA",1,0,1,1
@@ -22064,6 +22066,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 34,2015,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,"Sacramento, CA",1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,po_office,"Birmingham, AL",1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,po_office,"Omaha, NE",1,0,1,1
+34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,"Denver, CO",1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,"Fort Worth, TX",1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,"New Bern, NC",1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,"Tampa, FL",1,0,1,1
@@ -28223,7 +28226,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 39,2015,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,"Phoenix, AZ",0,0,1,1
 39,2015,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Phoenix, AZ",0,0,41,41
 39,2015,Drug Possession,,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Phoenix, AZ",0,0,1,1
-39,2015,Drug Possession,,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,"Norfolk, VA",0,1,1,0
 39,2015,Drug Possession,,,U.S. Citizen,U.S. Citizen,,Prison Only (No Alternatives),Drug Trafficking,po_office,"Waco, TX",0,0,1,1
 39,2015,Drug Trafficking,College Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,"Hollywood, FL",1,0,1,1
 39,2015,Drug Trafficking,College Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,"Louisville, KY",0,1,1,0
@@ -33932,7 +33934,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,po_office,"Lafayette, LA",0,1,1,0
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,po_office,"Macon, GA",0,1,1,0
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,po_office,"Tampa, FL",0,1,1,0
-43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Fraud,po_office,"Las Vegas, NV",1,0,1,1
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,po_office,"Atlanta, GA",1,0,1,1
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,po_office,"Augusta, GA",1,0,1,1
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,po_office,"Boston, MA",1,0,1,1
@@ -34171,6 +34172,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Albuquerque, NM",0,0,1,1
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Baltimore, MD",0,0,1,1
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Chicago, IL",0,0,1,1
+43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Del Rio, TX",1,0,1,1
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"El Paso, TX",1,0,2,2
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Las Cruces, NM",0,0,1,1
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"McAllen, TX",0,0,1,1
@@ -51136,6 +51138,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 24,2015,Immigration,,Hispanic,,,Male,Probation Only,Immigration,po_office,National Total,0,1,1,0
 24,2015,Immigration,,White,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,0,0,1,1
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,5,0,8,8
+24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,po_office,National Total,0,1,1,0
 24,2015,Immigration,,,Illegal Alien,Non-U.S. Citizen,,Prison Only (No Alternatives),Immigration,po_office,National Total,0,0,1,1
 24,2015,Individual Rights,,Black,U.S. Citizen,U.S. Citizen,Male,No Prison/Probation (Fine Only),Other,po_office,National Total,0,0,1,0
 24,2015,Kidnapping,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,1,0,1,1
@@ -51406,7 +51409,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,po_office,National Total,2,0,2,2
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,16,0,16,16
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Drug Trafficking,po_office,National Total,1,0,1,1
-25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,66,0,66,66
+25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,67,0,67,67
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Hispanic,,,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,1,0,1,1
 25,2015,Drug Trafficking,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,2,0,2,2
@@ -55696,7 +55699,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 33,2015,Drug Trafficking,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,95,0,95,95
 33,2015,Drug Trafficking,H.S. Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,1,0,1,1
-33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,15,0,18,18
+33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,14,0,17,17
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,1,0,1,1
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,8,0,8,8
 33,2015,Drug Trafficking,H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,6,0,6,6
@@ -56683,7 +56686,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 34,2015,Sex Abuse,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,National Total,2,0,2,2
 34,2015,Sex Abuse,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,National Total,1,0,1,1
 34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Sexual Offense,po_office,National Total,2,0,2,2
-34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,National Total,3,0,3,3
+34,2015,Sex Abuse,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,po_office,National Total,4,0,4,4
 34,2015,Stalking/Harassing,H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,1,0,1,1
 34,2015,Stalking/Harassing,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Violent Offense,po_office,National Total,1,0,1,1
 34,2015,Stalking/Harassing,Less Than H.S. Graduate,Other,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Violent Offense,po_office,National Total,1,0,1,1
@@ -58778,7 +58781,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 39,2015,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,1,1
 39,2015,Drug Possession,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,41,41
 39,2015,Drug Possession,,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,1,1
-39,2015,Drug Possession,,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
 39,2015,Drug Possession,,,U.S. Citizen,U.S. Citizen,,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,1,1
 39,2015,Drug Trafficking,College Graduate,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,1,0,1,1
 39,2015,Drug Trafficking,College Graduate,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
@@ -60825,7 +60827,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Fraud,po_office,National Total,6,0,6,6
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation + Confinement Conditions (Alternatives),Fraud,po_office,National Total,0,1,1,0
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Fraud,po_office,National Total,0,4,4,0
-43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Fraud,po_office,National Total,1,0,1,1
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Fraud,po_office,National Total,16,0,16,16
 43,2015,Fraud/Theft/Embezzlement,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Fraud,po_office,National Total,0,1,1,0
 43,2015,Fraud/Theft/Embezzlement,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Probation Only,Fraud,po_office,National Total,0,1,1,0
@@ -60899,7 +60900,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 43,2015,Immigration,Some College,Black,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,1,0,1,1
 43,2015,Immigration,Some College,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,1,0,1,1
 43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,1,0,1,1
-43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,3,0,9,9
+43,2015,Immigration,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,4,0,10,10
 43,2015,Immigration,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Female,Probation Only,Immigration,po_office,National Total,0,1,1,0
 43,2015,Immigration,Some College,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,1,0,1,1
 43,2015,Immigration,Some College,Other,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,1,0,2,2

@@ -4474,6 +4474,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 25,2023,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Nebraska,2,0,2,2
 25,2023,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,New York Southern,1,0,1,1
 25,2023,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,North Carolina Eastern,1,0,1,1
+25,2023,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,Texas Eastern,1,0,1,1
 25,2023,Drug Possession,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,Missouri Eastern,1,0,1,1
 25,2023,Drug Possession,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Florida Northern,0,1,1,0
 25,2023,Drug Possession,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,Idaho,0,1,1,0
@@ -36664,7 +36665,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Puerto Rico,3,0,3,3
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Eastern,1,0,1,1
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Northern,2,0,2,2
-53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Southern,10,0,33,33
+53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Southern,10,0,32,32
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Texas Western,24,0,27,27
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Vermont,1,0,1,1
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,Washington Eastern,1,0,1,1
@@ -43918,7 +43919,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 25,2023,Child Pornography,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,5,0,5,5
 25,2023,Child Pornography,Some College,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
 25,2023,Child Pornography,Some College,Other,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,1,0,1,1
-25,2023,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,8,0,8,8
+25,2023,Child Pornography,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Sexual Offense,state_district,National Total,9,0,9,9
 25,2023,Drug Possession,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,state_district,National Total,1,0,1,1
 25,2023,Drug Possession,H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,1,1,0
 25,2023,Drug Possession,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Drug Trafficking,state_district,National Total,0,1,1,0
@@ -55730,7 +55731,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 53,2023,Immigration,Less Than H.S. Graduate,Black,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,2,0,2,2
 53,2023,Immigration,Less Than H.S. Graduate,Black,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,state_district,National Total,0,1,1,0
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,state_district,National Total,3,0,5,5
-53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,73,0,117,117
+53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,73,0,116,116
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,Resident/Legal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,3,0,3,3
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,"Prison + Confinement Conditions (Alternatives, Including Zone C Split Sentences)",Immigration,state_district,National Total,1,0,1,1
 53,2023,Immigration,Less Than H.S. Graduate,Hispanic,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,state_district,National Total,2,0,2,2

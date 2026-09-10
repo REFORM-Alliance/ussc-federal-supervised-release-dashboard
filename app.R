@@ -524,7 +524,10 @@ server <- function(input, output, session) {
     m <- 
       map_data %>%
       leaflet() %>%
-      addProviderTiles("CartoDB.Positron")
+      addProviderTiles(
+        "CartoDB.Positron", 
+        options = providerTileOptions(apikey = Sys.getenv("CARTO_API_KEY"))
+      )
     
     if(point_mode){
       m <- 

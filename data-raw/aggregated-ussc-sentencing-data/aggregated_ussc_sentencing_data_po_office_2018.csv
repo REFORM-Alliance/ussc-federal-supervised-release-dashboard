@@ -12355,7 +12355,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,"Concord, NH",1,0,1,1
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,"Dayton, OH",0,1,1,0
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,"Oklahoma City, OK",0,1,1,0
-29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,"Norfolk, VA",0,0,1,1
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,po_office,"San Antonio, TX",0,1,1,0
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Norfolk, VA",0,0,1,1
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,"Oklahoma City, OK",0,0,1,1
@@ -13587,7 +13586,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Buffalo, NY",1,0,1,1
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Charlotte, NC",1,0,1,1
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Cleveland, OH",1,0,2,2
-29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Corpus Christi, TX",0,0,6,6
+29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Corpus Christi, TX",0,0,7,7
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Detroit, MI",1,0,2,2
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"El Paso, TX",9,0,29,29
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,"Fargo, ND",1,0,1,1
@@ -52538,7 +52537,6 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 29,2018,Drug Possession,Less Than H.S. Graduate,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,1,0,1,1
 29,2018,Drug Possession,Some College,White,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,2,2,0
-29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,1,1
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Female,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Drug Trafficking,po_office,National Total,0,0,2,2
 29,2018,Drug Possession,,Black,U.S. Citizen,U.S. Citizen,Male,Probation Only,Drug Trafficking,po_office,National Total,0,1,1,0
@@ -52837,7 +52835,7 @@ age,fiscal_year,offguide_description,neweduc_description,newrace_description,cit
 29,2018,Immigration,Some College,White,U.S. Citizen,U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,1,0,1,1
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,5,0,11,11
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Female,Probation Only,Immigration,po_office,National Total,0,1,1,0
-29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,56,0,123,123
+29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,56,0,124,124
 29,2018,Immigration,,Hispanic,Illegal Alien,Non-U.S. Citizen,Male,Probation Only,Immigration,po_office,National Total,0,20,20,0
 29,2018,Immigration,,Hispanic,Not a U.S. Citizen/Alien Status Unknown,Non-U.S. Citizen,Male,Prison Only (No Alternatives),Immigration,po_office,National Total,4,0,5,5
 29,2018,Immigration,,Hispanic,U.S. Citizen,U.S. Citizen,Female,Prison Only (No Alternatives),Immigration,po_office,National Total,2,0,2,2
