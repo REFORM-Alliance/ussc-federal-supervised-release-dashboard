@@ -4499,19 +4499,19 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     ".RData": {
-      "checksum": "570d52c3cef0f9f10bca32f7cfec328b"
+      "checksum": "565a622866d4682ceb8da08f87595b00"
     },
     ".Renviron": {
       "checksum": "241f8db71e764339332be566c7100e88"
     },
     ".Rprofile": {
-      "checksum": "ecf6ca354baeba1cb6a0c471534b0990"
+      "checksum": "0410fc2261f426b259e1f70d5b0c7add"
     },
     "app_old.R": {
       "checksum": "d0719e0881667508f67dc5c7424d5811"
     },
     "app.R": {
-      "checksum": "fe39599e625f325db97f3bcfa2c2af56"
+      "checksum": "652cbff714a2adedacb5561e464a8686"
     },
     "data-raw/aggregated_ussc_sentencing_data.csv": {
       "checksum": "8743557ae7d96fec928a3b6fb630270e"

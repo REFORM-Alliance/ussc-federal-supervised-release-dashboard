@@ -7,14 +7,17 @@ po_office,state_name,lat,long
 "Fort Smith, AR",Arkansas,35.37,-94.38
 "Los Angeles, CA",California,34.11,-118.41
 "Indianapolis, IN",Indiana,39.78,-86.15
+"Great Falls, MT",Montana,47.5,-111.29
 "Omaha, NE",Nebraska,41.26,-96.01
 "Albuquerque, NM",New Mexico,35.12,-106.62
 "Las Cruces, NM",New Mexico,32.34,-106.76
+"Fargo, ND",North Dakota,46.88,-96.82
 "El Paso, TX",Texas,31.85,-106.44
 "Norfolk, VA",Virginia,36.92,-76.24
 "Montgomery, AL",Alabama,32.35,-86.28
 "Birmingham, AL",Alabama,33.53,-86.8
 "Mobile, AL",Alabama,30.68,-88.09
+"Sacramento, CA",California,38.57,-121.47
 "San Francisco, CA",California,37.77,-122.45
 "Chula Vista, CA",California,32.63,-117.04
 "Denver, CO",Colorado,39.77,-104.87
@@ -41,6 +44,7 @@ po_office,state_name,lat,long
 "Wichita, KS",Kansas,37.69,-97.34
 "Lexington, KY",Kentucky,38.04,-84.46
 "Louisville, KY",Kentucky,38.22,-85.74
+"New Orleans, LA",Louisiana,30.07,-89.93
 "Lafayette, LA",Louisiana,30.22,-92.03
 "Baltimore, MD",Maryland,39.3,-76.61
 "Detroit, MI",Michigan,42.38,-83.1
@@ -51,7 +55,6 @@ po_office,state_name,lat,long
 "Jackson, MS",Mississippi,32.32,-90.21
 "Kansas City, MO",Missouri,39.12,-94.55
 "Springfield, MO",Missouri,37.2,-93.29
-"Great Falls, MT",Montana,47.5,-111.29
 "Las Vegas, NV",Nevada,36.21,-115.22
 "Trenton, NJ",New Jersey,40.22,-74.76
 "Santa Fe, NM",New Mexico,35.68,-105.95
@@ -61,7 +64,6 @@ po_office,state_name,lat,long
 "Raleigh, NC",North Carolina,35.82,-78.66
 "Greensboro, NC",North Carolina,36.08,-79.83
 "Charlotte, NC",North Carolina,35.2,-80.83
-"Fargo, ND",North Dakota,46.88,-96.82
 "Grand Forks, ND",North Dakota,47.92,-97.07
 "Cleveland, OH",Ohio,41.48,-81.68
 "Toledo, OH",Ohio,41.66,-83.58
@@ -78,6 +80,7 @@ po_office,state_name,lat,long
 "Greenville, SC",South Carolina,34.84,-82.37
 "Pierre, SD",South Dakota,44.37,-100.34
 "Rapid City, SD",South Dakota,44.08,-103.23
+"Knoxville, TN",Tennessee,35.97,-83.95
 "Nashville, TN",Tennessee,36.17,-86.78
 "Memphis, TN",Tennessee,35.11,-90.01
 "Amarillo, TX",Texas,35.2,-101.82
@@ -111,7 +114,6 @@ po_office,state_name,lat,long
 "Fayetteville, AR",Arkansas,36.07,-94.16
 "Santa Ana, CA",California,33.74,-117.88
 "Fresno, CA",California,36.78,-119.79
-"Sacramento, CA",California,38.57,-121.47
 "Oakland, CA",California,37.77,-122.22
 "San Jose, CA",California,37.3,-121.85
 "Colorado Springs, CO",Colorado,38.86,-104.76
@@ -134,7 +136,6 @@ po_office,state_name,lat,long
 "Topeka, KS",Kansas,39.04,-95.69
 "Covington, KY",Kentucky,39.04,-84.51
 "Bowling Green, KY",Kentucky,36.97,-86.44
-"New Orleans, LA",Louisiana,30.07,-89.93
 "Baton Rouge, LA",Louisiana,30.45,-91.13
 "Alexandria, LA",Louisiana,31.29,-92.46
 "Lake Charles, LA",Louisiana,30.21,-93.2
@@ -171,7 +172,6 @@ po_office,state_name,lat,long
 "Charleston, SC",South Carolina,32.79,-79.99
 "Sioux Falls, SD",South Dakota,43.54,-96.73
 "Chattanooga, TN",Tennessee,35.07,-85.26
-"Knoxville, TN",Tennessee,35.97,-83.95
 "Jackson, TN",Tennessee,35.63,-88.83
 "Beaumont, TX",Texas,30.09,-94.14
 "Plano, TX",Texas,33.05,-96.75
@@ -225,9 +225,11 @@ po_office,state_name,lat,long
 "Boca Raton, FL",Florida,26.37,-80.11
 "Santa Barbara, CA",California,34.43,-119.72
 "Santa Rosa, CA",California,38.45,-122.7
+"Biloxi, MS",Mississippi,30.41,-88.93
 "Redding, CA",California,40.57,-122.36
-"Brunswick, GA",Georgia,51.9996347,-0.3064121
+"Brunswick, GA",Georgia,51.9996347,-0.3063761
 "East St. Louis, IL",Illinois,38.6268666,-90.159707
+"New York City, NY",New York,40.7127281,-74.0060152
 "San Juan, PR",Puerto Rico,18.384239,-66.05344
 "McAllen, TX",Texas,26.204114,-98.2300605
 "Pecos, TX",Texas,30.7857437,-102.8065415
@@ -239,11 +241,10 @@ po_office,state_name,lat,long
 "Oxford, MS",Mississippi,34.3689929,-89.505933
 "Cape Girardeau, MO",Missouri,37.304731,-89.5176418
 "St. Louis, MO",Missouri,38.6254063,-90.190009
-"New York City, NY",New York,40.7127281,-74.0060152
 "Winston Salem, NC",North Carolina,36.0998131,-80.2440518
 "Statesville, NC",North Carolina,35.7827676,-80.8873574
 "Muskogee, OK",Oklahoma,35.6630196,-95.3927706
-"Greeneville, TN",Tennessee,36.1631575,-82.8309861
+"Greeneville, TN",Tennessee,36.1631981,-82.8310464
 "Alpine, TX",Texas,30.3602181,-103.6628596
 "Del Rio, TX",Texas,29.357515,-100.8987707
 "Midland Odessa, TX",Texas,31.8330508,-102.360544
@@ -263,7 +264,7 @@ po_office,state_name,lat,long
 "London, KY",Kentucky,37.1283343,-84.0835576
 "Greenbelt, MD",Maryland,39.004607,-76.8756838
 "St. Paul, MN",Minnesota,44.9497487,-93.0931028
-"Aberdeen, MS",Mississippi,33.8251139,-88.5436553
+"Aberdeen, MS",Mississippi,39.5153408,-76.163795
 "Brooklyn, NY",New York,40.6526006,-73.9497211
 "New Bern, NC",North Carolina,35.1068428,-77.0398762
 "Salisbury, NC",North Carolina,35.6709727,-80.4742261
@@ -274,7 +275,7 @@ po_office,state_name,lat,long
 "Florence, SC",South Carolina,34.1984435,-79.7671658
 "Aberdeen, SD",South Dakota,45.4649805,-98.487813
 "Sherman, TX",Texas,36.2452294,-101.8858689
-"Texarkana, TX",Texas,33.4466745,-94.0771483
+"Texarkana, TX",Texas,33.4466208,-94.0765653
 "St. George, UT",Utah,37.1098772,-113.5832063
 "Abingdon, VA",Virginia,36.7104018,-81.975249
 "Charlottesville, VA",Virginia,38.029306,-78.4766781

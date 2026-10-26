@@ -93,6 +93,27 @@ is_rate_outcome <- function(outcome) {
   outcome %in% c("probation_rate", "supervised_release_rate")
 }
 
+carto_key <- Sys.getenv("CARTO_API_KEY")   # set in .Renviron or your host's env vars
+
+add_basemap <- function(map) {
+  if (nzchar(carto_key)) {
+    addTiles(
+      map,
+      urlTemplate = paste0(
+        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png?key=",
+        carto_key
+      ),
+      attribution = paste0(
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ',
+        '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+      )
+    )
+  } else {
+    # keyless fallback so the map never shows a watermark
+    addProviderTiles(map, "Esri.WorldGrayCanvas")
+  }
+}
+
 
 ####Theme####
 my_theme <- bs_theme(
@@ -524,10 +545,7 @@ server <- function(input, output, session) {
     m <- 
       map_data %>%
       leaflet() %>%
-      addProviderTiles(
-        "CartoDB.Positron", 
-        options = providerTileOptions(apikey = Sys.getenv("CARTO_API_KEY"))
-      )
+      add_basemap()
     
     if(point_mode){
       m <- 
