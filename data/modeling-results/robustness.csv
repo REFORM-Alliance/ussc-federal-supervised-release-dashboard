@@ -1,0 +1,77 @@
+outcome,order,comparison,approach,or,note,display,result_kind,result_label
+Supervised release,1,Non-U.S. citizen vs. U.S. citizen,Complete cases,0.049,NA,0.049,ok,Holds
+Supervised release,1,Non-U.S. citizen vs. U.S. citizen,Missing as its own category,0.066,NA,0.066,ok,Holds
+Supervised release,1,Non-U.S. citizen vs. U.S. citizen,Multiple imputation,0.053,NA,0.053,ok,Holds
+Supervised release,2,Hispanic vs. White,Complete cases,0.828,NA,0.828,ok,Holds
+Supervised release,2,Hispanic vs. White,Missing as its own category,0.799,NA,0.799,ok,Holds
+Supervised release,2,Hispanic vs. White,Multiple imputation,0.74,NA,0.74,ok,Holds
+Supervised release,3,Other race vs. White,Complete cases,1.49,NA,1.490,ok,Holds
+Supervised release,3,Other race vs. White,Missing as its own category,1.511,NA,1.511,ok,Holds
+Supervised release,3,Other race vs. White,Multiple imputation,1.62,NA,1.62,ok,Holds
+Supervised release,4,Black vs. White,Complete cases,1.009,NA,1.009,ok,Holds: no clear difference
+Supervised release,4,Black vs. White,Missing as its own category,0.978,NA,0.978,ok,Holds: no clear difference
+Supervised release,4,Black vs. White,Multiple imputation,1.06,NA,1.06,ok,Holds: no clear difference
+Supervised release,5,Female vs. male,Complete cases,0.867,NA,0.867,ok,Holds
+Supervised release,5,Female vs. male,Missing as its own category,0.836,NA,0.836,ok,Holds
+Supervised release,5,Female vs. male,Multiple imputation,0.83,NA,0.83,ok,Holds
+Supervised release,6,FY2024 vs. FY2014,Complete cases,1.569,NA,1.569,ok,Holds
+Supervised release,6,FY2024 vs. FY2014,Missing as its own category,1.876,NA,1.876,ok,Holds
+Supervised release,6,FY2024 vs. FY2014,Multiple imputation,2.16,NA,2.16,ok,Holds
+Supervised release,7,FY2025 vs. FY2014,Complete cases,1.139,NA,1.139,ok,Holds
+Supervised release,7,FY2025 vs. FY2014,Missing as its own category,1.324,NA,1.324,ok,Holds
+Supervised release,7,FY2025 vs. FY2014,Multiple imputation,1.31,NA,1.31,ok,Holds
+Supervised release,8,Age (per year),Complete cases,1.006,NA,1.006,note,"Same direction, size varies"
+Supervised release,8,Age (per year),Missing as its own category,1.009,NA,1.009,note,"Same direction, size varies"
+Supervised release,8,Age (per year),Multiple imputation,1.02,NA,1.02,note,"Same direction, size varies"
+Supervised release,9,Sexual offense vs. drug trafficking,Complete cases,4.413,NA,4.413,note,"Same direction, size varies"
+Supervised release,9,Sexual offense vs. drug trafficking,Missing as its own category,7.236,NA,7.236,note,"Same direction, size varies"
+Supervised release,9,Sexual offense vs. drug trafficking,Multiple imputation,9.24,NA,9.24,note,"Same direction, size varies"
+Supervised release,10,Violent offense vs. drug trafficking,Complete cases,0.458,NA,0.458,note,"Same direction, size varies"
+Supervised release,10,Violent offense vs. drug trafficking,Missing as its own category,0.728,NA,0.728,note,"Same direction, size varies"
+Supervised release,10,Violent offense vs. drug trafficking,Multiple imputation,0.75,NA,0.75,note,"Same direction, size varies"
+Supervised release,11,H.S. graduate vs. less than H.S.,Complete cases,1.035,NA,1.035,warn,Changes
+Supervised release,11,H.S. graduate vs. less than H.S.,Missing as its own category,1.149,NA,1.149,warn,Changes
+Supervised release,11,H.S. graduate vs. less than H.S.,Multiple imputation,0.969,not significant,0.969,warn,Changes
+Supervised release,12,Some college vs. less than H.S.,Complete cases,1.091,NA,1.091,warn,Changes
+Supervised release,12,Some college vs. less than H.S.,Missing as its own category,1.366,NA,1.366,warn,Changes
+Supervised release,12,Some college vs. less than H.S.,Multiple imputation,1.05,not significant,1.05,warn,Changes
+Supervised release,13,College graduate vs. less than H.S.,Complete cases,0.897,NA,0.897,warn,Changes
+Supervised release,13,College graduate vs. less than H.S.,Missing as its own category,1.137,NA,1.137,warn,Changes
+Supervised release,13,College graduate vs. less than H.S.,Multiple imputation,1.01,not significant,1.01,warn,Changes
+Supervised release,14,Firearms vs. drug trafficking,Complete cases,0.663,NA,0.663,bad,Reverses
+Supervised release,14,Firearms vs. drug trafficking,Missing as its own category,1.245,NA,1.245,bad,Reverses
+Supervised release,14,Firearms vs. drug trafficking,Multiple imputation,1.44,NA,1.44,bad,Reverses
+Probation,1,Non-U.S. citizen vs. U.S. citizen,Complete cases,0.226,NA,0.226,ok,Holds
+Probation,1,Non-U.S. citizen vs. U.S. citizen,Multiple imputation,0.248,NA,0.248,ok,Holds
+Probation,2,Female vs. male,Complete cases,2.692,NA,2.692,ok,Holds
+Probation,2,Female vs. male,Multiple imputation,2.52,NA,2.52,ok,Holds
+Probation,3,Black vs. White,Complete cases,0.701,NA,0.701,ok,Holds
+Probation,3,Black vs. White,Multiple imputation,0.682,NA,0.682,ok,Holds
+Probation,4,Hispanic vs. White,Complete cases,0.775,NA,0.775,ok,Holds
+Probation,4,Hispanic vs. White,Multiple imputation,0.722,NA,0.722,ok,Holds
+Probation,5,Other race vs. White,Complete cases,1.128,NA,1.128,ok,Holds
+Probation,5,Other race vs. White,Multiple imputation,1.09,NA,1.09,ok,Holds
+Probation,6,H.S. graduate vs. less than H.S.,Complete cases,1.365,NA,1.365,ok,Holds
+Probation,6,H.S. graduate vs. less than H.S.,Multiple imputation,1.32,NA,1.32,ok,Holds
+Probation,7,Some college vs. less than H.S.,Complete cases,1.852,NA,1.852,ok,Holds
+Probation,7,Some college vs. less than H.S.,Multiple imputation,1.78,NA,1.78,ok,Holds
+Probation,8,College graduate vs. less than H.S.,Complete cases,1.989,NA,1.989,ok,Holds
+Probation,8,College graduate vs. less than H.S.,Multiple imputation,1.91,NA,1.91,ok,Holds
+Probation,9,Fraud vs. drug trafficking,Complete cases,5.744,NA,5.744,ok,Holds
+Probation,9,Fraud vs. drug trafficking,Multiple imputation,5.75,NA,5.75,ok,Holds
+Probation,10,Immigration vs. drug trafficking,Complete cases,3.646,NA,3.646,ok,Holds
+Probation,10,Immigration vs. drug trafficking,Multiple imputation,3.8,NA,3.80,ok,Holds
+Probation,11,Other offense vs. drug trafficking,Complete cases,5.217,NA,5.217,ok,Holds
+Probation,11,Other offense vs. drug trafficking,Multiple imputation,5.69,NA,5.69,ok,Holds
+Probation,12,Firearms vs. drug trafficking,Complete cases,1.522,NA,1.522,ok,Holds
+Probation,12,Firearms vs. drug trafficking,Multiple imputation,1.41,NA,1.41,ok,Holds
+Probation,13,Sexual offense vs. drug trafficking,Complete cases,0.163,NA,0.163,ok,Holds
+Probation,13,Sexual offense vs. drug trafficking,Multiple imputation,0.152,NA,0.152,ok,Holds
+Probation,14,FY2023 vs. FY2014,Complete cases,0.718,NA,0.718,ok,Holds
+Probation,14,FY2023 vs. FY2014,Multiple imputation,0.692,NA,0.692,ok,Holds
+Probation,15,FY2025 vs. FY2014,Complete cases,0.837,NA,0.837,ok,Holds
+Probation,15,FY2025 vs. FY2014,Multiple imputation,0.77,NA,0.770,ok,Holds
+Probation,16,Violent offense vs. drug trafficking,Complete cases,0.703,NA,0.703,note,"Same direction, smaller"
+Probation,16,Violent offense vs. drug trafficking,Multiple imputation,0.842,NA,0.842,note,"Same direction, smaller"
+Probation,17,Age (per year),Complete cases,1.005,NA,1.005,warn,Effect disappears
+Probation,17,Age (per year),Multiple imputation,1,NA,1.00,warn,Effect disappears

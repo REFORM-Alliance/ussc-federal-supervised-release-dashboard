@@ -4505,13 +4505,13 @@
       "checksum": "241f8db71e764339332be566c7100e88"
     },
     ".Rprofile": {
-      "checksum": "0410fc2261f426b259e1f70d5b0c7add"
+      "checksum": "5c54f1cf1a339e7fbb5a87c520e64a31"
     },
     "app_old.R": {
-      "checksum": "d0719e0881667508f67dc5c7424d5811"
+      "checksum": "652cbff714a2adedacb5561e464a8686"
     },
     "app.R": {
-      "checksum": "652cbff714a2adedacb5561e464a8686"
+      "checksum": "d06bf62db11bd47c79af52d42f665533"
     },
     "data-raw/aggregated_ussc_sentencing_data.csv": {
       "checksum": "8743557ae7d96fec928a3b6fb630270e"
@@ -4768,6 +4768,39 @@
     "data/judicial_sf_data.rds": {
       "checksum": "47370b62fab6cce4cfa069ab4251a26a"
     },
+    "data/modeling-results/fiscal_year_odds_ratios.csv": {
+      "checksum": "ab10f0d86e686616eba8ccd88f4a3c31"
+    },
+    "data/modeling-results/icc.csv": {
+      "checksum": "0aeb57d950f63286335e9be8fe7f171d"
+    },
+    "data/modeling-results/missing_by_field.csv": {
+      "checksum": "3763d7ac318809f6db0529e91b65237b"
+    },
+    "data/modeling-results/missing_category_odds_ratios.csv": {
+      "checksum": "a38774bb4b0402574b10927de7a34963"
+    },
+    "data/modeling-results/missing_education_by_group.csv": {
+      "checksum": "8fd1ad0e3fab5649a8fc6b97e1d777d5"
+    },
+    "data/modeling-results/model_details.csv": {
+      "checksum": "addf2795bccb7d5071d7723d9fb5504a"
+    },
+    "data/modeling-results/observed_by_group.csv": {
+      "checksum": "6c77d5ae70a924d88da6b453649e42bd"
+    },
+    "data/modeling-results/observed_national_by_year.csv": {
+      "checksum": "73166a127960770080caf425dc24cb9f"
+    },
+    "data/modeling-results/odds_ratios.csv": {
+      "checksum": "338e9066ac861b3ba2ac4ed3eff8da04"
+    },
+    "data/modeling-results/robustness_labels.csv": {
+      "checksum": "eee83b4bb2b76fc09e96f3e4fc8e47d9"
+    },
+    "data/modeling-results/robustness.csv": {
+      "checksum": "9a421d0c9ddc683f14e856cb17179e10"
+    },
     "data/qualifying_offense_counts_by_statute.csv": {
       "checksum": "2a0b7a2aa9ae477357b4f2c6d98e19cb"
     },
@@ -4776,6 +4809,9 @@
     },
     "logs/cronlogs.log": {
       "checksum": "81e656c41377ca96c497a721479f4ff3"
+    },
+    "R/fit-supervision-models.R": {
+      "checksum": "fb5652547c5024bc9175e8283614d00e"
     },
     "R/fsa-qualifying-offense-analysis.R": {
       "checksum": "ec6d6149f76a42b969ed83b6bd783349"
@@ -4798,8 +4834,32 @@
     "R/utils-functions.R": {
       "checksum": "66f3ae70e48160038983b9ddff274ffc"
     },
+    "README.md": {
+      "checksum": "736772b820d63c68c1dac6225cf1c8e3"
+    },
     "renv.lock": {
       "checksum": "f8ec3d26ebc84f205a916573180ce235"
+    },
+    "reports/probation-report.Rmd": {
+      "checksum": "cb31333fad132d58c71eafdeff79087b"
+    },
+    "reports/render-reports.R": {
+      "checksum": "e09ef71331a6a9317ead25fd03cd12aa"
+    },
+    "reports/report-helpers.R": {
+      "checksum": "a36e2f0e9d4e8d6ee76d2e5521cd9460"
+    },
+    "reports/report.css": {
+      "checksum": "b13621fffa515b5494fa2b661a387e8e"
+    },
+    "reports/supervised-release-report.Rmd": {
+      "checksum": "7a1ef7761b6fe0c52cbd85f9aaae2883"
+    },
+    "www/reports/probation-report.pdf": {
+      "checksum": "2f91549d1fac1adecf7a48c996c5a738"
+    },
+    "www/reports/supervised-release-report.pdf": {
+      "checksum": "e5ba6d44726e055ed6a1460c4eef8d1c"
     }
   },
   "users": null

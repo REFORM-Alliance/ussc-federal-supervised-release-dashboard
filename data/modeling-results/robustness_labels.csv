@@ -1,0 +1,32 @@
+outcome,order,comparison,result_kind,result_label
+Supervised release,1,Non-U.S. citizen vs. U.S. citizen,ok,Holds
+Supervised release,2,Hispanic vs. White,ok,Holds
+Supervised release,3,Other race vs. White,ok,Holds
+Supervised release,4,Black vs. White,ok,Holds: no clear difference
+Supervised release,5,Female vs. male,ok,Holds
+Supervised release,6,FY2024 vs. FY2014,ok,Holds
+Supervised release,7,FY2025 vs. FY2014,ok,Holds
+Supervised release,8,Age (per year),note,"Same direction, size varies"
+Supervised release,9,Sexual offense vs. drug trafficking,note,"Same direction, size varies"
+Supervised release,10,Violent offense vs. drug trafficking,note,"Same direction, size varies"
+Supervised release,11,H.S. graduate vs. less than H.S.,warn,Changes
+Supervised release,12,Some college vs. less than H.S.,warn,Changes
+Supervised release,13,College graduate vs. less than H.S.,warn,Changes
+Supervised release,14,Firearms vs. drug trafficking,bad,Reverses
+Probation,1,Non-U.S. citizen vs. U.S. citizen,ok,Holds
+Probation,2,Female vs. male,ok,Holds
+Probation,3,Black vs. White,ok,Holds
+Probation,4,Hispanic vs. White,ok,Holds
+Probation,5,Other race vs. White,ok,Holds
+Probation,6,H.S. graduate vs. less than H.S.,ok,Holds
+Probation,7,Some college vs. less than H.S.,ok,Holds
+Probation,8,College graduate vs. less than H.S.,ok,Holds
+Probation,9,Fraud vs. drug trafficking,ok,Holds
+Probation,10,Immigration vs. drug trafficking,ok,Holds
+Probation,11,Other offense vs. drug trafficking,ok,Holds
+Probation,12,Firearms vs. drug trafficking,ok,Holds
+Probation,13,Sexual offense vs. drug trafficking,ok,Holds
+Probation,14,FY2023 vs. FY2014,ok,Holds
+Probation,15,FY2025 vs. FY2014,ok,Holds
+Probation,16,Violent offense vs. drug trafficking,note,"Same direction, smaller"
+Probation,17,Age (per year),warn,Effect disappears

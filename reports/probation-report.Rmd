@@ -1,0 +1,251 @@
+---
+pagetitle: "Probation Analysis Report"
+lang: en
+header-includes: '<meta name="author" content="REFORM Alliance">'
+output:
+  html_document:
+    self_contained: true
+    theme: null
+    highlight: null
+    mathjax: null
+    css: report.css
+---
+
+```{r setup, include=FALSE}
+# Probation report. Everything below is written from the model results in data/modeling-results/
+# (produced by R/fit-supervision-models.R), so re-running that script and re-knitting updates the numbers in the text.
+# Run reports/render-reports.R to knit this file and print it to PDF.
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, results = "asis")
+source("report-helpers.R")
+
+oc <- PB
+o      <- function(lbl) odds(oc, lbl)
+s_o    <- function(lbl) odds(SR, lbl)          # the same factor in the supervised release model
+fy     <- function(y) fy_or(oc, y)
+icc    <- function(comp, col = "primary") icc_val(oc, comp, col)
+sr_icc <- function(comp, col = "primary") icc_val(SR, comp, col)
+f2     <- function(x) sprintf("%.2f", x)
+f3     <- fmt_or
+comb <- "State and district baselines combined"; dist <- "District baseline (within state)"; st <- "State baseline"
+dall <- "District baseline plus district trend"; remainder <- "Individual-level variation (remainder)"
+rob_or <- function(comparison, approach) R$rob$or[R$rob$outcome == oc & R$rob$comparison == comparison & R$rob$approach == approach]
+mc_or  <- function(term) miss_cat_or(oc, term)    # odds ratio when missing values are kept as their own category
+pb_year <- year_rate(PB)
+rate_at <- function(d, y) d$rate[d$fiscal_year == y]
+allr <- group_rate("all", "All", PB)
+fem <- group_rate("gender", "Female", PB); male <- group_rate("gender", "Male", PB)
+vif_max <- 1.4   # largest variance inflation factor in the original analysis (not recomputed here)
+```
+
+```{r cover}
+show(cover(oc, "Who Receives Federal Probation?",
+           paste0("What is linked to probation sentences in federal court, fiscal years ", FY_FIRST, " to ", FY_LAST),
+           "Supervised Release"))
+running_footer("Probation")
+```
+
+::: lead
+Probation is a sentence served in the community instead of prison. This report uses U.S. Sentencing Commission data to ask which people, offenses and places are linked to a higher or lower chance of receiving it. It compares people who are alike on the other characteristics in the data, and it checks whether the findings hold when missing information is handled in different ways.
+:::
+
+```{r kpis}
+x_times <- function(x) paste0(sub(" times", "", times(x)), "&times;")
+show(kpis(c(x_times(o("Fraud")), x_times(o("Female")), pct(icc(comb), 1)),
+          c("the odds of probation for fraud compared with drug trafficking, the largest offense difference",
+            "the odds of probation for women compared with men",
+            sprintf("of the leftover variation is tied to state and district, against %s for supervised release", pct(sr_icc(comb), 0)))))
+```
+
+### Key findings
+
+::: findings
+1. **Offense type shows the largest differences.** Compared with drug trafficking, fraud had `r times(o("Fraud"))` the odds of probation, other offenses `r times(o("Other offense"))`, immigration `r times(o("Immigration"))` and firearms `r times(o("Firearms"))`. Sexual offenses had `r lower(o("Sexual offense"))` lower odds and violent offenses `r lower(o("Violent offense"))` lower.
+2. **Women and people with more education had higher odds.** Women had `r times(o("Female"))` the odds of men, the opposite of supervised release. College graduates had `r times(o("College graduate"))` the odds of people without a high school diploma.
+3. **Non-citizens, Black and Hispanic defendants had lower odds.** Non-U.S. citizens had `r lower(o("Non-U.S. citizen"))` lower odds, Black defendants `r lower(o("Black"))` lower and Hispanic defendants `r lower(o("Hispanic"))` lower.
+4. **Place matters much less than for supervised release.** About `r pct(icc(comb), 1)` of the leftover variation is tied to state and district, against `r pct(sr_icc(comb), 0)` for supervised release. Case characteristics explain more of probation than place does.
+5. **Probation became less common.** The odds did not change in FY2015 or FY2016, then fell to a low in FY2023 (`r f2(fy(2023))` vs. FY2014) and were `r f2(fy(2025))` in FY2025. The results held up well when missing data were handled differently.
+:::
+
+::: {.callout}
+<span class="t">Read this first.</span> These results describe patterns in recorded sentences. They do not show why a difference exists or whether it reflects unequal treatment. The models leave out criminal history, the guideline range, plea agreements and the facts of each case, because the dashboard data do not include them.
+:::
+
+### Contents
+
+```{r toc}
+show(toc(c("Purpose and data", "How to read the results", "What the model found", "How well the findings held up",
+           "Limits and open questions", "Appendix: tables and technical details")))
+show(page_break())
+```
+
+## Purpose and data {.numbered .first}
+
+The analysis was designed to identify what is linked to higher use of federal probation, to inform efforts to reduce unnecessary use. It looks for differences between demographic groups, between states and between judicial districts.
+
+- **Data.** Federal sentencing records from the U.S. Sentencing Commission, fiscal years `r FY_FIRST` to `r FY_LAST`, aggregated for the dashboard. Each row is a group of people who share the same characteristics and place, with counts of how many received each sentence type. In the probation data, `r round(detail(oc, "rows_single_person_pct"))`% of rows describe a single person.
+- **Who is counted.** Everyone sentenced, whether or not they were sentenced to prison.
+- **Exclusions.** The Northern Mariana Islands were left out because there were too few cases.
+
+```{r sample}
+show(sample_table(oc, "everyone sentenced"))
+figure(fig_trend(oc), 7.0, 2.55, "Probation rate over time",
+       sprintf("Share of everyone sentenced who received probation, national total, fiscal years %d to %d. These are raw rates from the dashboard data. The rate was %s in FY%d, fell to a low of %s in FY%d and was %s in FY%d.",
+               FY_FIRST, FY_LAST, pct(rate_at(pb_year, FY_FIRST)), FY_FIRST, pct(min(pb_year$rate)), pb_year$fiscal_year[which.min(pb_year$rate)], pct(rate_at(pb_year, FY_LAST)), FY_LAST),
+       "Line chart of the national probation rate by fiscal year")
+```
+
+## How to read the results {.numbered}
+
+The outcome was modeled with a binomial mixed-effects (multilevel) logistic regression. In plain terms:
+
+- For each row, the model uses the number of people who received probation and the number who did not.
+- It estimates how the **odds** of probation differ between groups of people, holding the other characteristics in the model constant: age, race and ethnicity, gender, citizenship, education, offense type and fiscal year.
+- It gives each state, and each district within a state, its own baseline level, so places can differ even when the people sentenced are alike.
+- Results are odds ratios with 95% confidence intervals. An odds ratio of 1 means no difference. Below 1 means lower odds and above 1 means higher odds than the reference group.
+
+```{r ref}
+show(ref_table())
+```
+
+::: {.callout .tip}
+<span class="t">Odds are not percentages.</span> Odds compare the chance that something happens with the chance that it does not. Probation is uncommon: `r pct(allr)` of people sentenced received it. When an outcome is rare, odds and chances are close, so an odds ratio of `r sprintf("%.1f", o("Female"))` is close to `r sprintf("%.1f", o("Female"))` times the chance. In the raw data, `r pct(fem, 0)` of women and `r pct(male, 0)` of men received probation. When an outcome is common, a large odds ratio can be a small change in percentage points.
+:::
+
+No predictors overlapped strongly (all variance inflation factors were below `r vif_max`). Because most rows describe a single person, the two-column binomial outcome handles the mix of single and grouped rows. Technical details are in the appendix.
+
+## What the model found {.numbered}
+
+### Who receives probation
+
+Figure 2 (below) shows the adjusted odds ratio for every characteristic except age. The sections that follow describe each result.
+
+#### Offense type
+
+Offense type shows the largest differences. Compared with drug trafficking, fraud had `r times(o("Fraud"))` the odds of probation (odds ratio `r f3(o("Fraud"))`), other offenses `r times(o("Other offense"))`, immigration `r times(o("Immigration"))` and firearms `r times(o("Firearms"))`. Violent offenses had `r lower(o("Violent offense"))` lower odds and sexual offenses `r lower(o("Sexual offense"))` lower, consistent with required prison terms for sexual offenses. For fraud, immigration and other offenses the pattern is the reverse of supervised release, where they had lower odds: offenses that are less likely to lead to supervised release after prison are more likely to lead to probation instead of prison.
+
+#### Gender
+
+Women had `r times(o("Female"))` the odds of probation compared with men (odds ratio `r f3(o("Female"))`), the reverse of supervised release, where women had `r lower(s_o("Female"))` lower odds. Women appear more likely to receive probation as an alternative to prison than supervised release after it.
+
+#### Education
+
+More education is linked to higher odds. Compared with people without a high school diploma, high school graduates had `r higher(o("H.S. graduate"))` higher odds, people with some college `r higher(o("Some college"))` and college graduates `r higher(o("College graduate"))`. The step-up held under multiple imputation (odds ratio `r f2(rob_or("College graduate vs. less than H.S.", "Multiple imputation"))` for college graduates), unlike the education pattern for supervised release. One reading is that people with more education are seen as better candidates for a sentence in the community; the data cannot test that.
+
+#### Citizenship, race and ethnicity
+
+Non-U.S. citizens had `r lower(o("Non-U.S. citizen"))` lower odds of probation than U.S. citizens who were otherwise similar (`r f3(o("Non-U.S. citizen"))`), a smaller gap than for supervised release (`r lower(s_o("Non-U.S. citizen"))` lower). Compared with White defendants, Black defendants had `r lower(o("Black"))` lower odds (`r f3(o("Black"))`) and Hispanic defendants `r lower(o("Hispanic"))` lower (`r f3(o("Hispanic"))`); defendants in the Other group had `r higher(o("Other race"))` higher odds (`r f3(o("Other race"))`). For supervised release, Black and White defendants showed no clear difference.
+
+#### Age
+
+Each additional year of age was linked to `r sprintf("%.1f", 100 * (o("Age (per year)") - 1))`% higher odds of probation in the main model. The effect is small and disappears under multiple imputation (odds ratio `r f2(rob_or("Age (per year)", "Multiple imputation"))`).
+
+```{r forest}
+figure(fig_forest(oc), 7.0, 0.2 * nrow(forest_rows(oc)) + 0.72, "Adjusted odds ratios for probation",
+       "Odds ratios with 95% confidence intervals from the main model, adjusted for the other factors. Each point compares a group with the reference group named in its row heading. Every interval excludes 1, so every difference is clear. The horizontal axis is logarithmic.",
+       "Forest plot of adjusted odds ratios for probation by characteristic")
+figure(fig_observed(oc), 7.0, 2.75, "The raw rates behind the odds ratios",
+       "Unadjusted probation rates among everyone sentenced, national total, fiscal years 2014 to 2025. They do not hold other factors constant, which is why they can differ from the odds ratios. The dotted line is the rate across all people sentenced.",
+       "Bar charts of probation rates by offense type and by education")
+```
+
+### Change over time
+
+The odds of probation fell over the period, while the odds of supervised release rose. In the main model the odds did not differ from FY`r FY_FIRST` in FY2015 (`r f2(fy(2015))`) or FY2016 (`r f2(fy(2016))`). A decline began in FY2017 (`r f2(fy(2017))`) and continued to a low in FY2023 (`r f2(fy(2023))`), `r lower(fy(2023))` lower than in FY`r FY_FIRST`. The odds were slightly higher in FY2024 (`r f2(fy(2024))`) and lower again in FY2025 (`r f2(fy(2025))`).
+
+```{r fy}
+figure(fig_fy(oc), 7.0, 2.9, "Odds of probation by fiscal year",
+       "Odds ratio for each fiscal year compared with FY2014, adjusted for the other factors in the model, with 95% confidence bands. The vertical axis is logarithmic.",
+       "Line chart of odds ratios for probation by fiscal year compared with fiscal year 2014")
+```
+
+Over most of this period federal sentencing shifted toward supervision after prison (supervised release) and away from community supervision without prison (probation). The decline held under both missing-data checks. The AR1 model, which lets each district follow its own year-to-year path, fit better than fiscal-year fixed effects (AIC lower by `r num(detail(oc, "aic_fixed_year") - detail(oc, "aic_ar1"))`), by less than for supervised release, and left the results for individual characteristics essentially unchanged. National probation trends were very stable from year to year (AR1 correlation `r f3(detail(oc, "ar1_rho_national"))`).
+
+### Where someone is sentenced
+
+Place matters much less for probation than for supervised release. In the main model **`r pct(icc(comb), 1)`** of the variation left after accounting for people's characteristics is tied to where they were sentenced: `r pct(icc(st), 1)` to the state and `r pct(icc(dist), 1)` to the district within the state. For supervised release the combined figure is `r pct(sr_icc(comb), 1)`. Districts vary more than states, but both vary little (district standard deviation `r f3(detail(oc, "sd_district"))`, state `r f3(detail(oc, "sd_state"))`).
+
+```{r icc}
+figure(fig_icc(oc), 7.0, 2.7, "Where the variation in probation sits",
+       "Share of the total variation tied to each source, on the log-odds scale (intraclass correlation). Panel A is the main model. Panel B lets each district follow its own trend over time (AR1); diamonds show the same model after multiple imputation. The grey bar is everything else: differences between individual cases that place and year do not explain.",
+       "Bar charts of variance shares for probation in the main model and the yearly-trend model")
+```
+
+With district trends included, the district-level share rises to `r pct(icc(dall, "ar1"), 0)` (`r pct(icc(dall, "ar1_mice"), 0)` after imputation), still far below the `r pct(sr_icc(dall, "ar1"), 0)` for supervised release. Most of the variation (`r pct(icc(remainder, "ar1"), 0)` in the yearly-trend model) is left to differences between individual cases. The analysis reads this as probation depending more on case characteristics than on place, so differences in probation may need to be addressed through changes that apply to specific kinds of cases rather than to particular districts. The model cannot see every case detail, so the remainder may include unmeasured features of the case.
+
+## How well the findings held up {.numbered}
+
+The main model uses only rows with no missing values (`r sprintf("%.1f", detail(oc, "complete_pct"))`% of rows). Education and race are missing far more often for non-citizens and Hispanic defendants (Figure `r next_figure()`), so dropping incomplete rows risks selection bias. The model was therefore run twice more: once keeping people with missing values by treating missing as their own category, and once with multiple imputation (five filled-in datasets using random forests, combined with Rubin's rules).
+
+```{r missing}
+figure(fig_missing(oc), 7.0, 2.55, "How much was missing, and where",
+       "Panel A: share of rows with a missing value for each field. Offense type, fiscal year and district had no missing values. Panel B: share of rows with no education recorded, by group.",
+       "Bar and dot charts showing missing data by field and missing education by group")
+n_rob <- length(unique(R$rob$comparison[R$rob$outcome == oc]))
+figure(fig_robust(oc), 7.0, 0.28 * n_rob + 0.9, "Odds ratios from the main model and after multiple imputation",
+       "Odds ratios for the same comparisons from the main model (complete cases) and after multiple imputation. Markers that stay close together show a result that holds. The horizontal axis is logarithmic.",
+       "Dot chart of odds ratios under two approaches to handling missing data")
+```
+
+- **Probation results were stable.** Under multiple imputation every result kept its direction, including the education pattern, which changed for supervised release. The violent offense gap shrank (odds ratio `r f3(rob_or("Violent offense vs. drug trafficking", "Complete cases"))` to `r f3(rob_or("Violent offense vs. drug trafficking", "Multiple imputation"))`) and the small age effect disappeared.
+- **Missing as its own category.** The citizenship gap grew (odds ratio `r f3(mc_or("newcit_descriptionNon-U.S. Citizen"))`). People with missing education had far higher odds of probation (`r f3(mc_or("neweduc_descriptionUnknown/Missing"))`), the opposite of the supervised release data, where they had far lower odds, so the cases with missing education differ between the two datasets. People with missing race had `r lower(mc_or("newrace_descriptionUnknown/Missing"))` lower odds than White defendants. The decline in probation began slightly earlier in this check (FY2015 odds ratio `r f3(mc_or("fiscal_year2015"))`).
+- **Geography held:** the district-level share of variation was `r pct(icc(dall, "ar1_mice"), 0)` after imputation, against `r pct(icc(dall, "ar1"), 0)` in the main yearly-trend model, and individual-level variation stayed dominant (`r pct(icc(remainder, "ar1_mice"), 0)` against `r pct(icc(remainder, "ar1"), 0)`).
+
+## Limits and open questions {.numbered}
+
+#### What this analysis cannot tell you
+
+- It describes patterns in recorded outcomes. It does not show why a difference exists, or whether it reflects unequal treatment.
+- It leaves out things that influence sentences, such as criminal history, the guideline range, plea agreements and the facts of the case.
+- Odds ratios are not differences in percentages. Probation is uncommon, so odds ratios and relative chances are close, but they are not the same.
+- The estimates come from one set of data and one set of modeling choices. Confidence intervals are Wald intervals. Profile-likelihood intervals are recommended for final results.
+
+#### Questions the analysis flags
+
+- Which districts, if any, show the largest racial and ethnic gaps. One approach is to let the race effect vary by district.
+- Whether the education pattern differs by offense type, for example through models run separately for each type.
+- How the probation decline relates to the rise in supervised release over the same years.
+
+```{r compare}
+show(compare_table(oc))
+show('<p class="small">Source: U.S. Sentencing Commission individual offender datafiles for fiscal years 2014 to 2025, aggregated for the REFORM Alliance federal sentencing dashboard. Odds ratios are from binomial mixed-effects models fitted with the glmmTMB package in R.</p>')
+show(page_break())
+```
+
+## Appendix: tables and technical details {.appendix .first}
+
+### A1. Odds ratios from the main model
+
+```{r a1}
+show(tbl_odds(oc))
+show('<p class="small">Binomial mixed-effects model, complete cases. Each odds ratio compares a group with its reference group, holding the other characteristics constant.</p>')
+```
+
+### A2. Fiscal-year odds ratios
+
+```{r a2}
+show(tbl_fy(oc))
+```
+
+### A3. Where the variation sits
+
+```{r a3}
+show(tbl_icc(oc))
+show('<p class="small">Shares of total variation on the log-odds scale. The remainder row is one minus the other shares. Yearly-trend model components below.</p>')
+show(tbl_icc_detail(oc))
+```
+
+### A4. Complete cases and multiple imputation
+
+```{r a4}
+show(tbl_robust(oc))
+show('<p class="small">Odds ratios.</p>')
+```
+
+### A5. Model specification
+
+- **Software.** glmmTMB in R. Outcome: `cbind(probation_sentence_flag, total_sentenced - probation_sentence_flag)`, binomial family with logit link. `r sprintf("%.1f", detail(oc, "rows_single_person_pct"))`% of rows have `total_sentenced` equal to 1 (maximum `r num(detail(oc, "rows_denominator_max"))`, mean `r sprintf("%.2f", detail(oc, "rows_denominator_mean"))`).
+- **Fixed effects.** Age, race and ethnicity, gender, citizenship, education, offense category and fiscal year.
+- **Random effects.** Nested random intercepts for judicial district within state, `(1 | state_name/state_district)`.
+- **Yearly-trend (AR1) model.** Fiscal-year fixed effects replaced by a national AR1 term, `ar1(0 + year_f | dummy)`, and a district-level AR1 term, `ar1(0 + year_f | state_district)`, keeping the nested intercepts. AIC `r num(detail(oc, "aic_ar1"), 1)` against `r num(detail(oc, "aic_fixed_year"), 1)` for fixed-effect years. AR1 correlations: national `r f3(detail(oc, "ar1_rho_national"))`, district `r f3(detail(oc, "ar1_rho_district"))` (after imputation `r f3(detail(oc, "ar1_rho_national", "imputed"))` and `r f3(detail(oc, "ar1_rho_district", "imputed"))`). ICCs for AR1 terms use the variance SD²/(1−ρ²).
+- **Missing data.** Main model: complete cases. Check 1: missing treated as its own category (all `r num(detail(oc, "n_eligible"))` rows). Check 2: multiple imputation with miceRanger (random forest, m = 5, 50 trees, 5 iterations, seed 123) for race and ethnicity, gender, citizenship and education; the model was fitted to each imputed dataset and pooled with Rubin's rules.
+- **Diagnostics.** All variance inflation factors below `r vif_max`. Missingness was examined with the finalfit package.

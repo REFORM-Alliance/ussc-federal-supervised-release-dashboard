@@ -1,0 +1,25 @@
+dimension,group,sr_events,sr_denom,pb_events,pb_denom
+offense,Drug Trafficking,214148,226833,10374,237861
+offense,Firearms,84553,85797,5204,91040
+offense,Fraud,50857,55287,20668,76725
+offense,Immigration,155931,248836,12057,260942
+offense,Other,43952,50815,17387,71552
+offense,Sexual Offense,30549,30616,282,30901
+offense,Violent Offense,33927,34877,1410,36349
+education,College Graduate,33038,34945,8852,43913
+education,H.S. Graduate,201140,213577,18343,232041
+education,Less Than H.S. Graduate,253005,320263,12071,332404
+education,Some College,105078,109262,17374,126742
+gender,Female,71898,80770,22918,104867
+gender,Male,541803,650996,44128,698348
+race,Black,153202,156381,15363,172419
+race,Hispanic,291482,398574,20007,418808
+race,Other,26387,27518,4720,32380
+race,White,140432,144277,25333,170779
+citizenship,Non-U.S. Citizen,198664,309136,9837,319246
+citizenship,U.S. Citizen,414301,421826,55892,480421
+race_by_citizenship,Hispanic | Non-U.S. Citizen,183311,288160,7749,295981
+race_by_citizenship,Hispanic | U.S. Citizen,107843,109911,12115,122148
+race_by_citizenship,White | Non-U.S. Citizen,5172,6604,597,7232
+race_by_citizenship,White | U.S. Citizen,135180,137474,24426,162886
+all,All,613917,733061,67382,805370

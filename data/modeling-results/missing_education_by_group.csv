@@ -1,0 +1,13 @@
+outcome,dimension,group,pct
+Supervised release,Citizenship,Non-U.S. citizen,15.3
+Supervised release,Citizenship,U.S. citizen,1.6
+Supervised release,Race and ethnicity,Black,1.6
+Supervised release,Race and ethnicity,Hispanic,9.3
+Supervised release,Race and ethnicity,Other,2.9
+Supervised release,Race and ethnicity,White,1.8
+Probation,Citizenship,Non-U.S. citizen,15.8
+Probation,Citizenship,U.S. citizen,3.1
+Probation,Race and ethnicity,Black,2.9
+Probation,Race and ethnicity,Hispanic,9.6
+Probation,Race and ethnicity,Other,4.3
+Probation,Race and ethnicity,White,3.6

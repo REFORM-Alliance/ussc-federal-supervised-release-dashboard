@@ -1,0 +1,15 @@
+outcome,component,primary,ar1,ar1_mice,kind
+Supervised release,State baseline,0.035,0.019,0.006,component
+Supervised release,District baseline (within state),0.276,0.106,0.122,component
+Supervised release,State and district baselines combined,0.311,0.125,0.128,combined
+Supervised release,District trend over time,NA,0.457,0.396,component
+Supervised release,National trend over time,NA,0.003,0.01,component
+Supervised release,District baseline plus district trend,NA,0.563,0.518,combined
+Supervised release,Individual-level variation (remainder),0.689,0.415,0.466,remainder
+Probation,State baseline,0.008,0.005,0.003,component
+Probation,District baseline (within state),0.05,0.017,0.03,component
+Probation,State and district baselines combined,0.058,0.023,0.032,combined
+Probation,District trend over time,NA,0.182,0.139,component
+Probation,National trend over time,NA,0.022,0.023,component
+Probation,District baseline plus district trend,NA,0.199,0.169,combined
+Probation,Individual-level variation (remainder),0.942,0.774,0.805,remainder

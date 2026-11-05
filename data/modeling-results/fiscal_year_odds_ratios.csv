@@ -1,0 +1,23 @@
+outcome,fiscal_year,or,lo,hi,p_value
+Supervised release,2015,1.166,1.115,1.219,<0.001
+Supervised release,2016,1.218,1.165,1.274,<0.001
+Supervised release,2017,1.328,1.269,1.389,<0.001
+Supervised release,2018,1.184,1.133,1.238,<0.001
+Supervised release,2019,1.198,1.148,1.251,<0.001
+Supervised release,2020,1.091,1.043,1.14,<0.001
+Supervised release,2021,1.286,1.224,1.35,<0.001
+Supervised release,2022,1.22,1.163,1.279,<0.001
+Supervised release,2023,1.299,1.238,1.362,<0.001
+Supervised release,2024,1.569,1.493,1.648,<0.001
+Supervised release,2025,1.139,1.089,1.191,<0.001
+Probation,2015,1.005,0.964,1.048,0.798
+Probation,2016,0.993,0.952,1.036,0.746
+Probation,2017,0.928,0.889,0.969,<0.001
+Probation,2018,0.869,0.831,0.907,<0.001
+Probation,2019,0.825,0.79,0.862,<0.001
+Probation,2020,0.895,0.855,0.937,<0.001
+Probation,2021,0.876,0.837,0.917,<0.001
+Probation,2022,0.791,0.756,0.827,<0.001
+Probation,2023,0.718,0.686,0.751,<0.001
+Probation,2024,0.851,0.814,0.89,<0.001
+Probation,2025,0.837,0.8,0.875,<0.001

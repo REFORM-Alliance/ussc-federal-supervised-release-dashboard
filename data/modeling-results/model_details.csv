@@ -1,0 +1,39 @@
+outcome,metric,complete,imputed
+Supervised release,n_eligible,487798,NA
+Supervised release,n_complete,459570,NA
+Supervised release,complete_pct,94.2,NA
+Supervised release,sd_state,0.406,NA
+Supervised release,sd_district,1.148,NA
+Supervised release,aic_fixed_year,181421.7,NA
+Supervised release,aic_random_year,181453.8,NA
+Supervised release,aic_ar1,176154.9,NA
+Supervised release,ar1_sd_state,0.391,0.209
+Supervised release,ar1_sd_district,0.917,0.927
+Supervised release,ar1_sd_national,0.143,0.207
+Supervised release,ar1_sd_district_trend,0.921,0.848
+Supervised release,ar1_rho_national,0.515,0.613
+Supervised release,ar1_rho_district,0.875,0.861
+Supervised release,immigration_share_people_missing_demographics,65.8,NA
+Supervised release,immigration_share_people_complete,31.3,NA
+Supervised release,rows_single_person_pct,85.5,NA
+Supervised release,rows_denominator_max,199,NA
+Supervised release,rows_denominator_mean,1.47,NA
+Probation,n_eligible,554676,NA
+Probation,n_complete,514157,NA
+Probation,complete_pct,92.7,NA
+Probation,sd_state,0.169,NA
+Probation,sd_district,0.418,NA
+Probation,aic_fixed_year,313541.3,NA
+Probation,aic_random_year,313572.3,NA
+Probation,aic_ar1,311921.9,NA
+Probation,ar1_sd_state,0.151,0.102
+Probation,ar1_sd_district,0.272,0.349
+Probation,ar1_sd_national,0.135,0.135
+Probation,ar1_sd_district_trend,0.431,0.4
+Probation,ar1_rho_national,0.897,0.898
+Probation,ar1_rho_district,0.872,0.848
+Probation,immigration_share_people_missing_demographics,56.3,NA
+Probation,immigration_share_people_complete,30.1,NA
+Probation,rows_single_person_pct,86.8,NA
+Probation,rows_denominator_max,199,NA
+Probation,rows_denominator_mean,1.43,NA
